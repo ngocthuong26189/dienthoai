@@ -4,196 +4,207 @@
         {% block head %}
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {% block title %}<title></title>{% endblock title %}
-        <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
-        <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
-        <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
-    {% endblock head %}
-</head>
-<body>
-    
-    <section id="header">
-        <div id="first-menu" class="show-for-large-up">
-            <div class="row">
-                <ul class="inline-list">
-                    <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
-                    <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
-                    <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
-                    <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="off-canvas-wrap" data-offcanvas>
-            <div class="inner-wrap">
-                <nav class="tab-bar hide-for-large-up">
-                    <section class="left-small">
-                        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-                    </section>
-                    <section class="middle tab-bar-section">
-                        <a href="" title="home">
-                            <img src="./static/img/logo.png" alt="" style="height:41px;margin-top:4px;">
-                        </a>
-                    </section>
-                </nav>
-                <aside class="left-off-canvas-menu hide-for-large-up">
-                    <ul class="off-canvas-list">
-                        <li><label>DANH MỤC SẢN PHẨM</label></li>
-                        <li><a href="{{ url_for('home.x4') }}">X-4 Mobile</a></li>
-                        <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
-                        <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
+            {% block title %}<title></title>{% endblock %}
+            <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
+            <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
+            <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
+        {% endblock%}
+    </head>
+    <body>
+        
+        <section id="header">
+            <div id="first-menu" class="show-for-large-up">
+                <div class="row">
+                    <ul class="inline-list">
+                        <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
+                        <li><a href="{{ url_for('home.index') }}">Home</a></li>
+                        <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
+                        <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
+                        <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
                     </ul>
-                </aside>
-                <section class="main-section">
-                    <!-- content goes here -->
-                    <div class="row">
-                        {% block slide %}
-                            
-                        {% endblock %}
-                    </div>
-                        {% block hi %}
-                            
-                        {% endblock %}
-                        {% block khung %}{% endblock %}
-                    
-                    
-                </section>
-                <a class="exit-off-canvas"></a>
-            </div>
-        </div>
-    </section>
-    <div id="social">
-        <ul>
-            <li><a href="https://www.facebook.com/ngocminhytr" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
-            <li><a href="#" title="Google"><img src="./static/img/google.png" alt=""></a></li>
-            <li><a href="#" title="Youtube"><img src="./static/img/youtube.png" alt=""></a></li>
-        </ul>
-    </div>
-    <div class="clearfix" style="height:15px; width:100%;"></div>
-    <footer>
-        <hr>
-        <div class="row show-for-medium-up">
-            <div class="small-6 medium-12 large-6 columns">
-                <div class="row" data-equalizer>
-                    <div class="small-4 medium-4 large-4 columns">
-                        
-                        <ul data-equalizer-watch>
-                            <li><h3>Giới Thiệu Công Ty</h3></li>
-                            <li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
-                            <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
-                            <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
-                            <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
-                            <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
-                            <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li>
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns">
-                        
-                        <ul data-equalizer-watch>
-                            <li><h3>Hỗ Trợ Khách Hàng</h3></li>
-                           <!-- <li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
-                            <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
-                            <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
-                            <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
-                            <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
-                            <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li> -->
-                        </ul>
-                    </div>
-                    <div class="small-4 medium-4 large-4 columns">
-                        
-                        <ul data-equalizer-watch>
-                            <li><h3>Thanh Toán</h3></li>
-                            <!--<li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
-                            <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
-                            <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
-                            <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
-                            <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
-                            <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li>-->
-                        </ul>
-                    </div>
                 </div>
             </div>
-            <div class="small-6 medium-12 large-6 columns">
-                <div class="row">
-                    <div class="small-6 medium-6 large-6 columns">
-                        <form action="promotions" method="post" accept-charset="utf-8">
-                            <input type="text" name="" required="true" placeholder="Tên Người Nhận" >
-                            <input type="email" name="" required placeholder="Email nhận khuyễn mãi">
-                            <button class="button expand" type="submit">Xác nhận</button>
-                        </form>
+            <div class="off-canvas-wrap" data-offcanvas>
+                <div class="inner-wrap">
+                    <nav class="tab-bar hide-for-large-up">
+                        <section class="left-small">
+                            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                            <a href="" title="home">
+                                <img src="./static/img/logo.png" alt="" style="height:41px;margin-top:4px;">
+                            </a>
+                        </section>
+                    </nav>
+                    <aside class="left-off-canvas-menu hide-for-large-up">
+                        <ul class="off-canvas-list">
+                            <li><label>DANH MỤC SẢN PHẨM</label></li>
+                            <li><a href="{{ url_for('home.x4') }}">X-4 Mobile</a></li>
+                            <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
+                            <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
+                        </ul>
+                    </aside>
+                    <section class="main-section">
+                        <!-- content goes here -->
+                        <div class="row">
+                            {% block slides %}
+                                
+                            {% endblock %}
+                        </div>
+                        <div class="clearfix" style="height:15px; width:100%;"></div>
+                        <div class="row">
+                            
+                            {% block hi %}
+                                
+                            {% endblock %}    
+                        </div>
+                        <div class="clearfix" style="height:15px; width:100%;"></div>
+                        <div class="row">
+                            {% block khung %}
+
+                            {% endblock %}
+                        </div>
+                        <div class="clearfix" style="height:15px; width:100%;"></div>
+                    </section>
+                    <a class="exit-off-canvas"></a>
+                </div>
+            </div>
+        </section>
+        
+        <div class="clearfix" style="height:15px; width:100%;"></div>
+        <div id="social">
+            <ul>
+                <li><a href="https://www.facebook.com/ngocminhytr" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
+                <li><a href="#" title="Google"><img src="./static/img/google.png" alt=""></a></li>
+                <li><a href="#" title="Youtube"><img src="./static/img/youtube.png" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="clearfix" style="height:15px; width:100%;"></div>
+        <footer>
+            <hr>
+            <div class="row show-for-medium-up">
+                <div class="small-6 medium-12 large-6 columns">
+                    <div class="row" data-equalizer>
+                        <div class="small-4 medium-4 large-4 columns">
+                            
+                            <ul data-equalizer-watch>
+                                <li><h3>Giới Thiệu Công Ty</h3></li>
+                                <li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
+                                <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
+                                <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
+                                <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
+                                <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
+                                <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li>
+                            </ul>
+                        </div>
+                        <div class="small-4 medium-4 large-4 columns">
+                            
+                            <ul data-equalizer-watch>
+                                <li><h3>Hỗ Trợ Khách Hàng</h3></li>
+                                <!-- <li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
+                                <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
+                                <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
+                                <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
+                                <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
+                                <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li> -->
+                            </ul>
+                        </div>
+                        <div class="small-4 medium-4 large-4 columns">
+                            
+                            <ul data-equalizer-watch>
+                                <li><h3>Thanh Toán</h3></li>
+                                <!--<li> <a href="" title="Về Đại Siêu Thị Mẹ Bé">Về Đại Siêu Thị Mẹ Bé</a> </li>
+                                <li><a href="" title="Hệ Thống Cửa Hàng Mẹ Bé">Hệ Thống Cửa Hàng Mẹ Bé</a></li>
+                                <li><a href="" title="Khuyến Mãi">Khuyến Mãi</a></li>
+                                <li><a href="" title="Liên Hệ">Liên Hệ</a></li>
+                                <li><a href="" title="Tuyển Dụng">Tuyển Dụng</a></li>
+                                <li><a href="" title="Hỏi Đáp">Hỏi Đáp</a></li>-->
+                            </ul>
+                        </div>
                     </div>
-                    <div class="small-6 medium-6 large-6 columns">
-                        <div class="face-box">
-                            UPDATING...
+                </div>
+                <div class="small-6 medium-12 large-6 columns">
+                    <div class="row">
+                        <div class="small-6 medium-6 large-6 columns">
+                            <form action="promotions" method="post" accept-charset="utf-8">
+                                <input type="text" name="" required="true" placeholder="Tên Người Nhận" >
+                                <input type="email" name="" required placeholder="Email nhận khuyễn mãi">
+                                <button class="button expand" type="submit">Xác nhận</button>
+                            </form>
+                        </div>
+                        <div class="small-6 medium-6 large-6 columns">
+                            <div class="face-box">
+                                UPDATING...
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row show-for-small-only">
-            <div class="small-12 medium-6 large-6 columns">
-                <a href="" title="Giới Thiệu Công Ty" class="button expand">Giới Thiệu Công Ty</a>
+            <div class="row show-for-small-only">
+                <div class="small-12 medium-6 large-6 columns">
+                    <a href="" title="Giới Thiệu Công Ty" class="button expand">Giới Thiệu Công Ty</a>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <a href="" title="Hỗ Trợ Khách Hàng" class="button expand">Hỗ Trợ Khách Hàng</a>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <a href="" title="Thanh Toán" class="button expand">Thanh Toán</a>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <a href="" title="Kết Nối Với Chúng Tôi" class="button expand">Kết Nối Với Chúng Tôi</a>
+                </div>
+                <div class="small-12 medium-6 large-6 columns">
+                    <a href="" title="ĐĂNG NHẬP" class="button expand">ĐĂNG NHẬP</a>
+                </div>
             </div>
-            <div class="small-12 medium-6 large-6 columns">
-                <a href="" title="Hỗ Trợ Khách Hàng" class="button expand">Hỗ Trợ Khách Hàng</a>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <h5>Bản quyền của công ty Mẹ & Bé. Copyright@ 2014</h5>
+                </div>
             </div>
-            <div class="small-12 medium-6 large-6 columns">
-                <a href="" title="Thanh Toán" class="button expand">Thanh Toán</a>
-            </div>
-            <div class="small-12 medium-6 large-6 columns">
-                <a href="" title="Kết Nối Với Chúng Tôi" class="button expand">Kết Nối Với Chúng Tôi</a>
-            </div>
-            <div class="small-12 medium-6 large-6 columns">
-                <a href="" title="ĐĂNG NHẬP" class="button expand">ĐĂNG NHẬP</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="small-12 medium-12 large-12 columns">
-                <h5>Bản quyền của công ty Mẹ & Bé. Copyright@ 2014</h5>
-            </div>
-        </div>
-    </footer>
-    <script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
-    <script src="./static/vendor/foundation/js/foundation.min.js"></script>
-    <script src="./static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
-    <script src="./static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./static/css/footer.css" />
-    <link rel="stylesheet" href="./static/css/layout.css" />
-    <link rel="stylesheet" href="./static/css/menu.css" />
-    <link rel="stylesheet" href="./static/css/home.css" />
-    <script>
-    $(document).foundation();
-    </script>
-    <script type="text/javascript" charset="utf-8" async defer>
-    $(document).foundation();
-    </script>
-    <script type="text/javascript" charset="utf-8" async defer>
-    $(function() {
-    // Ẩn tất cả .accordion trừ accordion đầu tiên
-    // $("#accordiondemo .accordion:not(:first)").hide();
-    $("#accordiondemo .accordion").hide();
-    $('.accordion .active').each(function () {
-    $first_accordion = $(this).parent().parent().parent();
-    $first_accordion.prev().addClass("active");
-    $first_accordion.slideDown();
-    });
-    $('#accordiondemo > .active').each(function () {
-    $first_accordion = $(this).next();
-    $first_accordion.slideDown();
-    });
-    $("#accordiondemo > a").click(function(){
-    $("#accordiondemo > a").removeClass('active');
-    $('.accordion .active').removeClass('active');
-    $(this).addClass('active');
-    $accordion = $(this).next();
-    if ($accordion.is(':hidden') === true) {
-    $("#accordiondemo .accordion").slideUp();
-    $accordion.slideDown();
-    } else {
-    $accordion.slideUp();
-    }
-    });
-    });
-    </script>
-</body>
+        </footer>
+        <script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
+        <script src="./static/vendor/foundation/js/foundation.min.js"></script>
+        <script src="./static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
+        <script src="./static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./static/css/footer.css" />
+        <link rel="stylesheet" href="./static/css/layout.css" />
+        <link rel="stylesheet" href="./static/css/menu.css" />
+        <link rel="stylesheet" href="./static/css/home.css" />
+        <script>
+        $(document).foundation();
+        </script>
+        <script type="text/javascript" charset="utf-8" async defer>
+        $(document).foundation();
+        </script>
+        <script type="text/javascript" charset="utf-8" async defer>
+        $(function() {
+        // Ẩn tất cả .accordion trừ accordion đầu tiên
+        // $("#accordiondemo .accordion:not(:first)").hide();
+        $("#accordiondemo .accordion").hide();
+        $('.accordion .active').each(function () {
+        $first_accordion = $(this).parent().parent().parent();
+        $first_accordion.prev().addClass("active");
+        $first_accordion.slideDown();
+        });
+        $('#accordiondemo > .active').each(function () {
+        $first_accordion = $(this).next();
+        $first_accordion.slideDown();
+        });
+        $("#accordiondemo > a").click(function(){
+        $("#accordiondemo > a").removeClass('active');
+        $('.accordion .active').removeClass('active');
+        $(this).addClass('active');
+        $accordion = $(this).next();
+        if ($accordion.is(':hidden') === true) {
+        $("#accordiondemo .accordion").slideUp();
+        $accordion.slideDown();
+        } else {
+        $accordion.slideUp();
+        }
+        });
+        });
+        </script>
+    </body>
 </html>
