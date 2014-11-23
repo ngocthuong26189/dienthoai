@@ -1,0 +1,6 @@
+{% extends "admin/category/layout.html" %}
+{% block content %}
+    {% from "admin/category/form.html" import form %}
+    {% set data={'parents':categories,'name':category.name,'image':category.image,'image_url':category.image_url,'image_original_url':category.image_original_url,'parent':category.parent.id} %}
+    {{ form(url_for('admin.category.update', category_id=category.id), data, show_form=2) }}
+{% endblock %}

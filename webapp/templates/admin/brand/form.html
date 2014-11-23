@@ -1,0 +1,41 @@
+{% macro form(url, data='', show_form=3) -%}
+<form action="{{ url }}" method="post">
+	<fieldset>
+			
+		{% if show_form == 2 %}
+		<legend>Change password:</legend>
+		{% endif %}
+	
+		{% if show_form == 3 or show_form == 1 %}
+		<legend>Enter brand info:</legend>
+		<div class="row collapse">
+			<div class="medium-2 columns">
+				<span class="prefix">Name:</span>	
+			</div>
+			<div class="medium-10 columns">
+				<input type="text" placeholder="Enter your brand name here" name="name" value="{{ data.name }}" />
+			</div>
+		</div>
+		<div class="row collapse">
+            <div class="medium-8 columns">
+                <span>Image:</span>   
+                <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
+                <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
+            </div>
+            
+            <div class="medium-4 columns clearfix">
+
+                <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
+            </div>
+        </div>
+		{% endif %}
+		<div class="row collapse">
+			<div class="medium-3 columns">
+        <input type="submit" value="Submit" class="button tiny success">
+        <a href="{{ url_for('admin.brand.index') }}" class="button tiny secondary">Cancel</a>
+			</div>
+		</div>
+	</fieldset>
+</form>
+{% endmacro -%}
+

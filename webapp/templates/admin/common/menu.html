@@ -1,0 +1,25 @@
+{% macro top_menu(current="dashboard") -%}
+
+{% set menu = [
+	("dashboard","fa-home", "Dashboard"),
+	("user","fa-user", "Users"),
+	("category","fa-folder-open", "Categories"),
+	("product","fa-puzzle-piece", "Products"),
+	("order","fa-puzzle-piece", "Order"),
+	("brand","fa-flask", "Brands"),
+	("sticky","fa-ticket", "Sticky"),
+	("news_category","fa-bullhorn", "Category of News"),
+	("news","fa-bullhorn", "News"),
+	("question_category","fa-question", "Category of Question"),
+	("question","fa-question", "Question")
+] %}
+
+{% for item in menu %}
+	<li class="{% if current== item[0] %}active{% endif %}">
+		<a href="{{ url_for('admin.' + item[0] + '.index') }}">
+			<i class="fa fa-lg fa-fw {{ item[1] }}"></i>{{ item[2] }}
+		</a>
+	</li>
+{% endfor %}
+
+{%- endmacro %}

@@ -1,0 +1,53 @@
+{% extends "admin/news_category/layout.html" %}
+
+{% block content %}
+<div class="row">
+        <div class="medium-6 columns">
+            <a href="{{ url_for('admin.news_category.add') }}" class="button success tiny"><i class="fa fa-plus"></i> Add a category of News</a>        
+        </div>
+        <div class="medium-6 columns">
+            <form>
+                <div class="row collapse">
+                    <div class="small-10 columns">
+                        <input type="text" name="name__icontains" placeholder="category of News name">
+                    </div>
+                    <div class="small-2 columns">
+                        <button type="submit" href="#" class="button postfix">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Image</th>
+				<th>Name</th>
+                <th>To do</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for news_category in news_categorys %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				
+                <td>
+                {%if news_category.image_original_url | length > 0%}
+                    <a class="th" role="button" aria-label="Thumbnail" href="{{news_category.image_original_url}}">
+                  <img aria-hidden=true src="{{news_category.image_url}}"/>
+                  </a>
+                {% endif %}
+                
+                </td>
+                <td><a href="{{ url_for('admin.news_category.detail', news_category_id=news_category.id) }}">{{ news_category.name }}</a></td>
+				<td>
+          <a href="{{ url_for('admin.news_category.edit', news_category_id=news_category.id) }}">Edit</a> | 
+          <a href="javascript:post('{{ url_for('admin.news_category.delete', news_category_id=news_category.id) }}')">Delete</a>
+        </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{{ pagination.links | safe  }}
+{% endblock %}

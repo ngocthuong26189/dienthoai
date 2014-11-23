@@ -1,0 +1,5 @@
+{% extends "admin/brand/layout.html" %}
+{% block content %}
+	{% from "admin/brand/form.html" import form %}
+	{{ form(url_for('admin.brand.create')) }}
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "admin/news/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <table>
+        <h2 class="text-center subheader">News detail</h2>
+         
+          <tr>
+            <th>Properties</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Author</td>
+            <td>{{news.author.username}}</td>
+        </tr>
+        <tr>
+            <td >Title</td>
+            <td>{{news.title}}</td>
+        </tr>
+        <tr>
+            <td >Brief</td>
+            <td>{{news.brief}}</td>
+        </tr>
+         <tr>
+            <td >Category</td>
+            <td>{{news.news_category.name}}</td>
+        </tr>
+        <tr>
+            <td >Video embed code</td>
+            <td>{{news.video}}</td>
+        </tr>
+        <tr>
+            <td >Show in index page</td>
+            <td>{{news.show_in_index}}</td>
+        </tr>
+        <tr>
+            <td >Image</td>
+            <td>
+            {%if news.image_original_url | length > 0%}
+                <a class="th" role="button" aria-label="Thumbnail" href="{{news.image_original_url}}">
+                  <img aria-hidden=true src="{{news.image_url}}"/>
+                </a>
+            {%endif%}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div style="border:1px solid green;background-color:#fff;padding:10px;">
+                    {{news.content|safe}}
+                </div>
+            </td>
+            
+        </tr>
+        <tr style="border-top:solid 1px #ddd;">
+            <td ><a href="{{ url_for('admin.news.edit', news_id=news.id) }}" class="button tiny success right"><i class="fa fa-edit"></i> Edit</a></td>
+            <td><a href="javascript:post('{{ url_for('admin.news.delete', news_id=news.id) }}',null,'{{url_for('admin.news.index')}}')" class="button tiny alert left"><i class="fa fa-trash"></i> Delete</a></td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock %}

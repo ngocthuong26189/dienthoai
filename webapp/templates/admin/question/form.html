@@ -1,0 +1,53 @@
+{% macro form(url, data='', show_form=1) -%}
+<form action="{{ url }}" method="post">
+	<fieldset>
+		
+		<legend>{% if show_form == 1 %}Create a question:{%else%}Update a question:{% endif %}</legend>
+		<div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Author*:</span>   
+            </div>
+            <div class="medium-10 columns" >
+                <input type="text" placeholder="Enter question name here" name="user" value="{%if data.user%}{{ data.user }}{% else %}{{data.username}}{% endif %}" required readonly="true" />
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Category*:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="question_category" style="margin-bottom:1rem;" required>
+                    <option value=""></option> 
+                    {%for category in data.categories%}
+                        <option value="{{category.id}}" {% if data.question_category and category.id == data.question_category.id %} selected {%endif%}>{{category.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+		<div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Content*: </span>   
+            </div>
+            <div class="medium-10 columns">
+            <textarea rows="10" placeholder="Enter your content here" name="content" value="{{ data.content }}" required id="content">{{ data.content | safe }}</textarea>
+            </div>
+        </div>
+
+        <div class="row collapse">
+            <div class="medium-10 columns" >
+                <input type="checkbox" id="show_in_index" name="show_in_index" {%if data.show_in_index == True %} checked {%endif%}><label for="show_in_index">Show in index page</label>
+            </div>
+        </div>
+		<div class="row collapse">
+			<div class="medium-3 columns">
+				<input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+			</div>
+		</div>
+	</fieldset>
+</form>
+<script src="/static/vendor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+     CKEDITOR.replace( 'content' );
+</script>
+{% endmacro -%}

@@ -1,0 +1,6 @@
+{% extends "admin/news/layout.html" %}
+{% block content %}
+	{% from "admin/news/form.html" import form %}
+    {% set data={'categories':categories,'username':username}%}
+	{{ form(url_for('admin.news.create'),data) }}
+{% endblock %}

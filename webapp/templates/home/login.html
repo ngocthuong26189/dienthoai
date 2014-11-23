@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block title %}<title></title>{% endblock title %}
+    <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
+	<link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/css/app-admin.css" />
+    <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
+	<script src="/static/vendor/jquery/dist/jquery.min.js"></script>
+	<script src="/static/js/helpers.js"></script>
+    {% endblock head %}
+</head>
+<body>
+    <div class="row">
+		<form method="POST">
+			<fieldset>
+				<legend>Login</legend>
+				<label>Username:
+					<input name="username" type="text">
+				</label>
+				<label>Password:
+					<input name="password" type="password">
+				</label>
+
+				<input type="submit" value="Login" class="button tiny success">
+			</fieldset>
+		</form>
+	</div>
+    <script src="/static/vendor/foundation/js/foundation.min.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>

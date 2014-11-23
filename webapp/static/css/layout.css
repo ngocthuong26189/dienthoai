@@ -1,0 +1,23 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+[class*="column"] + [class*="column"]:last-child {
+	float: left;
+}
+ul li ul, ul li ol{
+	margin: 0px;
+}
+.orbit-timer{
+	display: none;
+}
+/*for facebook comment responsive*/
+@media only screen and (max-width: 1000px) {
+.fb-comments{width: 100% !important;}
+.fb-comments iframe[style]{width: 100% !important;}
+.fb-like-box{width: 100% !important;}
+.fb-like-box iframe[style]{width: 100% !important;}
+.fb-comments span{width: 100% !important;}
+.fb-comments iframe span[style]{width: 100% !important;}
+.fb-like-box span{width: 100% !important;}
+.fb-like-box iframe span[style]{width: 100% !important;} }

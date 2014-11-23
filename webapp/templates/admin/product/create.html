@@ -1,0 +1,6 @@
+{% extends "admin/product/layout.html" %}
+{% block content %}
+    {% from "admin/product/form.html" import form %}
+    {% set data={'categories':categories,'brands':brands}%}
+    {{ form(url_for('admin.product.create'),data) }}
+{% endblock %}

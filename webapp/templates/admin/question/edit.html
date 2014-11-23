@@ -1,0 +1,6 @@
+{% extends "admin/question/layout.html" %}
+{% block content %}
+	{% from "admin/question/form.html" import form %}
+    {% set data={'categories':categories,'image':question.image,'image_url':question.image_url,'image_original_url':question.image_original_url,'content':question.content,'video':question.video,'brief':question.brief,'question_category':question.question_category,'title':question.title,'username':username,'show_in_index':question.show_in_index} %}
+	{{ form(url_for('admin.question.update', question_id=question.id), data, show_form=2) }}
+{% endblock %}

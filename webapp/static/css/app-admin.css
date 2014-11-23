@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body,html{
+    height: 100%;
+}
+.full-width {
+    width: 100%;
+    max-width: 100%;
+}
+#left-panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 904;
+    background: #2C3742;
+    min-height: 100%;
+    width: 220px;
+    border-right: 1px solid #eee;
+}
+
+#left-panel .fa {
+    margin-right: 5px;
+}
+
+.side-nav {
+    padding: 0;
+}
+
+#left-panel ul li a {
+    padding: 10px 10px 10px 11px;
+}
+
+#left-panel ul li {
+    margin: 0;
+    border-bottom: 1px solid #1B2538;
+}
+
+#left-panel ul li:first-child {
+    border-top: 1px solid #1B2538;
+}
+
+#left-panel a {
+    color: #a8a8a8;
+}
+
+#left-panel a:hover, #left-panel li.active a {
+    color: #EEEEEE;
+}
+
+#main {
+    position: absolute;
+    left: 220px;
+    right: 0px;
+    padding: 15px;
+    min-height: 100%;
+}
+
+#main .row {
+    max-width: 100%;
+}
+
+#logo {
+    line-height: 48px;
+    padding-left: 54px;
+    height: 48px;
+    background: url('../img/pi.png') no-repeat;
+    background-size: contain;
+    font-weight: bolder;
+    display: block;
+    text-transform: uppercase;
+    margin: 5px;
+} 
+table{
+    width: 100%;
+}
+table img{
+    max-height: 100px;
+    max-width: 100px;
+}
+li img{
+    height: 30px;
+    width: 30px;
+}
+#chat-top-bar{
+    background: #2C3742;
+    height: 45px;
+    line-height: 45px;
+}
+#chat-top-bar-boder{
+    border-bottom:2px solid #008cba;width:100%;
+}
+#chat-top-bar,#chat-top-bar-boder{
+    min-width: 500px;
+}
+#chat-top-bar ul {
+    list-style: none; 
+    margin: 0; 
+}
+#chat-top-bar ul li{
+    float: left;
+}
+#chat-top-bar a{
+    display: block;
+    padding: 0 15px;
+    line-height: 45px;
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: normal;
+    text-transform: none;
+}
+#chat-top-bar a:hover{
+    background: #272727;
+}
+#chat-top-bar .active a{
+    background: #008cba;
+}
+#chat-top-bar .active a:hover{
+    background: #0078a0;
+}
+#chat-top-bar .divider{
+    height: 45px;
+    width: 1px;
+    border-left: 1px solid #272727;
+}

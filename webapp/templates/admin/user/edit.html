@@ -1,0 +1,6 @@
+{% extends "admin/user/layout.html" %}
+{% block content %}
+	{% from "admin/user/form.html" import form %}
+	{{ form(url_for('admin.user.update', user_id=user.uid), data=user, show_form=1) }}
+	{{ form(url_for('admin.user.update', user_id=user.uid), data=user, show_form=2) }}
+{% endblock %}

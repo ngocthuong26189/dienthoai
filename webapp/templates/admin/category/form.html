@@ -1,0 +1,51 @@
+{% macro form(url, data='', show_form=1) -%}
+<form action="{{ url }}" method="post">
+    <fieldset>
+
+        {% if show_form == 1 %}
+        <legend>Create a category:</legend>
+        {% else %}
+        <legend>Update a category:</legend>
+        {% endif %}
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Name:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="text" placeholder="Category name" name="name" value="{{ data.name }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Parent category:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="parent" style="margin-bottom:1rem;">
+                    <option value=""></option>
+                    
+                    {%for category in data.parents%}
+                        <option value="{{category.id}}" {% if category.id ==data.parent %} selected {%endif%}>{{category.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-8 columns">
+                <span>Image:</span>   
+                <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
+                <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
+            </div>
+            
+            <div class="medium-4 columns clearfix">
+
+                <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-3 columns">
+                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endmacro -%}

@@ -1,0 +1,5 @@
+{% extends "admin/news_category/layout.html" %}
+{% block content %}
+	{% from "admin/news_category/form.html" import form %}
+	{{ form(url_for('admin.news_category.update', news_category_id=news_category.id), data=news_category, show_form=2) }}
+{% endblock %}

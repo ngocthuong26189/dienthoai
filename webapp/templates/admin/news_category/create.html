@@ -1,0 +1,5 @@
+{% extends "admin/news_category/layout.html" %}
+{% block content %}
+	{% from "admin/news_category/form.html" import form %}
+	{{ form(url_for('admin.news_category.create')) }}
+{% endblock %}

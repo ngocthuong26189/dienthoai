@@ -1,0 +1,20 @@
+{% extends "admin/common/layout.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="medium-12 columns">
+		<h4>400 Bad request</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">
+		{{ error.description }}
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">
+		<a href="javascript:window.history.back()" class="button alert tiny">Back to Form</a>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends "admin/sticky/layout.html" %}
+{% block content %}
+	{% from "admin/sticky/form.html" import form %}
+	{{ form(url_for('admin.sticky.create')) }}
+{% endblock %}

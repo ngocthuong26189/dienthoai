@@ -1,0 +1,60 @@
+{% extends "admin/product/layout.html" %}
+{% block content%}
+<div class="row">
+        <div class="medium-6 columns">
+            <a href="{{ url_for('admin.product.add') }}" class="button success tiny"><i class="fa fa-plus"></i> Add a product</a>        
+        </div>
+        <div class="medium-6 columns">
+            <form>
+                <div class="row collapse">
+                    <div class="small-10 columns">
+                        <input type="text" name="name__icontains" placeholder="Product name">
+                    </div>
+                    <div class="small-2 columns">
+                        <button type="submit" href="#" class="button postfix">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<table>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <!-- <th>Image</th> -->
+            <th>Name</th>
+            <th>Sku</th>
+            <th>Price</th>
+            <!-- <th>Selling Price</th> -->
+            <th>Discount</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>To do</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <!-- <td>
+                {%if product.image_original_url | length > 0%}
+                    <a class="th" role="button" aria-label="Thumbnail" href="{{product.image_original_url}}">
+                  <img aria-hidden=true src="{{product.image_url}}"/>
+                  </a>
+                {% endif %}
+            </td> -->
+            <td><a href="{{ url_for('admin.product.detail', product_id=product.id) }}">{{ product.name }}</a></td>
+            <td>{{ product.sku }}</td>
+            <td>{{ product.price}}</td>
+           <!--  <td>{{ product.selling_price}}</td> -->
+            <td>{{ product.discount}}</td>
+            <td>{{ product.category.name}}</td>
+            <td>{{ product.brand.name}}</td>
+            <td><a href="{{ url_for('admin.product.edit', product_id=product.id) }}">Edit</a> | <a href="javascript:post('{{ url_for('admin.product.delete', product_id=product.id) }}')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{{ pagination.links | safe  }}
+{% endblock %}

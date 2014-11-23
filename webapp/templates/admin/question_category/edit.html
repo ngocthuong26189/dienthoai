@@ -1,0 +1,5 @@
+{% extends "admin/question_category/layout.html" %}
+{% block content %}
+	{% from "admin/question_category/form.html" import form %}
+	{{ form(url_for('admin.question_category.update', question_category_id=question_category.id), data=question_category, show_form=2) }}
+{% endblock %}

@@ -1,0 +1,68 @@
+
+<div style="position:absolute;min-height:100%;left:0px;right:200px">
+    <div style="width:100%;height:30px;background-color:#f5f5f5;border:1px solid #ddd;position:relative;font-size:18px; ">
+        <div style="position:absolute;left:0px;right:150px;height:100%;padding-left:10px;">
+        <i class="fa fa-lg fa-fw fa-circle chat-status"></i> <span style="font-size:13px;"><strong>Email:</strong> thenguyen27192@gmail.com | <strong>Name:</strong>  Nguyen the nguy</span>
+        </div>
+        <div style="position:absolute;width:150px;height:100%;right:0px;top:0px;text-align:right;padding-right:10px;">
+        <a href="" ng-click="closeChat(123)"><i class="fa fa-close"> Close chat</i></a>
+        </div>
+    </div>
+    <div style="position:absolute;top:30px;bottom:50px; width:100% ; max-height:100%;overflow:auto;overflow-x: hidden; border-left:1px solid #ddd;border-right:1px solid #ddd;" >
+        <ul id="chat-message" style="border:1px solid:red">
+            <li class="customer-message"><strong>Customer: </strong> tại sân bay tự cho điểm</li>
+            <li class="employee-message"> Trao đổi  <strong> :Me</strong></li>
+        </ul>
+    </div>
+    <form ng-submit="send()">
+        <div style="position:absolute;bottom:0px;height:50px; width:100%;">
+            <div style="position:absolute;min-height:100%;left:0px;right:100px;">
+                <input type="text" ng-model="message" placeholder="Your message" style="height:50px; margin:0px;" />
+            </div>
+            <div style=" position:absolute;min-height:100%;width:100px;right:0">
+             <input type="submit" class="button" value="Send" style="margin:0px;width:100px;height:50px;;">
+         </div>
+     </div>
+ </form>
+</div>
+<div style="position:absolute;min-height:100%;width:200px;right:0">
+    <div style="position:absolute;top:0px;bottom:50px; width:100% ;border-right:1px solid #ddd;border-bottom:1px solid #ddd; overflow:auto;overflow-x: hidden;">
+        <ul id="list-chat-user" class="side-nav">
+            <li class="online message">
+                <a href="">
+                    <i class="fa fa-lg fa-fw fa-circle"></i>thenguyen27192@gmail.com
+                    <p >Cho toi hoi gia cai nay ...</p>
+                   
+                </a>
+            </li>
+            <li class="online">
+                <a href="">
+                    <i class="fa fa-lg fa-fw fa-circle"></i>thenguyen27192@gmail.com
+                    <p >Cho toi hoi gia cai nay</p>
+                </a>
+            </li>
+            <li class="message">
+                <a href="">
+                    <i class="fa fa-lg fa-fw fa-circle"></i>thenguyen27192@gmail.com
+                    <p >Cho toi hoi gia cai nay</p>
+                </a>
+            </li>
+            <li class="">
+                <a href="">
+                    <i class="fa fa-lg fa-fw fa-circle"></i>thenguyen27192@gmail.com
+                    <p >Cho toi hoi gia cai nay</p>
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+    <div style="position:absolute;bottom:0px;height:50px; width:100%;padding:5px; font-size:13px;">
+        <div>
+            <i class="fa fa-lg fa-fw fa-circle" style="color:green;"></i> 10 Online
+        </div>
+        <div>
+            <i class="fa fa-lg fa-fw fa-circle" style="color:#141823;"></i> 1 Offline
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{% extends "admin/brand/layout.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="medium-6 columns">
+			<a href="{{ url_for('admin.brand.add') }}" class="button success tiny">Add a brand</a>		
+		</div>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Name</th>
+				<th>Image</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for brand in brands %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td><a href="{{ url_for('admin.brand.detail', brand_id=brand.uid) }}">{{ brand.name }}</a></td>
+				<td>
+          <a href="{{ url_for('admin.brand.edit', brand_id=brand.uid) }}">Edit</a> | 
+          <a href="javascript:post('{{ url_for('admin.brand.delete', brand_id=brand.uid) }}')">Delete</a>
+        </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{{ pagination.links | safe  }}
+{% endblock %}

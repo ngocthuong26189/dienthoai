@@ -1,0 +1,97 @@
+{% macro form(url, data='', show_form=1) -%}
+<form action="{{ url }}" method="post">
+    <fieldset>
+
+        {% if show_form == 1 %}
+        <legend>Create a product:</legend>
+        {% else %}
+        <legend>Update a product:</legend>
+        {% endif %}
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Order ID:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="text" placeholder="Order ID" name="name" value="{{ data.name }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Sku:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="text" placeholder="should storage as business rule" name="sku" value="{{ data.sku }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Price:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="number" placeholder="price" name="price" value="{{ data.price }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Selling price:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="number" placeholder="selling price" id="selling_price" name="selling_price" value="{{ data.selling_price }}" step="0.001" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">discount:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="number" placeholder="Discount" name="discount" min="0" step="0.001" max="100" value="{{ data.discount }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Category:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="category" style="margin-bottom:1rem;" required>
+                    <option value=""></option> 
+                    {%for category in data.categories%}
+                        <option value="{{category.id}}" {% if category.id ==data.category %} selected {%endif%}>{{category.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Brand:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="brand" style="margin-bottom:1rem;">
+                    <option value=""></option>
+                    
+                    {%for brand in data.brands%}
+                        <option value="{{brand.id}}" {% if brand.id ==data.brand %} selected {%endif%}>{{brand.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-8 columns">
+                <span>Image:</span>   
+                <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
+                <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
+            </div>
+            
+            <div class="medium-4 columns clearfix">
+
+                <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
+            </div>
+        </div>
+        
+        <div class="row collapse">
+            <div class="medium-3 columns">
+                 <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+            </div>
+        </div>
+    </fieldset>
+</form>
+{% endmacro -%}

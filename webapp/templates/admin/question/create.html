@@ -1,0 +1,6 @@
+{% extends "admin/question/layout.html" %}
+{% block content %}
+	{% from "admin/question/form.html" import form %}
+    {% set data={'categories':categories,'username':username}%}
+	{{ form(url_for('admin.question.create'),data) }}
+{% endblock %}

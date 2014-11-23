@@ -1,0 +1,46 @@
+{% extends "admin/user/layout.html" %}
+
+{% set roles = ["None", "Normal", "Employe", "Admin"] %}
+
+{% block content %}
+	<div class="row">
+		<div class="medium-6 columns">
+			<a href="{{ url_for('admin.user.add') }}" class="button success tiny">Add a user</a>		
+		</div>
+		<div class="medium-6 columns">
+			<form>
+				<div class="row collapse">
+					<div class="small-10 columns">
+						<input type="text" name="username__icontains" placeholder="Username">
+					</div>
+					<div class="small-2 columns">
+						<button type="submit" href="#" class="button postfix">Search</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Username</th>
+				<th>Email</th>
+				<th>Role</th>
+				<td>To do</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for user in users %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td><a href="{{ url_for('admin.user.detail', user_id=user.uid) }}">{{ user.username }}</a></td>
+				<td>{{ user.email }}</td>
+				<td>{{ roles[user.permission] }}</td>
+				<td><a href="{{ url_for('admin.user.edit', user_id=user.uid) }}">Edit</a> | <a href="javascript:post('{{ url_for('admin.user.delete', user_id=user.uid) }}')">Delete</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{{ pagination.links | safe  }}
+{% endblock %}

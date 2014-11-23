@@ -1,0 +1,10 @@
+Flask
+mongoengine
+nose
+WebTest
+pinocchio
+factory_boy
+preggy
+pillow
+blinker
+Flask-SocketIO

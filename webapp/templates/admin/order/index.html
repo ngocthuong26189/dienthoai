@@ -1,0 +1,49 @@
+{% extends "admin/order/layout.html" %}
+{% block content%}
+<div class="row">
+    <div class="medium-8 columns">
+        <form>
+            <div class="row collapse">
+                <div class="small-6 columns">
+                    <input type="text" name="id__icontains" placeholder="Order ID">
+                </div>
+                <div class="small-4 columns">
+                    <select name="state__icontains">
+                        <option value="all">Select order state</option>
+                        <option value="pending">Pending</option>
+                        <option value="confirmed">Confirmed</option>
+                        <option value="delivery">In Delivery</option>
+                        <option value="complete">Complete</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                </div>
+                <div class="small-2 columns">
+                    <button type="submit" class="button postfix">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>Order ID</th>
+            <th>State</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td><a href="{{ url_for('admin.order.detail', order_id=order.id) }}">{{ order.id }}</a></td>
+            <td>{{ product.state }}</td>
+            <td>{{ product.total}}</td>
+            <td><a href="{{ url_for('admin.order.edit', order_id=product.id) }}">Edit</a> | <a href="javascript:post('{{ url_for('admin.order.delete', order_id=order.id) }}')">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

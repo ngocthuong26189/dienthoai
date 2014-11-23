@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+	<title>X-Fone mobile very good</title>
+{% endblock %}
+{% block content %}
+	{% for item in news %}
+		<div class="container" id="name">
+			<div class="row">
+				<a href=""><h1>{{ item.title | safe }}</h1></a>
+				{{ item.content | safe }}
+				{%if item.image_original_url | length > 0%}
+                <a class="th" role="button" aria-label="Thumbnail" href="{{item.image_original_url}}">
+                  <img aria-hidden=true src="{{item.image_url}}" />
+                </a>
+            {%endif%}
+			</div>
+		</div>
+	{% else %}
+		No du lieu
+	{% endfor %}
+{% endblock %}

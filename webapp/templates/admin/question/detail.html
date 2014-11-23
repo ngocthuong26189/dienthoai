@@ -1,0 +1,36 @@
+{% extends "admin/question/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <table>
+        <h2 class="text-center subheader">question detail</h2>
+         
+          <tr>
+            <th>Properties</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>User</td>
+            <td>{{question.user.username}}</td>
+        </tr>
+        <tr>
+            <td >Show in index page</td>
+            <td>{{question.show_in_index}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div style="border:1px solid green;background-color:#fff;padding:10px;">
+                    {{question.content|safe}}
+                </div>
+            </td>
+            
+        </tr>
+        <tr style="border-top:solid 1px #ddd;">
+            <td ><a href="{{ url_for('admin.question.edit', question_id=question.id) }}" class="button tiny success right"><i class="fa fa-edit"></i> Edit</a></td>
+            <td><a href="javascript:post('{{ url_for('admin.question.delete', question_id=question.id) }}',null,'{{url_for('admin.question.index')}}')" class="button tiny alert left"><i class="fa fa-trash"></i> Delete</a></td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock %}

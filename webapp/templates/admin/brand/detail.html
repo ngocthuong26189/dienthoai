@@ -1,0 +1,14 @@
+{% extends "admin/brand/layout.html" %}
+{% block content %}
+<div class="row">
+	<div class="medium-12 columns">
+		<h4> Detail Brand Info:</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">Brand name: {{ brand.name }}</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns"><img alt="{{ brand.name }}" src="{{ brand.image_url }}"/></div>
+</div>
+{% endblock %}

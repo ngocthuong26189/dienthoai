@@ -1,0 +1,68 @@
+{% extends "admin/product/layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <table>
+        <h2 class="text-center subheader">Product detail</h2>
+         
+          <tr>
+            <th>Properties</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Id</td>
+            <td>{{product.id}}</td>
+        </tr>
+        <tr>
+            <td >Name</td>
+            <td>{{product.name}}</td>
+        </tr>
+        <tr>
+            <td >Sku</td>
+            <td>{{product.sku}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{product.price}}</td>
+        </tr>
+        <tr>
+            <td >Selling price</td>
+            <td>{{product.selling_price}}</td>
+        </tr>
+        <tr>
+            <td>discount</td>
+            <td>{{product.discount}}</td>
+        </tr>
+        <tr>
+            <td>category</td>
+            <td>{{product.category.name}}</td>
+        </tr>
+        <tr>
+            <td>brand</td>
+            <td>{{product.brand.name}}</td>
+        </tr>
+        <tr>
+            <td >Image</td>
+            <td>
+                {%if product.image_original_url | length > 0%}
+                <a class="th" role="button" aria-label="Thumbnail" href="{{product.image_original_url}}">
+                  <img aria-hidden=true src="{{product.image_url}}"/>
+                </a>
+            {%endif%}
+            </td>
+        </tr>
+        <tr style="border-top:solid 1px #ddd;">
+            <td ><a href="{{ url_for('admin.product.edit', product_id=product.id) }}" class="button tiny success right"><i class="fa fa-edit"></i> Edit</a></td>
+            <td><a href="javascript:post('{{ url_for('admin.product.delete', product_id=product.id) }}',null,'{{url_for('admin.product.index')}}')" class="button tiny alert left"><i class="fa fa-trash"></i> Delete</a></td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock %}
+
+
+
+
+

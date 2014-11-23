@@ -1,0 +1,5 @@
+{% extends "admin/sticky/layout.html" %}
+{% block content %}
+	{% from "admin/sticky/form.html" import form %}
+	{{ form(url_for('admin.sticky.update', sticky_id=sticky.id), data=sticky, show_form=2) }}
+{% endblock %}

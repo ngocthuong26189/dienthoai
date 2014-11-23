@@ -1,0 +1,13 @@
+{% block content%}
+  {% for product in products %}
+    <div class="product">
+      <div>
+        <a href="{{ url_for('site_product.detail', product_slug=product.slug)}}">{{product.name}}</a>
+      </div>
+      <div>
+        {{product.price}}
+      </div>
+      <div></div>
+    </div>
+  {% endfor %}
+{% endblock %}

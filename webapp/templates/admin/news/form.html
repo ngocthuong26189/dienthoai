@@ -1,0 +1,89 @@
+{% macro form(url, data='', show_form=1) -%}
+<form action="{{ url }}" method="post">
+	<fieldset>
+		
+		<legend>{% if show_form == 1 %}Create a news:{%else%}Update a news:{% endif %}</legend>
+		<div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Author*:</span>   
+            </div>
+            <div class="medium-10 columns" >
+                <input type="text" placeholder="Enter news name here" name="author" value="{%if data.author%}{{ data.author }}{% else %}{{data.username}}{% endif %}" required readonly="true" />
+            </div>
+        </div>
+        
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Title*:</span>   
+            </div>
+            <div class="medium-10 columns" >
+                <input type="text" placeholder="Enter news name here" name="title" value="{{ data.title }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Videos embed code:</span>   
+            </div>
+            <div class="medium-10 columns" style="margin-bottom:1rem;" >
+                
+                <textarea rows="3" placeholder="Enter video embed code here" name="video" value="{{ data.video }}" required>{{ data.video | safe }}</textarea>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Category*:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="news_category" style="margin-bottom:1rem;" required>
+                    <option value=""></option> 
+                    {%for category in data.categories%}
+                        <option value="{{category.id}}" {% if data.news_category and category.id == data.news_category.id %} selected {%endif%}>{{category.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="row collapse" style="margin-bottom:10px;">
+            <div class="medium-2 columns">
+                <span class="prefix">Brief*:</span>   
+            </div>
+            <div class="medium-10 columns">
+            <textarea rows="3" placeholder="Enter your brief here" name="brief" value="{{ data.brief }}" required>{{ data.brief }}</textarea>
+            </div>
+        </div>
+		<div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Content*: </span>   
+            </div>
+            <div class="medium-10 columns">
+            <textarea rows="10" placeholder="Enter your content here" name="content" value="{{ data.content }}" required id="content">{{ data.content | safe }}</textarea>
+            </div>
+        </div>
+		<div class="row collapse" style="margin-top:10px;">
+            <div class="medium-8 columns">
+                <span>Image:</span>   
+                <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
+                <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
+            </div>
+            
+            <div class="medium-4 columns clearfix">
+
+                <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-10 columns" >
+                <input type="checkbox" id="show_in_index" name="show_in_index" {%if data.show_in_index %} checked {%endif%}><label for="show_in_index">Show in index page</label>
+            </div>
+        </div>
+		<div class="row collapse">
+			<div class="medium-3 columns">
+				<input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+			</div>
+		</div>
+	</fieldset>
+</form>
+<script src="/static/vendor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+     CKEDITOR.replace( 'content' );
+</script>
+{% endmacro -%}

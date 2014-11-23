@@ -1,0 +1,10 @@
+{% block content %}
+<div>{{ product.name }}</div>
+<div>{{ product.sku }}</div>
+<form action="{{ url_for('cart.add') }}" method="POST">
+  <label>So Luong</label>
+  <input type="number" name="quantity" value="1" step="1" />
+  <input type="hidden" name="product_id" value="{{ product.id }}" />
+  <button type="submit">Add to cart</button>
+</form>
+{% endblock %}

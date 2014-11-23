@@ -1,0 +1,57 @@
+{% macro form(url, data='', show_form=3) -%}
+<form action="{{ url }}" method="post">
+	<fieldset>
+			
+		{% if show_form == 2 %}
+		<legend>Change password:</legend>
+		{% endif %}
+	
+		{% if show_form == 3 or show_form == 1 %}
+		<legend>Enter user info:</legend>
+		<div class="row collapse">
+			<div class="medium-2 columns">
+				<span class="prefix">Username:</span>	
+			</div>
+			<div class="medium-10 columns">
+				<input type="text" placeholder="Username" name="username" value="{{ data.username }}" />
+			</div>
+		</div>
+		<div class="row collapse">
+			<div class="medium-2 columns">
+				<span class="prefix">Email:</span>	
+			</div>
+			<div class="medium-10 columns">
+				<input type="text" placeholder="Email" name="email" value="{{ data.email }}" />
+			</div>
+		</div>
+		{% endif %}
+		{% if show_form == 3 or show_form == 2 %}
+		<div class="row collapse">
+			<div class="medium-2 columns">
+				<span class="prefix">Password:</span>	
+			</div>
+
+			<div class="medium-10 columns">
+				<input type="text" placeholder="Password" name="password" />
+			</div>
+		</div>
+		{% endif %}
+
+		{% if show_form == 3 or show_form == 1 %}
+		<div class="row collapse">
+			<div class="medium-4 columns">
+				<label>Choose Permission:</label>
+				<input type="radio" name="permission" value="1" id="perm1" {% if not data.permission or data.permission == 1 %}checked{% endif %}><label for="perm1">Normal</label>
+				<input type="radio" name="permission" value="2" id="perm2" {% if data.permission == 2 %}checked{% endif %}><label for="perm2">Employe</label>	
+				<input type="radio" name="permission" value="3" id="perm3" {% if data.permission == 3 %}checked{% endif %}><label for="perm3">Administrator</label>
+			</div>
+		</div>
+		{% endif %}
+		<div class="row collapse">
+			<div class="medium-3 columns">
+				<input type="submit" value="Submit" class="button tiny success">
+			</div>
+		</div>
+	</fieldset>
+</form>
+{% endmacro -%}

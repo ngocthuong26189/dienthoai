@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block title %}<title></title>{% endblock title %}
+        <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
+        <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
+        <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
+    {% endblock head %}
+</head>
+<body>
+    <section id="header">
+        <div id="first-menu" class="show-for-large-up">
+            <div class="row">
+                <ul class="inline-list">
+                    <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
+                    <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
+                    <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
+                    <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="off-canvas-wrap" data-offcanvas>
+            <div class="inner-wrap">
+                <nav class="tab-bar hide-for-large-up">
+                    <section class="left-small">
+                        <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                    </section>
+                    <section class="middle tab-bar-section">
+                        <a href="" title="home">
+                            <img src="./static/img/logo.png" alt="" style="height:41px;margin-top:4px;">
+                        </a>
+                    </section>
+                </nav>
+                <aside class="left-off-canvas-menu hide-for-large-up">
+                    <ul class="off-canvas-list">
+                        <li><label>DANH MỤC SẢN PHẨM</label></li>
+                        <li><a href="{{ url_for('home.x4') }}">X-4 Mobile</a></li>
+                        <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
+                        <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
+                    </ul>
+                </aside>
+                <section class="main-section">
+                    <!-- content goes here -->
+                    <div class="row">
+                        {% block hi %}
+                            
+                        {% endblock %}
+                    </div>
+                </section>
+                <a class="exit-off-canvas"></a>
+            </div>
+        </div>
+    </section>
+    <script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
+    <script src="./static/vendor/foundation/js/foundation.min.js"></script>
+    <script src="./static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
+    <script src="./static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
+    <link rel="stylesheet" href="./static/css/layout.css" />
+    <link rel="stylesheet" href="./static/css/menu.css" />
+    <script>
+    $(document).foundation();
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{% extends "admin/common/layout.html" %}
+
+{% block top_menu %}
+    {% from "admin/common/menu.html" import top_menu %}
+    {{ top_menu('category') }}
+{% endblock %}
+
+{% macro gen_category(list,parent,level) -%}
+    <ul class="no-bullet">
+    {% for category in list%}
+        {% if category.parent.id == parent.id %}
+        <li style="margin-top:10px; border-left:1px solid #000;padding-left:10px;">
+            <!--  {%if category.image_original_url | length > 0%}
+                    <a class="th" role="button" aria-label="Thumbnail" href="{{category.image_original_url}}">
+                  <img aria-hidden=true src="{{category.image_url}}"/>
+                  </a>
+            {% endif %} -->
+            <a href="{{ url_for('admin.category.detail', category_id=category.id) }}">{{ category.name }}</a> ( 
+            <a href="{{ url_for('admin.category.edit', category_id=category.id) }}">Edit</a> 
+            | 
+            <a href="javascript:post('{{ url_for('admin.category.delete', category_id=category.id) }}')"> Delete</a> )
+        {{gen_category(list,category,level+1)}}
+        </li>
+        {% endif %}
+    {% endfor%}
+    </ul>
+{% endmacro -%}

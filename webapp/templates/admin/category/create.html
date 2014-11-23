@@ -1,0 +1,6 @@
+{% extends "admin/category/layout.html" %}
+{% block content %}
+    {% from "admin/category/form.html" import form %}
+    {% set data={'parents':categories}%}
+    {{ form(url_for('admin.category.create'),data) }}
+{% endblock %}

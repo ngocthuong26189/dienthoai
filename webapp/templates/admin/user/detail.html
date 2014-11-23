@@ -1,0 +1,21 @@
+{% extends "admin/user/layout.html" %}
+{% block content %}
+<div class="row">
+	<div class="medium-12 columns">
+		<h4> Detail User Info:</h4>
+	</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">Username: {{ user.username }}</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns">Email: {{ user.email }}</div>
+</div>
+{% set roles = ["None", "Normal", "Employe", "Admin"] %}
+<div class="row">
+	<div class="medium-12 columns">Roles: {{ roles[user.permission] }}</div>
+</div>
+<div class="row">
+	<div class="medium-12 columns"><a href="{{ url_for('admin.user.edit', user_id=user.uid) }}" class="button success tiny">Edit account</a></div>
+</div>
+{% endblock %}

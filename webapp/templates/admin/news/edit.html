@@ -1,0 +1,6 @@
+{% extends "admin/news/layout.html" %}
+{% block content %}
+	{% from "admin/news/form.html" import form %}
+    {% set data={'categories':categories,'image':news.image,'image_url':news.image_url,'image_original_url':news.image_original_url,'content':news.content,'video':news.video,'brief':news.brief,'news_category':news.news_category,'title':news.title,'username':username,'show_in_index':news.show_in_index} %}
+	{{ form(url_for('admin.news.update', news_id=news.id), data, show_form=2) }}
+{% endblock %}
