@@ -84,14 +84,14 @@ footer h5{
 	display: block;
 	padding: 24px;
 	color: #fff;
-	background-color: #FDA9CA;
+	background-color: #2A2326;
 	transition: all 300ms ease-out;
 }
 #social ul li:not(:last-child){
 	border-bottom: 1px solid #ddd;
 }
 #social ul li a:hover{
-	background: #EFBFD3;
+	background: #0078A0;
 }
 @media only screen and (min-width: 1200px){
 	#social{
