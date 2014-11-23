@@ -3500,8 +3500,8 @@ kbd {
     width: 36px;
     height: 60px;
     line-height: 50px;
-    color: white;
-    background-color: transparent;
+    color: rgb(129, 92, 92);
+    background-color: rgba(178, 91, 91, 0);
     text-indent: -9999px !important;
     z-index: 10; }
     .orbit-container .orbit-prev:hover,
@@ -3523,13 +3523,13 @@ kbd {
       border-color: transparent;
       border-right-color: black; }
     .orbit-container .orbit-prev:hover > span {
-      border-right-color: white; }  
+      border-right-color: white; }
   .orbit-container .orbit-next {
     right: 0; }
     .orbit-container .orbit-next > span {
       border-color: transparent;
       border-left-style: solid;
-      border-left-color: black  ;
+      border-left-color: black ;
       left: 50%;
       margin-left: -4px; }
     .orbit-container .orbit-next:hover > span {
