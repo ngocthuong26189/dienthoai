@@ -3,30 +3,28 @@
 	<title>X-Fone mobile very good</title>
 {% endblock %}
 {% block slides %}
-	<div id="slide">
-		<ul
-			data-orbit
-			data-options="animation:slide;
-			pause_on_hover:true;
-			animation_speed:500;
-			navigation_arrows:true;
-			bullets:false;slide_number:false;
-			next_on_click:false;
-			timer:true;next_class:custom_next;prev_class:custom_prev;">
-			<li data-orbit-slide="headline-1">
-				<a href="#"><img src="./static/img/8x/1.jpg" alt="slide 1" /></a>
-			</li>
-			<li data-orbit-slide="headline-2">
-				<a href="#"><img src="./static/img/8x/2.jpg" alt="slide 1" /></a>
-			</li>
-			<li data-orbit-slide="headline-3">
-				<a href="#"><img src="./static/img/8x/3.jpg" alt="slide 1" /></a>
-			</li>
-		</ul>
-	</div>
+	<ul class="example-orbit" data-orbit >
+	  <li>
+	    <img src="./static/img/8x/1.jpg" alt="slide 1" />
+	    <div class="orbit-caption">
+	      Caption One.
+	    </div>
+	  </li>
+	  <li>
+	    <img src="./static/img/8x/1.jpg" alt="slide 2" />
+	    <div class="orbit-caption">
+	      Caption Two.
+	    </div>
+	  </li>
+	  <li>
+	    <img src="./static/img/8x/1.jpg" alt="slide 3" />
+	    <div class="orbit-caption">
+	      Caption Three.
+	    </div>
+	  </li>
+	</ul>
 {% endblock %}
 {% block khung %}
-	
 	<div class="row">
 		<div class="small-6 medium-3 large-3 columns">
 			<a href="" title="">
