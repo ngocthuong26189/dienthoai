@@ -4,7 +4,7 @@
 }
 #header nav .nav-left li,#header nav .nav-right li{
 	margin: 0px;
-	background-color: #FEE6EF;
+	background-color: #2F292B;
 	height: 100px;
 }
 #header nav .nav-left li a,#header nav .nav-right li a{
@@ -22,7 +22,7 @@
 #header nav .nav-left li a:hover,
 #header nav .nav-right li a:active,
 #header nav .nav-right li a:hover{
-	background-color: #0078a0;
+	background-color: #FDA9CA;
 }
 #header .mid{
 	margin-left: 20px;
@@ -37,22 +37,20 @@
 #header #first-menu{
 	height: 60px;
 	width: 100%;
-	background-color: #3F3C3D;
+	background-color: #2F292B;
 }
 #header #first-menu ul li{
 	margin-left: 2px;
-	padding: 0 10px 10px 10px;
 }
 #header #first-menu ul li.active a,#header #first-menu ul li a:hover{
-	color: white;
+	color: #3ABDE8;
 	line-height: 56px;
 	border-radius: 10px;
-	padding: 7px 7px;
 }
 #header #first-menu ul li a{
 	line-height: 60px;
 	font-size: 18px;
-	padding:0px 5px;
+	padding:0px 20px;
 	transition: all 300ms ease-out;
 }
 #header .main-mobile{
@@ -64,7 +62,7 @@
 	box-shadow: none;
 }
 .tab-bar{
-	background-color: #3F3C3D;
+	background-color: #2F292B;
 	height: 50px;
 }
 .left-small{
@@ -81,7 +79,7 @@
 	height: 50px;
 }
 .left-off-canvas-menu,.right-off-canvas-menu{
-	background-color: #F2F2F2;
+	background-color: #2F292B;
 
 }
 .move-right .exit-off-canvas,.move-left .exit-off-canvas{
@@ -93,7 +91,7 @@ ul.off-canvas-list li label{
 	padding: 0px;
 	line-height: 50px;
 	text-align: center;
-	background-color: #3F3C3D;
+	background-color: #2F292B;
 	color: #fff;
 	border-top: 0px;
 }
@@ -105,7 +103,7 @@ ul.off-canvas-list li a:hover {
 	background: #0078a0;
 }
 .left-submenu, .right-submenu{
-	background-color: #0078a0;
+	background-color: #2F292B;
 }
 .left-submenu .back > a:before,.right-submenu .back > a:after {
 	content:"";
@@ -117,12 +115,12 @@ ul.off-canvas-list li a:hover {
 .left-submenu .back a,.right-submenu .back a{
 	padding: 0px;
 	padding-left: 10px;
-	background-color: #FDA9CA;
+	background-color: #2F292B;
 	border-top: 0px;
 	color: #fff;
 }
 .left-submenu .back a:hover,.right-submenu .back a:hover{
-	background-color: #0078a0;
+	background-color: #F993BC;
 	border-top: 0px;
 }
 .left-off-canvas-menu ul.off-canvas-list li.has-submenu > a:after,
