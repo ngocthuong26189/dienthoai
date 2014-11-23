@@ -30,7 +30,7 @@
 }
 #menu_slide{
 	position: relative;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 #menu_slide nav{
 	width: 200px;
@@ -90,14 +90,14 @@
 
 }
 .custom_next{
-	right: 10;
+	right: 10px;
 	background-image: url('../img/right.png');
 }
 .custom_next:hover{
 	right: 5px;
 }
 .custom_prev{
-	left: 10;
+	left: 10px;
 	background-image: url('../img/left.png');
 
 }
