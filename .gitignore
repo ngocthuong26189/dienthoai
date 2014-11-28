@@ -1,0 +1,13 @@
+*.pyc
+.idea
+.ropeproject
+*.idea
+*.log
+*.swp
+*.aiff
+*.orig
+python_env/*
+env/
+venv/
+webapp/static/vendor
+node_modules/

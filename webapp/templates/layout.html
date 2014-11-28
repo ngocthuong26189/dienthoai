@@ -4,21 +4,31 @@
         {% block head %}
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {% block title %}<title></title>{% endblock title %}
-        <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
-        <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
-        <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
-    {% endblock head %}
-</head>
-<body>
-    <section id="header">
-        <div id="first-menu" class="show-for-large-up">
-            <div class="row">
-                <ul class="inline-list">
-                    <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
-                    <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
-                    <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
-                    <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
+            {% block title %}<title></title>{% endblock %}
+            <link rel="stylesheet" href="./static/vendor/foundation/css/foundation.css" />
+            <link rel="stylesheet" href="./static/vendor/foundation/css/normalize.css" />
+            <script src="./static/vendor/foundation/js/vendor/modernizr.js"></script>
+        {% endblock%}
+    </head>
+    <body>
+        <section id="header">
+            <div id="first-menu" class="show-for-large-up" data-magellan-expedition="fixed">
+                <div class="row">
+                    <ul class="inline-list">
+                        <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
+                        <li><a href="{{ url_for('home.index') }}">Trang Chủ</a></li>
+                        <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
+                        <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
+                        <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
+                        <li><a href="#" data-reveal-id="firstModal" >Hệ Thống</a></li>
+                        <li><a href="#" data-dropdown="hover1" data-options="is_hover:true">Hỗ Trợ</a></li><br>
+                        <ul id="hover1" class="f-dropdown" data-dropdown-content>
+                            <li><a href="#" style="font-size:12px;color:black;" data-reveal-id="thanhtoan">Hỗ Trợ Thanh Toán</a></li>
+                            <li><a href="#" style="font-size:12px;color:black;" data-reveal-id="giaohang">Hỗ Trợ Vận Chuyển</a></li>
+                            <li><a href="#" style="font-size:12px;color:black;" data-reveal-id="baohanh">Hỗ Trợ Bảo Hành</a></li>
+                            <li><a href="" style="font-size:12px;color:black;" data-reveal-id="khieunai">Khiếu Nại - Thắc Mắc</a>
+                        </li>
+                    </ul>
                 </ul>
             </div>
         </div>
@@ -37,31 +47,669 @@
                 <aside class="left-off-canvas-menu hide-for-large-up">
                     <ul class="off-canvas-list">
                         <li><label>DANH MỤC SẢN PHẨM</label></li>
+                        <li><a href="{{ url_for('home.index') }}">Trang Chủ</a></li>
                         <li><a href="{{ url_for('home.x4') }}">X-4 Mobile</a></li>
                         <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
                         <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
+                        <li><a href="#" data-reveal-id="firstModal">Hệ Thống Siêu Thị</a></li>
+                        <li><a href="#">Hỗ Trợ</a></li>
                     </ul>
                 </aside>
+                <div class="clearfix" style="height:15px; width:100%;"></div>
                 <section class="main-section">
                     <!-- content goes here -->
                     <div class="row">
+                        {% block slides %}
+                            
+                        {% endblock %}
+                    </div>
+                    <div class="row">
+                        
                         {% block hi %}
                             
                         {% endblock %}
                     </div>
+                    <div class="clearfix" style="height:15px; width:100%;"></div>
+                    <div class="row">
+                        {% block khung %}
+                        {% endblock %}
+                    </div>
+                    <div class="clearfix" style="height:15px; width:100%;"></div>
                 </section>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>
     </section>
-    <script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
-    <script src="./static/vendor/foundation/js/foundation.min.js"></script>
-    <script src="./static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
-    <script src="./static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
-    <link rel="stylesheet" href="./static/css/layout.css" />
-    <link rel="stylesheet" href="./static/css/menu.css" />
-    <script>
-    $(document).foundation();
-    </script>
+    
+    <div class="clearfix" style="height:15px; width:100%;"></div>
+    <div id="social">
+        <ul>
+            <li><a href="https://www.facebook.com/ngocminhytr" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
+            <li><a href="#" title="Google"><img src="./static/img/google.png" alt=""></a></li>
+            <li><a href="#" title="Youtube"><img src="./static/img/youtube.png" alt=""></a></li>
+        </ul>
+    </div>
+    <!-- ********************************************* -->
+    <div id="giaohang" class="reveal-modal" data-reveal>
+        <div class="row">
+            <dir class="large-12-medium-12 small-12 columns">
+            <p style="color:red; font-size:25px; text-align:center;"><b>QUY ĐỊNH VỀ VIỆC GIAO HÀNG CỦA X-fone.vn</b></p>
+        </dir>
+            <div class="large-12 medium-12 small-12 columns">
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <span style="margin: 0px; padding: 0px; color: rgb(219, 35, 134);"><strong style="margin: 0px; padding: 0px;">1. Phạm vi giao h&agrave;ng</strong></span></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - X-fone.vn giao h&agrave;ng tr&ecirc;n to&agrave;n quốc</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Tại TP HCM,&nbsp;X-fone.vn c&oacute; đội ngũ giao h&agrave;ng: linh động sắp xếp lịch giao h&agrave;ng cho kh&aacute;ch h&agrave;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                -&nbsp;X-fone.vn hợp t&aacute;c với những đơn vị vận chuyển đ&aacute;ng tin cậy để giao h&agrave;ng trực tiếp đến nh&agrave; kh&aacute;ch h&agrave;ng cho c&aacute;c khu vực c&ograve;n lại.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <span style="margin: 0px; padding: 0px; color: rgb(219, 35, 134);"><strong style="margin: 0px; padding: 0px;">2. Biểu ph&iacute; giao h&agrave;ng:</strong></span></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <strong style="margin: 0px; padding: 0px;">+ Giao h&agrave;ng tại TP HCM</strong></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - X-fone.vn miễn ph&iacute; giao h&agrave;ng tại c&aacute;c khu vực c&oacute; mạng lưới si&ecirc;u thị x-fone.vn phủ s&oacute;ng đối với đơn h&agrave;ng tr&ecirc;n 199.000 đồng.&nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Đối với c&aacute;c khu vực kh&aacute;c, biểu ph&iacute; được t&iacute;nh như sau:</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <table border="1" cellpadding="0" cellspacing="0" class="vien_all" style="margin: 10px 0px; padding: 0px; border-width: 0px 0px 1px 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: rgb(252, 226, 236); border-left-color: rgb(252, 226, 236); float: left; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                    <caption style="margin: 0px; padding: 0px; border: 0px;">
+                    &nbsp;</caption>
+                    <tbody style="margin: 0px; padding: 0px; border: 0px;">
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both; text-align: center;">
+                                <strong style="margin: 0px; padding: 0px; border: 0px;">Gi&aacute; trị đơn h&agrave;ng</strong></p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both; text-align: center;">
+                                <strong style="margin: 0px; padding: 0px; border: 0px;">Cước ph&iacute; vận chuyển</strong></p>
+                            </td>
+                        </tr>
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Đơn h&agrave;ng từ 399.000 VNĐ</p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Miễn ph&iacute; vận chuyển</p>
+                            </td>
+                        </tr>
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Đơn h&agrave;ng dưới 399.000 VNĐ</p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                30.000 VNĐ</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <strong style="margin: 0px; padding: 0px;">+ Giao h&agrave;ng tỉnh</strong></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <table border="1" cellpadding="0" cellspacing="0" class="vien_all" style="margin: 10px 0px; padding: 0px; border-width: 0px 0px 1px 1px; border-bottom-style: solid; border-left-style: solid; border-bottom-color: rgb(252, 226, 236); border-left-color: rgb(252, 226, 236); float: left; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 28px; text-align: justify;">
+                    <tbody style="margin: 0px; padding: 0px; border: 0px;">
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both; text-align: center;">
+                                <strong style="margin: 0px; padding: 0px; border: 0px;">Gi&aacute; trị đơn h&agrave;ng</strong></p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both; text-align: center;">
+                                <strong style="margin: 0px; padding: 0px; border: 0px;">Cước ph&iacute; vận chuyển</strong></p>
+                            </td>
+                        </tr>
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Đơn h&agrave;ng từ 199.000 VNĐ</p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Miễn ph&iacute; vận chuyển</p>
+                            </td>
+                        </tr>
+                        <tr style="margin: 0px; padding: 0px; border: 0px;">
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                Đơn h&agrave;ng dưới 199.000 VNĐ</p>
+                            </td>
+                            <td style="margin: 0px; padding: 2px; border-top-width: 1px; border-right-width: 1px; border-left-width: 0px; border-top-style: solid; border-right-style: solid; border-bottom-style: none; border-top-color: rgb(252, 226, 236); border-right-color: rgb(252, 226, 236);" valign="top" width="300">
+                                <p style="margin: 0px; padding: 0px; border: 0px; clear: both;">
+                                30.000 VNĐ</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <span style="margin: 0px; padding: 0px; color: rgb(219, 35, 134);"><strong style="margin: 0px; padding: 0px;">3. Quy tr&igrave;nh giao nhận h&agrave;ng</strong></span></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <img alt="" height="146" pagespeed_url_hash="1858440968" src="http://cdn.concung.com/img/themes1.0/main/thanhtoan.jpg" style="margin: 0px auto; padding: 0px; display: block;" width="650" /></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                Khi nhận h&agrave;ng, Kh&aacute;ch h&agrave;ng cần lưu &yacute; thực hiện:</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Mở g&oacute;i h&agrave;ng v&agrave; đối chiếu h&agrave;ng h&oacute;a với Phiếu giao h&agrave;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Cầm sản phẩm kiểm tra xem c&oacute; đ&uacute;ng sản phẩm m&agrave; Kh&aacute;ch h&agrave;ng đ&atilde; đặt mua hay kh&ocirc;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Kiểm tra bao b&igrave; v&agrave; sản phẩm c&oacute; bị hư hại do qu&aacute; tr&igrave;nh vận chuyển hay kh&ocirc;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                Nếu kh&ocirc;ng h&agrave;i l&ograve;ng với 1 trong 3 điều tr&ecirc;n, Kh&aacute;ch h&agrave;ng c&oacute; thể y&ecirc;u cầu Nh&acirc;n vi&ecirc;n giao h&agrave;ng x&aacute;c nhận v&agrave; trả lại h&agrave;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                Concung.com sẽ kh&ocirc;ng chịu tr&aacute;ch nhiệm giải quyết khiếu nại của Kh&aacute;ch h&agrave;ng sau khi Kh&aacute;ch h&agrave;ng đ&atilde; k&yacute; nhận v&agrave; thanh to&aacute;n.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                Kh&aacute;ch h&agrave;ng nếu chọn h&igrave;nh thức &quot;Thanh to&aacute;n trực tiếp khi nhận h&agrave;ng&quot; th&igrave; c&oacute; thể thanh to&aacute;n trực tiếp cho nh&acirc;n vi&ecirc;n giao h&agrave;ng ngay sau khi nhận h&agrave;ng.</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                <span style="margin: 0px; padding: 0px; color: rgb(219, 35, 134);"><strong style="margin: 0px; padding: 0px;">4.Thời gian giao nhận h&agrave;ng</strong></span></p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                &nbsp;</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Đối với đơn h&agrave;ng trong nội th&agrave;nh phố HCM: giao h&agrave;ng trong v&ograve;ng 24 giờ</p>
+                <p style="margin: 0px; padding: 0px; clear: both; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+                - Đối với đơn h&agrave;ng ngoại tỉnh: giao h&agrave;ng từ 2 đến 7 ng&agrave;y t&ugrave;y thuộc v&agrave;o thời gian chuyển h&agrave;ng v&agrave; phương thức chuyển h&agrave;ng nhanh hay chậm.</p>
+            </div>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
+    </div>
+    
+    <div id="firstModal" class="reveal-modal" data-reveal>
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+                <h3 style="color:red;text-align:center;">TRỤ SỞ CHÍNH TẠI TP. HCM</h3>
+            </div>
+            <div class="large-4 medium-4 small-12 columns">
+                <div data-alert class="alert-box secondary">
+                    <h5>Trụ sở chính 1:</h5>
+                    <h5>Đại siêu thị Mẹ và Bé Quận 3</h5>
+                <address>326 Cách Mạng Tháng 8, Phường 10, Quận 3</address>
+                <i style="color:red;">DT: 08 3931 1618</i>
+            </div>
+            
+        </div>
+        <div class="large-4 medium-4 small-12 columns">
+            <div data-alert class="alert-box secondary">
+                <h5>Trụ sở chính 2:</h5>
+                <h5>Đại siêu thị Mẹ và Bé Quận 6</h5>
+            <address>126 Hậu Giang, Phường 6, Quận 6</address>
+            <i style="color:red;">DT: 08 3960 7659</i>
+        </div>
+        
+    </div>
+    <div class="large-4 medium-4 small-12 columns">
+        <div data-alert class="alert-box secondary">
+            <h5>Trụ sở chính 3:</h5>
+            <h5>Đại siêu thị Mẹ và Bé Gò Vấp</h5>
+        <address>ngã năm chuồng chó, Phường 7, Gò Vập</address>
+        <i style="color:red;">DT: 08 3985 7094</i>
+    </div>
+</div>
+<div id="khieunai" class="reveal-modal" data-reveal>
+    <h2>Xin Chào!</h2>
+    <p class="lead">Mọi khiếu nại thắc mắc xin gọi về số: <b style="color:red;">0916 775 165</b>.</p>
+    <p>Chúng tôi xin hứa sẽ giải quyết mọi vấn đề để quý khách hài lòng.</p>
+    <p>Xin Cám Ơn.</p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+<div id="baohanh" class="reveal-modal" data-reveal>
+    <div class="large-12 medium-12 small-12 columns">
+        <p style="color:red;font-size:24px;text-align:center;"><b>THÔNG TIN VỀ QUY ĐỊNH BẢO HÀNH BẢO TRÌ CỦA CHÚNG TÔI</b></p>
+    </div>
+    <div class="large-12 medium-12 small-12 columns">
+        <h4 style="color:blue;">A. CHẾ ĐỘ BẢO HÀNH</h4>
+        <p>Tất cả các sản phẩm, linh kiện điện thoại của Công ty Aventelecom cung cấp sẽ được thực hiện theo chế độ bảo hành đãi ngộ theo các hình thức sau:</p>
+        <p>- Các sản phẩm điện thoại được bán ra trong vòng 5 ngày nếu có lỗi từ phía nhà sản xuất sẽ được đổi ngay sản phẩm mới. Các sản phẩm được bảo hành miễn phí 12 tháng kể từ ngày mua hàng (Riêng sản phẩm ULTRA 8X và VPHONE 6S hưởng chế độ bảo hành đặc biệt 15 tháng). Trong đó:</p>
+        <p>+ Pin sạc bảo hành 03 tháng</p>
+        <p>+ Bảo hành 12 tháng cảm ứng và màn hình</p>
+        <p>Một số trường hợp khách hàng cần lưu ý:</p>
+        <p>- Các sản phẩm điện thoại của Aventelecom  bán ra đều được hưởng “Chế độ bảo hành” nhưng phải có đầy đủ điều kiện bảo hành của công ty (Xem kỹ tại mục Quy định bảo hành)Các phụ kiện đi kèm máy (sách, đĩa, vỏ hộp…) không được bảo hành nhưng Quý khách cần lưu ý khi được đổi sản phẩm phải giữ lại toàn bộ phụ kiện. Aventelecom  không chịu trách nhiệm về dữ liệu bộ nhớ hay các chương trình của quý khách bị mất do lỗi kỹ thuật phát sinh</p>
+        <h4 style="color:blue;">B. QUY ĐỊNH BẢO HÀNH – BẢO TRÌ</h4>
+        <h5 style="color:blue;">I. QUY ĐỊNH BẢO HÀNH</h5>
+        <i>1.Nội dung bảo hành</i>
+        <p>- Bảo hành sản phẩm là khắc phục những lỗi, sự cố kỹ thuật xảy ra do nhà sản xuất</p>
+        <i>2. Quy định bảo hành</i>
+        <p>- Sản phẩm được bảo hành miễn phí nếu sản phẩm còn trong thời hạn bảo hành kể từ ngày mua sản phẩm, sản phẩm được bảo hành theo thời gian ghi trên phiếu bảo hành và theo quy định của nhà sản xuất đối với tất cả sự cố về mặt kỹ thuậtCó phiếu bảo hành của công ty Aventelecom  ghi đầy đủ số IMEI</p>
+        <i>3. Những trường hợp không được bảo hành</i>
+        <p>- Sản phẩm đã hết thời gian bảo hành hay mất Phiếu bảo hành</p>
+        <p>- Số mã vạch, số IMEI trên sản phẩm không xác định được hoặc không đúng so với Phiều bảo hành</p>
+        <p>- Các sản phẩm khi mang đến bảo hành bị biến dạng cơ học, bị va đập, làm sứt, méo, vỡ, trầy xước
+        mặt kính cảm ứng, cháy, hỏng do hoen gỉ, chảy nước, động vật xâm nhâp vào, thiên tai hỏa hoạn, sử dụng sai điện áp.</p>
+        <p>- Hư hỏng do khách hàng gây nên hoặc sử dụng không đúng cách theo hương dẫn sử dụng .</p>
+        <p>- Tự ý tháo dỡ, sửa chữa bởi những cá nhân hoặc kỹ thuật viên không phải nhân viên của Aventelecom</p>
+        <p>- Các phần mềm kèm theo máy hoặc các lỗi hư hỏng về phần mềm</p>
+        <p>- Các loại thiết bị tiêu hao trong quá trình sử dụng như pin, công tắc nguồn, tai nghe theo thiết bị, dây cáp, vỏ…</p>
+        <p>- Khi bảo hành nếu phải thay thế thiết bị mới thì Quý khách hàng vui lòng chịu thêm chi phí bổ sung do nhà sản xuất quy định</p>
+        <p>- Bảo hành không bao gồm vận chuyển và giao hàng</p>
+        <p>- Đối với khách hàng từ xa, các sản phẩm khi gửi bảo hành phải đóng gói đúng quy cách, bên trong kèm phiếu bảo hành và ghi rõ địa chỉ người gửi, điện thoại liên hệ… và gửi đúng về địa chỉ Trung tâm bảo hành của Aventelecom. Chúng tôi không chịu trách nhiệm và bảo hành trong trường hợp sản phẩm bị thất lạc, rơi vỡ trên đường vận chuyển.</p>
+        <p>- Máy bị ẩm ướt hoặc ảnh hưởng do các điều kiện môi trường nóng ẩm hoặc những thay đổi nhanh chóng trong những điều kiện đó, bị bào mòn, oxy hóa, bị thức ăn hoặc chất lỏng đổ vào hoặc bị ảnh hưởng bởicác sản phẩm hóa học.</p>
+        
+        <h5 style="color:blue;">II. CHẾ ĐỘ BẢO TRÌ</h5>
+        <p>- Bao gồm cài đặt sửa chữa các lỗi phần mềm và các sự cố nhỏ (Không bao gồm thay thế các thiết bị)</p>
+        <h5 style="color:blue;">III. CÁC LƯU Ý QUAN TRỌNG</h5>
+        <p>- Sản phẩm của bạn là một thiết bị điện tử phức tạp ,có thể có màn hình độ chính xác cao ,ống kính máy ảnh và các bộ phận khác có thể bị hư hỏng ,trầy xước nếu không cẩn thận.Tất cả thông tin về bảo hành ,tính năng và đặc điểm của sản phẩm có thể thay đổi mà không cần thông báo trước.</p>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+</div>
+<div id="thanhtoan" class="reveal-modal" data-reveal>
+    <div class="row">
+        <dir class="large-12-medium-12 small-12 columns">
+            <p style="color:red; font-size:25px; text-align:center;"><b>QUY ĐỊNH VỀ THANH TOÁN CỦA CÔNG TY CHÚNG TÔI</b></p>
+        </dir>
+        <div class="large-12 columns-12 small-12 columns">
+            <p style="margin: 0px; padding: 0px; clear: both; font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: justify;">
+    <span style="color: rgb(234, 55, 124); margin: 0px; padding: 0px;"><strong style="margin: 0px; padding: 0px;">X-fone.vn</strong></span><span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">&nbsp;&aacute;p dụng 2 h&igrave;nh thức thanh to&aacute;n bao gồm thanh to&aacute;n trả trước (<span style="margin: 0px; padding: 0px;">&aacute;p dụng với tất cả c&aacute;c kh&aacute;ch h&agrave;ng tr&ecirc;n to&agrave;n quốc</span>) v&agrave; thanh to&aacute;n khi nhận h&agrave;ng (<span style="margin: 0px; padding: 0px;">hay c&ograve;n gọi l&agrave; thanh to&aacute;n COD, &aacute;p dụng với c&aacute;c kh&aacute;ch h&agrave;ng tại c&aacute;c quận tại Tp.Hồ Ch&iacute; Minh).</span></span><br />
+    <br />
+    <span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;"><strong style="margin: 0px; padding: 0px;"><span style="margin: 0px; padding: 0px; color: rgb(234, 55, 124);">1. Thanh to&aacute;n trả trước:&nbsp;</span></strong></span><br />
+    <br />
+    <span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">Qu&yacute; kh&aacute;ch h&agrave;ng c&oacute; thể thanh to&aacute;n đơn h&agrave;ng bằng c&aacute;ch chuyển khoản v&agrave;o 1 trong c&aacute;c t&agrave;i khoản ng&acirc;n h&agrave;ng sau:</span><br />
+    <br />
+    <span style="margin: 0px; padding: 0px;"><font color="#333333">Chủ t&agrave;i khoản:</font><font color="#ea377c"><b>&nbsp;C&ocirc;ng Ty CP SX-XNK Mẹ &amp; B&eacute;</b></font></span><br />
+    <br />
+    <strong style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">Ng&acirc;n h&agrave;ng Techcombank - Chi nh&aacute;nh Hồ Ch&iacute; Minh,&nbsp;</strong><span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">số t&agrave;i khoản :&nbsp;</span><strong style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">1902 xxxx xxxx</strong><br />
+    <br />
+    <strong style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">Ng&acirc;n h&agrave;ng Vietcombank &nbsp;- Chi nh&aacute;nh Ph&uacute; Thọ,&nbsp;</strong><span id="ContentPlaceHolder1_ReportDetail1_lblContent" style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">&nbsp;số t&agrave;i khoản :</span><strong style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;"><span id="ContentPlaceHolder1_ReportDetail1_lblContent" style="margin: 0px; padding: 0px;">&nbsp;&nbsp;&nbsp;<span id="ContentPlaceHolder1_ReportDetail1_lblContent" style="margin: 0px; padding: 0px;">0421 xxx xxx xxx</span></span></strong><br />
+    <br />
+    <br />
+    <span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;"><strong style="margin: 0px; padding: 0px;"><span style="margin: 0px; padding: 0px; color: rgb(234, 55, 124);">2. Thanh to&aacute;n khi nhận h&agrave;ng (thanh to&aacute;n COD)</span></strong></span><br />
+    <br />
+    <span style="color: rgb(51, 51, 51); margin: 0px; padding: 0px;">Khi li&ecirc;n hệ đặt h&agrave;ng, qu&yacute; kh&aacute;ch c&oacute; thể thỏa thuận với nh&acirc;n vi&ecirc;n b&aacute;n h&agrave;ng về h&igrave;nh thức thanh to&aacute;n khi nhận h&agrave;ng.<br />
+    Nh&acirc;n vi&ecirc;n giao h&agrave;ng sẽ giao h&agrave;ng v&agrave; nhận tiền thanh to&aacute;n trực tiếp từ qu&yacute; kh&aacute;ch.</span><br />
+    &nbsp;</p>
+<div style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Arial, 'Open Sans', HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 18px; text-align: right;">
+    <span style="margin: 0px; padding: 0px; color: rgb(255, 153, 0);"><strong style="margin: 0px; padding: 0px;"><span style="margin: 0px; padding: 0px;">Tr&acirc;n trọng cảm ơn qu&yacute; kh&aacute;ch!</span></strong></span></div>
+        </div>
+    </div>
+
+  <a class="close-reveal-modal">&#215;</a>
+</div>
+<!-- source hệ thống siêu thị  -->
+<div class="row">
+    <div class="large-12 medium-12 small-12 columns">
+        <h3 style="color:red; text-align:center;">DANH SÁCH HỆ THỐNG SIÊU THỊ LỚN TRÊN TOÀN QUỐC</h3>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hà Nội:</h5>
+        <h5>Số 2 Hoàng Quốc Việt - Cầu Giấy (gần triển lãm nông nghiệp) .ĐT:0973.906.645</h5>
+        <h5>Chợ Yên - Tiền Phong - Mê Linh.ĐT: 0989.648.645</h5>
+        <h5>311 Tây Sơn - Q. Đông Đa ( gần ngã tư sở ).ĐT:0982.765.012</h5>
+        <h5>T.T Bảo Hành (hà nội): số 15-Tiền phong- Mê Linh.ĐT: 0967.06.4433</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hà Nam:</h5>
+        <h5>262 Lý Thường Kiệt - Tp.Phủ Lý. 0918.621.988</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bắc Kạn:</h5>
+        <h5>365 Nguyễn Thị Minh Khai - TX.Bắc Kạn. 0979.373.468</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hà Giang:</h5>
+        <h5>97 Tổ 15 Trần Phú - Tp.Hà Giang. 0949.110.919</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hải Dương:</h5>
+        <h5>69B Trần Hưng Đạo - Tp.Hải Dương. 0978.483.666</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hải Phòng:</h5>
+        <h5>130 chợ Lũng - Q. Hải An - TP.Hải Phòng. 0904.151.024</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bắc Giang:</h5>
+        <h5>372 Thân Nhân Trung - TT.Bích Động - H.Việt Yên. 0966.844.245</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Quảng Ninh:</h5>
+        <h5>328 Khu An Sơn - P.Cẩm Sơn - Tp.Cẩm Phả. 0936.282.338</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Sơn La:</h5>
+        <h5>Tiểu khu 14 - TT.Hát lót - H.Mai Sơn - Sơn La. 0982.843.893</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Điện Biên:</h5>
+        <h5>Số 173 Tổ 30 Mường Thanh - Tp.Điện Biên Phủ "Cách cổng trường CĐSP 50m". ĐT: 0987.334.334</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Vĩnh Phúc:</h5>
+        <h5>102 An Dương Vương - P.Trưng Trắc - TX.Phúc Yên. 0987.929.499</h5>
+        <h5>Khu 3 - Ngã 4 TT.Vĩnh Tường - H.Vĩnh Tường.0968.238.886</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Thái Bình:</h5>
+        <h5>74 P.Minh Khai - tp.Thái Bình . 0947.894.789</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Lạng Sơn:</h5>
+        <h5>134 Hoàng Văn Thụ - Thị Trấn Thất Khê - Tràng Định. 01667557666 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hưng Yên:</h5>
+        <h5>789 Nguyễn Văn Linh - TP.Hưng Yên (Viễn Thông Trình An) .0968.702.678</h5>
+        <h5>Chợ Như Quỳnh - Văn Lâm . 0902.224.734</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Phú Thọ:</h5>
+        <h5>Ngã 3 Cát Lem -H. Đoan Hùng (Manh cường Mobile) ĐT:0969.896.620 )</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bắc Ninh:</h5>
+        <h5>399 Ngô Gia Tự - P.Tiền An - TP.Bắc Ninh (Showroom điện thoại số 1 Bắc Ninh) .</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Thái Nguyên:</h5>
+        <h5>Số 63 - Tổ 10- P. Trung Thành - Đ. Gang Thép (Ngã 4 chợ dốc hanh). Mr Cường 0948.286.186</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Lào Cai:</h5>
+        <h5>Tuyển Đại lý Khu Vực Lào Cai ( Mr.Quyết 0973.906.645)</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Yên Bái:</h5>
+        <h5>Tuyển Đại lý Khu Vực Yên Bái ( Mr.Quyết 0973.906.645)</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Tuyên Quang:</h5>
+        <h5>Tuyển Đại lý Khu Vực Tuyên Quang Mr.Quyết 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Đà Nẵng:</h5>
+        <h5>Số 667 Trần Cao Vân - Q . Thanh Khê( Mr.Hải ĐT: 0987.326.501 ) </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Thanh Hoá:</h5>
+        <h5>số 82 - P.hậu thành 2 - phường Trường Thi- TP. thanh hóa .0163.663.1186 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Nghệ An:</h5>
+        <h5>127 Hà Huy Tập - Tp.Vinh. 0966.035.677 </h5>
+        <h5>210 Lê Duẩn - Tp. Vinh .MR. Phương ĐT: 0963.738.656 - 0974.675.113</h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Dak Lắc :</h5>
+        <h5>02 Ngô Mây - Tp. Buôn Ma Thuột ĐT: 0500.3853174 - 0943.003.369</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Huế:</h5>
+        <h5> 02 Đào Duy Từ- P.Phú Hòa - Tp.Huế. 0903.524.958</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bình Định:</h5>
+        <h5>860 Trần Hưng Đạo- Tp. Quy Nhơn Mr. Hiệu 0982.796.799 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hà Tĩnh:</h5>
+        <h5>Tuyển đại lý khu vực Hà Tĩnh Mr. Quyết ĐT: 0973.906.645 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Quảng Bình:</h5>
+        <h5>Tuyển đại lý khu vực Quảng Bình Mr. Quyết ĐT: 0973.906.645 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Quảng Trị:</h5>
+        <h5>Tuyển đại lý khu vực Quảng Trị Mr. Quyết ĐT: 0973.906.645 </h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Phú Yên:</h5>
+        <h5>Tuyển đại lý khu vực Phú Yên Mr. Quyết ĐT: 0973.906.645 </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Đak Nông:</h5>
+        <h5>Tuyển đại lý khu vực Kon Tum Mr. Quyết ĐT: 0973.906.645 )</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bình Thuận:</h5>
+        <h5>Tuyển đại lý khu vực Bình Thuận Mr. Quyết ĐT: 0973.906.645 )</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Ninh Thuận:</h5>
+        <h5>Tuyển đại lý khu vực Ninh Thuận Mr. Quyết ĐT: 0973.906.645 )</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Lâm Đồng :</h5>
+        <h5>Cần tuyển đại lý tại Lâm Đồng Mr.Quyết (0973.906.645) </h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Đồng Nai:</h5>
+        <h5>570/22 KP5- Đ.Phạn Văn Thuận- P.Tam Hiệp-TP.biên hòa (đối diện trường cấp 2 tam hiệp).0945.89.29.39.</h5>
+        <h5>Cty TNHH Sao Đại Tuệ Đc: 133B- Tổ 2-Ấp Đông - Phước Tân - Biên Hòa . Mr.Hoàng Thông ĐT: 0909.012.567. </h5>
+        <h5>Số 56 Trần Phú -P.Xuân An- TX.Long Khánh.0967.47.14.80 - 0907.07.14.56</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bình Dương :</h5>
+        <h5>Âp Đồng Sổ- Lai Uyên- Bến Cát. 0988.686.909 - 0902.903.642</h5>
+        <h5>35A - Nguyễn Văn Tiết - P. Lái Thiêu - Tx. Thuận An . 0908.319.808</h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>TP.Cần Thơ:</h5>
+        <h5>84 Võ trường toản – P. An Hòa – Q .Ninh Kiều – TP. Cần Thơ . ĐT :0968.38.18.79 -0939.039.567</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    <dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Nha Trang:</h5>
+        <h5>22 Hai Bà Trưng - P. Vân Thanh - TP. Nha Trang.0916.775.165</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Vũng Tàu:</h5>
+        <h5>Số 335A - Trần Phú - Phường 5 -TP. vũng tàu.0165.440.8503</h5>
+        <h5>1587A đường 30/4 - P.12 - Tp.Vũng Tàu. 0907.071.456 (C/H ĐTDĐ Đại Dương) </h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Tây Ninh:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Tây Ninh Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bình Phước:</h5>
+        <h5>34 Đinh Tiên Hoàng - P.Thác Mơ - TX Phước LongMr.Long 0919.669.919</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Bến Tre:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Bến Tre Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Đồng Tháp:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Đồng Tháp Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại An Giang:</h5>
+        <h5>Tuyển Đại Lý Khu Vực An Giang Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Kiên Giang:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Kiên Giang Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Tiền Giang:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Tiền Giang Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Hậu Giang:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Hậu Giang Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Long An:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Long An Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    </dir><dir class="large-6 medium-6 small-12 columns">
+    <div data-alert class="alert-box secondary">
+        <h5>Tại Vĩnh Long:</h5>
+        <h5>Tuyển Đại Lý Khu Vực Vĩnh Long Mr.Quyết ĐT : 0973.906.645</h5>
+        <h5></h5>
+    </div>
+    </dir>
+    </dir>
+    
+</div>
+</div>
+<div class="row">
+<p style="text-align:center;padding-top:50px;">Copyright@2014 by Me&Be</p>
+</div>
+<a class="close-reveal-modal">&#215;</a>
+</div>
+<script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
+<script src="./static/vendor/foundation/js/foundation.min.js"></script>
+<script src="./static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
+<script src="./static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
+<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./static/css/footer.css" />
+<link rel="stylesheet" href="./static/css/layout.css" />
+<link rel="stylesheet" href="./static/css/menu.css" />
+<link rel="stylesheet" href="./static/css/home.css" />
+<script>
+$(document).foundation();
+</script>
+<script type="text/javascript" charset="utf-8" async defer>
+$(document).foundation();
+</script>
 </body>
 </html>

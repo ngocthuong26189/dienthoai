@@ -11,6 +11,9 @@ ul li ul, ul li ol{
 .orbit-timer{
 	display: none;
 }
+div.or-bit-container .orbit-next>span {
+	border-left-color: blue;
+}
 /*for facebook comment responsive*/
 @media only screen and (max-width: 1000px) {
 .fb-comments{width: 100% !important;}
