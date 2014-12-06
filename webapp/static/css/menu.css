@@ -14,6 +14,8 @@
 	display: block;
 	height: 100px;
 	transition: all 300ms ease-out;
+
+
 }
 #header nav .nav-left li.active, 
 #header nav .nav-right li.active, 
@@ -22,6 +24,7 @@
 #header nav .nav-right li a:active,
 #header nav .nav-right li a:hover{
 	background-color: #FDA9CA;
+	
 }
 #header .mid{
 	margin-left: 10px;
@@ -35,30 +38,25 @@
 }
 #header #first-menu{
 	height: 60px;
-	width: 100%;
-	background-color: #CC3333;
+
+	background-color: #333333;
 
 }
+
 #header #first-menu ul li{
 	margin-left: 2px;
 }
-#header #first-menu ul li.active a{
-	color: #3ABDE8;
-	line-height: 56px;
-	border-radius: 10px;
-
-}
 #header #first-menu ul li a:hover{
-	color: #3ABDE8;
-	line-height: 56px;
-	border-bottom: #3333FF solid 5px;
+	color: black;
+	position:relative;
+	font-weight: 1500;
 }
 
 #header #first-menu ul li a{
 	line-height: 60px;
 	font-size: 18px;
 	color:white;
-	padding:0px 20px;
+	padding:0px 10px;
 	transition: all 300ms ease-out;
 }
 #header .main-mobile{
@@ -70,7 +68,7 @@
 	box-shadow: none;
 }
 .tab-bar{
-	background-color: #2F292B;
+	background-color: #333333;
 	height: 50px;
 }
 .left-small{
@@ -87,7 +85,7 @@
 	height: 50px;
 }
 .left-off-canvas-menu,.right-off-canvas-menu{
-	background-color: #2F292B;
+	background-color: #333333;
 
 }
 .move-right .exit-off-canvas,.move-left .exit-off-canvas{
@@ -99,19 +97,23 @@ ul.off-canvas-list li label{
 	padding: 0px;
 	line-height: 50px;
 	text-align: center;
-	background-color: #2F292B;
+	background-color: #333333;
 	color: #fff;
 	border-top: 0px;
+}
+.opa {
+	opacity: 0.7;
 }
 ul.off-canvas-list li a{
 	color: white;
 	border-bottom: 1px solid #FEE6EF;
+	opacity: 1;
 }
 ul.off-canvas-list li a:hover {
 	background: #0078a0;
 }
 .left-submenu, .right-submenu{
-	background-color: #2F292B;
+	background-color: #333333;
 }
 .left-submenu .back > a:before,.right-submenu .back > a:after {
 	content:"";
@@ -123,7 +125,7 @@ ul.off-canvas-list li a:hover {
 .left-submenu .back a,.right-submenu .back a{
 	padding: 0px;
 	padding-left: 10px;
-	background-color: #2F292B;
+	background-color: #333333;
 	border-top: 0px;
 	color: #fff;
 }

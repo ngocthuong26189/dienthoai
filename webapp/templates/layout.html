@@ -14,14 +14,16 @@
         <section id="header">
             <div id="first-menu" class="show-for-large-up" >
                 <div class="row">
-                    <ul class="inline-list">
+                    <ul class="inline-list left">
                         <li><img src="./static/img/logo.png" alt="" style="height:50px;margin-top:5px;margin-right:10px;margin-left:20px;"></li>
+                    </ul>
+                    <ul class="inline-list right">                       
                         <li><a href="{{ url_for('home.index') }}">Trang Chủ</a></li>
                         <li><a href="{{ url_for('home.x4') }}">X-Fone X-4</a></li>
                         <li><a href="{{ url_for('home.x6') }}">X-Fone X-6</a></li>
                         <li><a href="{{ url_for('home.x8') }}">X-Fone X-8</a></li>
                         <li><a href="#" data-reveal-id="firstModal" >Hệ Thống</a></li>
-                        <li><a href="#" data-dropdown="drop" aria-controls="drop">Hỗ Trợ</a></li><br>
+                        <li><a href="#" data-dropdown="drop" aria-controls="drop">Hỗ Trợ Khách Hàng</a></li><br>
                         <ul id="drop" class="f-dropdown" data-dropdown-content>
                             <li><a href="#" style="font-size:12px;color:black;" data-reveal-id="thanhtoan">Hỗ Trợ Thanh Toán</a></li>
                             <li><a href="#" style="font-size:12px;color:black;" data-reveal-id="giaohang">Hỗ Trợ Vận Chuyển</a></li>
@@ -52,7 +54,7 @@
                         <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
                         <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
                         <li><a href="#" data-reveal-id="firstModal">Hệ Thống Siêu Thị</a></li>
-                        <li><a href="#" data-reveal-id="menu-hotro">Hỗ Trợ</a></li>
+                        <li><a href="#" data-reveal-id="menu-hotro">Hỗ Trợ Khách Hàng</a></li>
                         <div id="menu-hotro" class="reveal-modal" data-reveal>
                             <div class="row">
                                 <div class="large-12 medium-12 small-12 columns">
@@ -75,7 +77,6 @@
                         </div>
                     </ul>
                 </aside>
-                <div class="clearfix" style="height:15px; width:100%;"></div>
                 <section class="main-section">
                     <!-- content goes here -->
                     <div class="row">
@@ -89,19 +90,15 @@
                             
                         {% endblock %}
                     </div>
-                    <div class="clearfix" style="height:15px; width:100%;"></div>
                     <div class="row">
                         {% block khung %}
                         {% endblock %}
                     </div>
-                    <div class="clearfix" style="height:15px; width:100%;"></div>
                 </section>
                 <a class="exit-off-canvas"></a>
             </div>
         </div>
     </section>
-    
-    <div class="clearfix" style="height:15px; width:100%;"></div>
     <div id="social">
         <ul>
             <li><a href="https://www.facebook.com/pages/Smartphone-gi%C3%A1-r%E1%BA%BB-nh%E1%BA%A5t/757846657636925?ref=hl" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
@@ -109,6 +106,7 @@
             <li><a href="#" title="Youtube"><img src="./static/img/youtube.png" alt=""></a></li>
         </ul>
     </div>
+
     <!-- ********************************************* -->
     {% block hotro %}
         {% include "sites/baohanh.html"%}
