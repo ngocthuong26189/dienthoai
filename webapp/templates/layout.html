@@ -48,7 +48,7 @@
                         <li><a href="{{ url_for('home.x6') }}">X-6 Mobile</a></li>
                         <li><a href="{{ url_for('home.x8') }}">X-8 Mobile</a></li>
                         <li><a href="#" data-reveal-id="firstModal">Hệ Thống Siêu Thị</a></li>
-                        <li><a href="#" data-reveal-id="menu-thanhtoan">Hỗ Trợ</a></li>
+                        <li><a href="#" data-reveal-id="thanhtoan">Hỗ Trợ</a></li>
                     </ul>
                 </aside>
                 <section class="main-section">
@@ -80,8 +80,8 @@
     </div>
     <!-- ********************************************* -->
     {% block hotro %}
-        {% include "sites/temp.html"%}
-        {% include "sites/trungtam.html"%}
+        {% include "sites/temp.html" %}
+        {% include "sites/trungtam.html" %}
     {% endblock %}
     
     <script src="./static/vendor/foundation/js/vendor/jquery.js"></script>
