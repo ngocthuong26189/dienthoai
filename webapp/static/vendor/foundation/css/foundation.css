@@ -1112,7 +1112,7 @@ select {
       padding: 0.9375rem; }
       .accordion .accordion-navigation > .content.active, .accordion dd > .content.active {
         display: block;
-        background: white; }
+        background: #336699; }
 
 .alert-box {
   border-style: solid;
@@ -4292,7 +4292,7 @@ table {
       .tabs dd > a:hover, .tabs .tab-title > a:hover {
         background-color: #e1e1e1; }
     .tabs dd.active a, .tabs .tab-title.active a {
-      background-color: white;
+      background-color: #336699;
       color: #222222; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;

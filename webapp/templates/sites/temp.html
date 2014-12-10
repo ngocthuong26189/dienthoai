@@ -1,0 +1,24 @@
+<div div id="thanhtoan" class="reveal-modal" data-reveal>
+  <div class="row">
+    <dl class="tabs" data-tab>
+      <dd class="active large-3 medium-3 small-6 columns"><a href="#panel1" class="text-center">BẢO HÀNH</a></dd>
+      <dd class="large-3 medium-3 small-6 columns"><a href="#panel2" class="text-center">THANH TOÁN</a></dd>
+      <dd class="large-3 medium-3 small-6 columns"><a href="#panel3" class="text-center">GIAO HÀNG</a></dd>
+      <dd class="large-3 medium-3 small-6 columns"><a href="#panel4" class="text-center">KHIẾU NẠI</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="content active" id="panel1">
+          {% include "sites/baohanh.html"%}
+      </div>
+      <div class="content" id="panel2">
+          {% include "sites/thanhtoan.html"%}
+      </div>
+      <div class="content" id="panel3">
+          {% include "sites/giaohang.html"%}
+      </div>
+      <div class="content" id="panel4">
+          {% include "sites/khieunai.html"%}
+      </div>
+    </div>
+  </div>
+</div>
