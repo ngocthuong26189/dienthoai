@@ -24,7 +24,7 @@
 #header nav .nav-right li a:active,
 #header nav .nav-right li a:hover{
 	background-color: #FDA9CA;
-	
+
 }
 #header .mid{
 	margin-left: 10px;
@@ -38,18 +38,15 @@
 }
 #header #first-menu{
 	height: 60px;
-
 	background-color: #333333;
-
 }
 
 #header #first-menu ul li{
 	margin-left: 2px;
 }
 #header #first-menu ul li a:hover{
-	color: black;
-	position:relative;
-	font-weight: 1500;
+	color: 	#2BBBD8;
+	background: #666666;
 }
 
 #header #first-menu ul li a{
