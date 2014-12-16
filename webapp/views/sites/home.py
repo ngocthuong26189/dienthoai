@@ -119,11 +119,11 @@ def index():
     # if session.get('user') is not None:
     #     user = json.loads(session.get("user"))
     message = None
-    index = Category.objects(name = 'index').first()
+    #index = Category.objects(name = 'index').first()
     if index is None:
         message = "You must create index category"
-    return render.template('sites/home/index.html', category = index, message=message)    
-
+    #return render.template('sites/home/index.html', category = index, message=message)    
+    return render.template('sites/home/index.html', message=message)
 @module.route('/<string:level_1>', methods = ['GET'])
 def category_leve1(level_1):
     try:
