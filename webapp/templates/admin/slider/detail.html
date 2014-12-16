@@ -1,0 +1,42 @@
+{% extends "admin/slider/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <table>
+        <h2 class="text-center subheader">Slider detail</h2>
+         
+          <tr>
+            <th>Properties</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Id</td>
+            <td>{{slider.id}}</td>
+        </tr>
+        <tr>
+            <td >Name</td>
+            <td>{{slider.name}}</td>
+        </tr>
+        <tr>
+            <td >Desctiption</td>
+            <td>
+                <div style="border:1px solid green;background-color:#fff;padding:10px;">
+                    {{slider.description|safe}}
+                </div>
+                
+            </td>
+        </tr>
+        <tr style="border-top:solid 1px #ddd;">
+            <td colspan="2">
+                <ul class="button-group" style="display:table;margin:0 auto;">
+                <li> <a href="{{ url_for('admin.slider.add') }}" class="button tiny success" style="margin-bottom:0px;"><i class="fa fa-plus"></i> Add </a></li>
+                  <li><a href="{{ url_for('admin.slider.edit', slider_id=slider.id) }}" class="button tiny" style="margin-bottom:0px;"><i class="fa fa-edit"></i> Edit</a></li>
+                  <li><a href="javascript:post('{{ url_for('admin.slider.delete', slider_id=slider.id) }}',null,'{{url_for('admin.slider.index')}}')" class="button tiny alert" style="margin-bottom:0px;"><i class="fa fa-trash"></i> Delete</a></li>
+              </ul>
+          </td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock %}

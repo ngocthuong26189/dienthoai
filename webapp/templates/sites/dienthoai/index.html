@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block title %}
+	<title>X-Fone mobile very good</title>
+{% endblock %}
+{% block slides %}
+	<ul class="example-orbit" data-orbit >
+		<li>
+			<a href="{{ url_for('home.x8') }}"><img src="./static/img/8x/1.jpg" alt="slide 1" /></a>
+			<div class="orbit-caption">
+				<a href="{{ url_for('home.x8') }}" style="color:white; font-size:25px;">X-8 Mobile Tot Nhat</a>
+			</div>
+		</li>
+		<li>
+			<a href="{{ url_for('home.x4') }}"><img src="./static/img/8x/1.jpg" alt="slide 1" /></a>
+			<div class="orbit-caption">
+				<a href="{{ url_for('home.x4') }}" style="color:white; font-size:25px;">X-4 Mobile Tot Nhat</a>
+			</div>
+		</li>
+		<li>
+			<a href="{{ url_for('home.x6') }}"><img src="./static/img/8x/1.jpg" alt="slide 1" /></a>
+			<div class="orbit-caption">
+				<a href="{{ url_for('home.x6') }}" style="color:white; font-size:25px;">X-6 Mobile Tot Nhat</a>
+			</div>
+		</li>
+	</ul>
+{% endblock %}
+{% block khung %}
+	<!--
+	<div class="row">
+							<div class="small-6 medium-3 large-3 columns">
+													<a href="" title="">
+																			<img src="./static/img/220x300.png" alt="">
+													</a>
+							</div>
+							<div class="small-6 medium-3 large-3 columns">
+													<a href="" title="">
+																			<img src="./static/img/220x300.png" alt="">
+													</a>
+							</div>
+							<div class="small-6 medium-3 large-3 columns">
+													<a href="" title="">
+																			<img src="./static/img/220x300.png" alt="">
+													</a>
+							</div>
+							<div class="small-6 medium-3 large-3 columns">
+													<a href="" title="">
+																			<img src="./static/img/220x300.png" alt="">
+													</a>
+		</div>-->
+	</div>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block script%}
+{{ super() }}
+<script src="./static/js/jssor/jssor.core.js"></script>
+<script src="./static/js/jssor/jssor.utils.js"></script>
+<script src="./static/js/jssor/jssor.slider.min.js"></script>
+<script src="./static/js/home.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+    $(function() {
+    // Ẩn tất cả .accordion trừ accordion đầu tiên
+    // $("#accordiondemo .accordion:not(:first)").hide();
+    $("#accordiondemo .accordion").hide();
+    $('.accordion .active').each(function () {
+        $first_accordion = $(this).parent().parent().parent();
+        $first_accordion.prev().addClass("active");
+        $first_accordion.slideDown();
+    });
+    $('#accordiondemo > .active').each(function () {
+        $first_accordion = $(this).next();
+        $first_accordion.slideDown();
+    });
+    $("#accordiondemo > a").click(function(){
+        $("#accordiondemo > a").removeClass('active');
+        $('.accordion .active').removeClass('active');
+        $(this).addClass('active');
+
+        $accordion = $(this).next();
+        if ($accordion.is(':hidden') === true) {
+            $("#accordiondemo .accordion").slideUp();
+            $accordion.slideDown();
+        } else {
+            $accordion.slideUp();
+        }
+    });
+});
+</script>
+{% endblock script %}

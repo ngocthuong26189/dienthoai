@@ -29,8 +29,13 @@
             </td>
         </tr>
         <tr style="border-top:solid 1px #ddd;">
-            <td ><a href="{{ url_for('admin.question_category.edit', question_category_id=question_category.id) }}" class="button tiny success right"><i class="fa fa-edit"></i> Edit</a></td>
-            <td><a href="javascript:post('{{ url_for('admin.question_category.delete', question_category_id=question_category.id) }}',null,'{{url_for('admin.question_category.index')}}')" class="button tiny alert left"><i class="fa fa-trash"></i> Delete</a></td>
+            <td colspan="2">
+                <ul class="button-group" style="display:table;margin:0 auto;">
+                <li> <a href="{{ url_for('admin.question_category.add') }}" class="button tiny success" style="margin-bottom:0px;"><i class="fa fa-plus"></i> Add </a></li>
+                  <li><a href="{{ url_for('admin.question_category.edit', question_category_id=question_category.id) }}" class="button tiny" style="margin-bottom:0px;"><i class="fa fa-edit"></i> Edit</a></li>
+                  <li><a href="javascript:post('{{ url_for('admin.question_category.delete', question_category_id=question_category.id) }}',null,'{{url_for('admin.question_category.index')}}')" class="button tiny alert" style="margin-bottom:0px;"><i class="fa fa-trash"></i> Delete</a></li>
+              </ul>
+          </td>
         </tr>
     </table>
 </div>

@@ -124,3 +124,13 @@ li img{
     width: 1px;
     border-left: 1px solid #272727;
 }
+ul.pagination li.unavailable p{
+    padding: 0.0625rem 0.625rem 0.0625rem;
+    color: #999999;
+    background: none;
+    border-radius: 3px;
+    font-weight: normal;
+    font-size: 1em;
+    line-height: inherit;
+    transition: background-color 300ms ease-out;
+}

@@ -1,0 +1,6 @@
+{% extends "admin/static_page/layout.html" %}
+{% block content %}
+	{% from "admin/static_page/form.html" import form %}
+    {% set data=static_page %}
+	{{ form(url_for('admin.static_page.update', static_page_id=static_page.id), data, show_form=2) }}
+{% endblock %}

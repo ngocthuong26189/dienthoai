@@ -1,0 +1,6 @@
+{% extends "admin/banner/layout.html" %}
+{% block content %}
+	{% from "admin/banner/form.html" import form %}
+    {% set data={'sliders':sliders,'image':banner.image,'image_url':banner.image_url,'image_original_url':banner.image_original_url,'html':banner.html,'name':banner.name,'slider':banner.slider,'positions':positions,'position':banner.position} %}
+	{{ form(url_for('admin.banner.update', banner_id=banner.id), data, show_form=2) }}
+{% endblock %}

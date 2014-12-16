@@ -1,0 +1,11 @@
+{% block content %}
+<h2>Thong tin thanh toan</h2>
+
+<form action="{{ url_for('cart.checkout') }}" method="POST">
+  <div class="row">
+    <div class="large-12 columns">
+      <button>Dat Mua</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

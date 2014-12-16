@@ -1,0 +1,119 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Hello world</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="./static/css/home.css" />
+{% endblock css%}
+{% block home%}
+<li class="active">
+    <a href="{{ url_for('home.index')}}" title="MẸ & BÉ">
+        <br>
+        MẸ VÀ BÉ
+    </a>
+</li>
+{% endblock home%}
+
+{% block content %}
+
+
+{%if message is none%}
+<section id="menu_slide" style="margin-top:10px;">
+    <div class="row clearfix">
+        <div id="slide">
+            <ul 
+            data-orbit 
+            data-options="animation:slide;
+            pause_on_hover:true;
+            animation_speed:500;
+            navigation_arrows:true;
+            bullets:false;slide_number:false;
+            next_on_click:false;
+            timer:true;next_class:custom_next;prev_class:custom_prev;">
+            <li data-orbit-slide="headline-1">
+                <img src="./static/img/slide-bg.png" alt="slide 1" />
+            </li>
+            <li data-orbit-slide="headline-2">
+                <img src="./static/img/slide-bg.png" alt="slide 2" />
+            </li>
+            <li data-orbit-slide="headline-3">
+                <h1>xxx</h1>
+            </li>
+        </ul>
+    </div>
+</div>
+</section>
+{%else%}
+    <h1 style="text-align:center;margin:30px;color:red;">{{message}}</h1>
+{%endif%}
+
+    <div class="row show-for-large-up">
+        <div class="small-12 medium-12 large-12 columns clearfix" id="bottom-slider">
+            <div class="arrow right">
+                <img src="./static/img/left.png" alt="" class="left arrow-left">
+                <img src="./static/img/right.png" alt="" class="left arrow-right">
+            </div>
+        </div>
+    </div>
+    <div class="row show-for-large-up">
+        <div class="small-12 medium-12 large-12 columns" id="brand">
+            <div id="slider1_container" style="position: relative; width: 1000px; height: 100px;">
+                <div u="slides" style="position: absolute; left: 0px; top: 5px; width: 1000px; height: 100px; overflow: hidden; ">
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+                    <div onclick="go('')" style="cursor: pointer; "><img u="image" src="./static/img/img-bottom.png" /></div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+{% block script%}
+{{ super() }}
+<script src="./static/js/jssor/jssor.core.js"></script>
+<script src="./static/js/jssor/jssor.utils.js"></script>
+<script src="./static/js/jssor/jssor.slider.min.js"></script>
+<script src="./static/js/home.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+    $(function() {
+    // Ẩn tất cả .accordion trừ accordion đầu tiên
+    // $("#accordiondemo .accordion:not(:first)").hide();
+    $("#accordiondemo .accordion").hide();
+    $('.accordion .active').each(function () {
+        $first_accordion = $(this).parent().parent().parent();
+        $first_accordion.prev().addClass("active");
+        $first_accordion.slideDown();
+    });
+    $('#accordiondemo > .active').each(function () {
+        $first_accordion = $(this).next();
+        $first_accordion.slideDown();
+    });
+    $("#accordiondemo > a").click(function(){
+        $("#accordiondemo > a").removeClass('active');
+        $('.accordion .active').removeClass('active');
+        $(this).addClass('active');
+
+        $accordion = $(this).next();
+        if ($accordion.is(':hidden') === true) {
+            $("#accordiondemo .accordion").slideUp();
+            $accordion.slideDown();
+        } else {
+            $accordion.slideUp();
+        }
+    });
+});
+</script>
+{% endblock script %}

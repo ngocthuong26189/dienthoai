@@ -73,6 +73,7 @@ class AdminProductModuleTestTest(ClientTest):
         data = ProductFactory.attributes()
         del data['category']
         del data['brand']
+        del data['link']
         resp = self.post('/admin/product/' + str(product.id) + '/update', data)
         expect(resp.status_int).to_equal(200)
 
@@ -81,6 +82,7 @@ class AdminProductModuleTestTest(ClientTest):
         data = ProductFactory.attributes()
         del data['category']
         del data['brand']
+        del data['link']
         resp = self.post('/admin/product/' + str(product.id) + '/update', data)
         product.reload()
         expect(product.name).to_equal(data.get('name'))

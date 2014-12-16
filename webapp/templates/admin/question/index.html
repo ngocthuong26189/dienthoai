@@ -32,7 +32,7 @@
 			<tr>
 				<td>{{ loop.index }}</td>
                 <td>
-                    <a href="{{ url_for('admin.question.detail', question_id=question.id) }}">{{ question.content | safe | truncate(50) }}</a>
+                    <a href="{{ url_for('admin.question.detail', question_id=question.id) }}">{{ question.content | truncate(50) | safe }}</a>
                 </td>
                 <td>{{ question.question_category.name}}</td>
 				<td>

@@ -6,7 +6,8 @@ class Category(Document):
     parent = ReferenceField('Category', reverse_delete_rule=NULLIFY)
     image = StringField()
     ancestors = ListField(ReferenceField('Category'))
-    
+    link = StringField(required=True, unique=True)
+
     @property
     def image_url(self):
         if self.image is None:
@@ -18,10 +19,28 @@ class Category(Document):
         if self.image is None:
             return ""
         return image_original_url(self.image)
+    
+    def get_childs(self):
+        return Category.objects(parent = self.id)
 
-def create(category_dict):
-    name = user_dict.get('name')
-    parent = user_dict.get('parent')
-    image = user_dict.get('image')
-    ancestors = user_dict.get('ancestors')
-    return User(name=name, parent=parent, image=image, ancestors=ancestors).save()
+    def get_level(self):
+        def check_level(le,category):
+                if category is not None:
+                    if category.parent is None:
+                        return le
+                else:
+                    return le
+                return check_level(le+1,category.parent)
+        if self.parent is None:
+            return 0;
+        return check_level(0, self)
+        
+    def get_root(self):
+        def get_parrent(category):
+            if category is not None:
+                if category.parent is None:
+                    return category
+            else:
+                return category
+            return get_parrent(category.parent)
+        return get_parrent(self)

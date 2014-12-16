@@ -1,0 +1,82 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Cap nhat thong tin giao hang</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="../static/css/news.css" />
+{% endblock css%}
+{% block content %}
+<h2>Cap nhat thong tin giao hang</h2>
+
+<form action="{{ url_for('cart.update_shipping') }}" method="POST" >
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Ho ten
+        <input type="text" value="{{ cart.shipping_data['customer_name']}}" name="customer_name" placeholder="Ho ten" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Email
+        <input type="text" name="customer_email" placeholder="Email" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>So Dien Thoai
+        <input type="text" name="customer_phone" placeholder="So Dien Thoai" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Dia chi giao hang
+        <input type="text" name="customer_address" placeholder="Dia Chi Giao Hang" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Tinh / Thành phố
+        <input type="text" name="customer_city" placeholder="Tỉnh / Thành Phố" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Ghi chú
+        <input type="text" name="customer_remark" placeholder="Ghi chú của khách hàng" />
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Phuong thuc giao hang
+        <select name="shipping_method">
+          <option value="cod">Buu dien</option>
+          <option value="pickup">Khach hang tu den nhan hang</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <label>Phuong thuc thanh toan
+        <select name="payment_method">
+          <option value="cash_on_delivery">Thanh toan khi nhan hang</option>
+          <option value="paypal">Thanh toan truc tuyen PayPal</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 columns">
+      <button>Cap nhat thong tin giao hang</button>
+    </div>
+  </div>
+</form>
+{% endblock %}

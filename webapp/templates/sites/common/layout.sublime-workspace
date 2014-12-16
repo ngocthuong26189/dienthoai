@@ -1,0 +1,637 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"zfca",
+				"zf-offcanvas	ZURB Foundation 5 Offcanvas"
+			],
+			[
+				"zfs",
+				"zf-sidenav	ZURB Foundation 5 Side Nav"
+			],
+			[
+				"zfn",
+				"zf-orbit-content	ZURB Foundation 5 Orbit Content Slider"
+			],
+			[
+				"zf",
+				"zfsidenav	Zurb Side Nav"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"mag",
+				"margin-top"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"do",
+				"document	Document"
+			],
+			[
+				"zfna",
+				"zfnavbar	Zurb Nav Bar"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"zfta",
+				"zf-tab	ZURB Foundation 5 Tabs"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"f",
+				"fixed"
+			],
+			[
+				"re",
+				"relative"
+			],
+			[
+				"tran",
+				"transform-style"
+			],
+			[
+				"bor",
+				"border-bottom-color"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"zfp",
+				"zfcpagination	Zurb Pagination Centered"
+			],
+			[
+				"zftop",
+				"zf-topbar	ZURB Foundation 5 Topbar"
+			],
+			[
+				"bs3",
+				"bs3-pagination	bs3-pagination"
+			],
+			[
+				"bs3-bu",
+				"bs3-button:primary	bs3-button-primary"
+			],
+			[
+				"bs3-col",
+				"bs3-col:3	bs3-col-3"
+			],
+			[
+				"bs",
+				"bs3-row	bs3-row"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"he",
+				"header	Tag"
+			],
+			[
+				"bs3-h",
+				"bs3-template:html5	bs3-html5-template"
+			],
+			[
+				"border-lef",
+				"border-left-color"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"zfba",
+				"zf-breadcrumb	ZURB Foundation 5 Breadcrumbs"
+			],
+			[
+				"zff",
+				"zf-offcanvas	ZURB Foundation 5 Offcanvas"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"r",
+				"rgb()"
+			],
+			[
+				"img",
+				"background-image"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"g",
+				"rgba()"
+			],
+			[
+				"n",
+				"new"
+			],
+			[
+				"paddin",
+				"padding-right"
+			],
+			[
+				"register",
+				"register_blueprint"
+			],
+			[
+				"read",
+				"readme	Plugin Readme"
+			],
+			[
+				"update",
+				"update_map"
+			],
+			[
+				"upd",
+				"update_map"
+			],
+			[
+				"placeinfo",
+				"placeinfo_id"
+			],
+			[
+				"can_be",
+				"can_be_parent"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"placein",
+				"placeinfos"
+			],
+			[
+				"place",
+				"placeinfos"
+			],
+			[
+				"registe",
+				"register_blueprint"
+			],
+			[
+				"regis",
+				"register_blueprint"
+			],
+			[
+				"ex",
+				"except	keyword"
+			],
+			[
+				"cl",
+				"collections"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/ngocminh/Desktop/dienthoai/webapp/templates/layout.html",
+			"settings":
+			{
+				"buffer_size": 5080,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"h",
+				"HTMLBeautify"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"htm",
+				"Snippet: html"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML (Jinja Templates)"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"aut",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"au",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"jin",
+				"Set Syntax: Jinja Templates"
+			],
+			[
+				"ji",
+				"Set Syntax: Jinja Templates"
+			],
+			[
+				"beau",
+				"HTMLBeautify"
+			],
+			[
+				"pytho",
+				"Set Syntax: Python"
+			],
+			[
+				"AUTO ",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"PYTHO",
+				"Set Syntax: Python"
+			],
+			[
+				"auto",
+				"User: Python PEP8 Autoformat"
+			],
+			[
+				"fo",
+				"Snippet: f4-pagination"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"fou",
+				"Snippet: f4-button"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/temp.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/layout.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/baohanh.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/baomat.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/vendor/foundation/css/foundation.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/khieunai.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/giaohang.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/thanhtoan.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/app.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/menu.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/vendor/foundation/scss/foundation/components/_inline-lists.scss",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/vendor/ckeditor/samples/inlineall.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/partials/index.html",
+		"/Users/ngocminh/Desktop/dienthoai/services/identity.py",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/footer.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/x-4.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/styledienthoai.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/x-8.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/x-6.html",
+		"/Users/ngocminh/Desktop/duantuthien/index.html",
+		"/Users/ngocminh/Desktop/duantuthien/css/app.css",
+		"/Users/ngocminh/Desktop/duantuthien/vendor/foundation/scss/foundation/_settings.scss",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/trungtam.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/product/trungtam.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/hotro.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/index.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/__init__.py",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/views/home.py",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/sites/lienhe.html",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/templates/admin/common/menu.html",
+		"/Users/ngocminh/Desktop/duantuthien/css/style.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/layout.css",
+		"/Users/ngocminh/Desktop/dienthoai/webapp/static/css/home.css",
+		"/Users/ngocminh/Desktop/babynmom/webapp/static/css/home.css",
+		"/Users/ngocminh/Downloads/babymom_2/home.html",
+		"/Users/ngocminh/Desktop/tienan.xlsx",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/layout.html",
+		"/Users/ngocminh/Desktop/abc/webapp/static/css/menu.css",
+		"/Users/ngocminh/Desktop/abc/webapp/views/home.py",
+		"/Users/ngocminh/Downloads/babymom_2/static/css/header.css",
+		"/Users/ngocminh/Desktop/babymom/header.html",
+		"/Users/ngocminh/Desktop/abc/webapp/static/css/header.css",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/sites/index.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/sites/x-4.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/sites/x-6.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/sites/x-8.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/x-8.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/x-4.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/x-6.html",
+		"/Users/ngocminh/Desktop/abc/webapp/static/robots.txt",
+		"/Users/ngocminh/Desktop/abc/webapp/static/css/layout.css",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/x4.html",
+		"/Users/ngocminh/Desktop/babymom/static/vendor/foundation/css/foundation.css",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/index.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/x6.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/admin/common/pagination.html",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/home/homedienthoai.html",
+		"/Users/ngocminh/Desktop/babymom/static/css/styledienthoai.css",
+		"/Users/ngocminh/Desktop/babymom/apple.html",
+		"/Users/ngocminh/Desktop/abc/webapp/views/image.py",
+		"/Users/ngocminh/Desktop/babymom/ai/webdesign.ai",
+		"/Users/ngocminh/Desktop/babymom/static/vendor/foundation/js/vendor/fastclick.js",
+		"/Users/ngocminh/Desktop/babymom/ai/thanhtoan.ai",
+		"/Users/ngocminh/Desktop/DSC_0871.jpg",
+		"/Users/ngocminh/Desktop/abc/webapp/templates/admin/common/menu.html",
+		"/Users/ngocminh/Desktop/abc/webapp/views/admin/chat.py",
+		"/Users/ngocminh/Desktop/abc/webapp/views/chat.py",
+		"/Users/ngocminh/Desktop/abc/webapp/views/api/like.py",
+		"/Users/ngocminh/Desktop/abc/webapp/__init__.py",
+		"/Users/ngocminh/Desktop/dienthoai/static/css/home.css",
+		"/Users/ngocminh/Desktop/dienthoai/homedienthoai.html",
+		"/Users/ngocminh/Desktop/dienthoai/static/css/login_register.css",
+		"/Users/ngocminh/Downloads/theme/index.html",
+		"/Users/ngocminh/Desktop/babymom/homedienthoai.html",
+		"/Users/ngocminh/Desktop/babymom/static/css/home.css",
+		"/Users/ngocminh/Desktop/babymom/homedienthoai",
+		"/Users/ngocminh/Desktop/babymom/news_detail.html",
+		"/Users/ngocminh/Desktop/babymom/static/css/detail.css",
+		"/Users/ngocminh/Desktop/babymom/detail.html",
+		"/Users/ngocminh/Desktop/babymom/dt.html",
+		"/Users/ngocminh/.vimrc",
+		"/Users/ngocminh/blog/webapp/views/admin/post.py",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/index.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/edit.html",
+		"/Users/ngocminh/blog/webapp/views/home.py",
+		"/Users/ngocminh/blog/webapp/templates/admin/home/index.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/dashboard/index.html",
+		"/Users/ngocminh/blog/webapp/views/admin/dashboard.py",
+		"/Users/ngocminh/blog/webapp/__init__.py",
+		"/Users/ngocminh/blog/webapp/templates/layout.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/common/menu.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/layout.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/common/layout.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/layout.html",
+		"/Users/ngocminh/blog/models/post.py",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/create.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/form.html",
+		"/Users/ngocminh/blog/webapp/templates/admin/post/detail.html",
+		"/Users/ngocminh/blog/services/render.py",
+		"/Users/ngocminh/blog/webapp/views/admin/__init__.py",
+		"/Users/ngocminh/blog/app.py",
+		"/Users/ngocminh/blog/webapp/views/admin/post/__init__.py",
+		"/Users/ngocminh/blog/webapp/views/admin/comment/__init__.py",
+		"/Users/ngocminh/blog/webapp/views/__init__.py",
+		"/Users/ngocminh/blog/services/__init__.py",
+		"/Users/ngocminh/blog/models/__init__.py",
+		"/Users/ngocminh/blog/webapp/static",
+		"/Users/ngocminh/blog/models/comment.py",
+		"/Users/ngocminh/blog/services/system.py",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/layout.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/detail.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/edit.html",
+		"/Users/ngocminh/quanlykhachhang/models/placeinfo.py",
+		"/Users/ngocminh/quanlykhachhang/webapp/views/admin/placeinfo.py",
+		"/Users/ngocminh/quanlykhachhang/webapp/views/admin/dashboard.py",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/index.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/typeinfo/index.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/__init__.py",
+		"/Users/ngocminh/quanlykhachhang/models/__init__.py",
+		"/Users/ngocminh/quanlykhachhang/services/__init__.py",
+		"/Users/ngocminh/quanlykhachhang/models/custommerinfo.py",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/create.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/placeinfo/form.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/static/vendor/modernizr/feature-detects/performance.js",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/custommerinfo/datail.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/dashboard/index.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/templates/admin/common/layout.html",
+		"/Users/ngocminh/quanlykhachhang/webapp/views/admin/typeinfo.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"img",
+			"sanpham",
+			" >",
+			"sanpham",
+			"=\"{{",
+			"radius",
+			"<p class=\"text-center\">Dat Hang</p>",
+			"tab",
+			"content",
+			"content active",
+			"E13987",
+			"333333",
+			"E13987",
+			"font-family",
+			"#E13987",
+			"#CC3333",
+			"font-family: \"Helvetica Neue\", Helvetica",
+			"font-family: \"Helvetica Neue\", Helvetica, Roboto",
+			"font-family: \"Helvetica Neue\", Helvetica, Roboto, Arial, sans-serif;",
+			"font",
+			"fixed",
+			"position",
+			"#head",
+			"fixed",
+			">\n",
+			"/imageRepository"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/ngocminh/Desktop/dienthoai/webapp/templates/layout.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5080,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "layout.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"inlist",
+				"webapp/static/vendor/foundation/scss/foundation/components/_inline-lists.scss"
+			],
+			[
+				"asas",
+				"static/css/styledienthoai.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 180.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

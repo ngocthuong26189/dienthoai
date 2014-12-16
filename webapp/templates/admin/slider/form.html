@@ -1,0 +1,39 @@
+{% macro form(url, data='', show_form=1) -%}
+<link rel="stylesheet" href="/static/vendor/select2/select2.css" />
+<form action="{{ url }}" method="post">
+	<fieldset>
+		
+		<legend>{% if show_form == 1 %}Create a slider:{%else%}Update a slider:{% endif %}</legend>
+		<div class="row collapse">
+			<div class="medium-2 columns">
+				<span class="prefix">Name:</span>	
+			</div>
+			<div class="medium-10 columns">
+				<input type="text" placeholder="Enter your slider name here" name="name" value="{{ data.name }}" required/>
+			</div>
+		</div>
+        <div class="row collapse" style="margin-bottom:15px;">
+            <div class="medium-2 columns">
+                <span class="prefix">Description:</span>   
+            </div>
+             <div class="medium-10 columns">
+                <textarea rows="10" placeholder="Enter your description here" name="description" value="{{ data.description }}" id="description">{{ data.description | safe }}</textarea>
+            </div>            
+        </div>
+
+
+        <div class="row collapse">
+            <div class="medium-12 columns">
+                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success" style="display:table;margin:0 auto; margin-top:15px;">
+            </div>
+        </div>
+    </fieldset>
+    <h1></h1>
+</form>
+<script src="/static/vendor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+    var config = {};
+    config.uiColor = '#AADC6E';
+    CKEDITOR.replace( 'description' ,config);
+</script>
+{% endmacro -%}

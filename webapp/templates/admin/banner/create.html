@@ -1,0 +1,6 @@
+{% extends "admin/banner/layout.html" %}
+{% block content %}
+	{% from "admin/banner/form.html" import form %}
+    {% set data={'sliders':sliders,'positions':positions}%}
+	{{ form(url_for('admin.banner.create'),data) }}
+{% endblock %}

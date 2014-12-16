@@ -8,6 +8,8 @@ class User(Document):
     email = EmailField(required=True)
     permission = IntField(required=True, default=1)
     sid = StringField()
+    facebook_access_token = StringField()
+    google_access_token = StringField()
 # The user services
 
 

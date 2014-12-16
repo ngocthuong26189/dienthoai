@@ -1,0 +1,9 @@
+<!-- Trang manange -->
+{% extends "admin/chat/layout.html" %}
+{% block chat_menu%}
+    {% from "admin/chat/menu.html" import top_chat_menu %}
+    {{ top_chat_menu('manage') }}
+{% endblock%} 
+{% block chat_content %}
+   <h1>Manage page</h1>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "admin/static_page/layout.html" %}
+
+{% block content %}
+<div class="row">
+        <div class="medium-6 columns">
+            <a href="{{ url_for('admin.static_page.add') }}" class="button success tiny"><i class="fa fa-plus"></i> Add a static_page</a>        
+        </div>
+        <div class="medium-6 columns">
+            <form>
+                <div class="row collapse">
+                    <div class="small-10 columns">
+                        <input type="text" name="name__icontains" placeholder="static_page name">
+                    </div>
+                    <div class="small-2 columns">
+                        <button type="submit" href="#" class="button postfix">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>Name</th>
+				
+                <th>To do</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for static_page in static_pages %}
+			<tr>
+				<td>{{ loop.index }}</td>
+                <td>
+                    <a href="{{ url_for('admin.static_page.detail', static_page_id=static_page.id) }}">{{ static_page.name }}</a>
+                </td>
+                
+				<td>
+                  <a href="{{ url_for('admin.static_page.edit', static_page_id=static_page.id) }}">Edit</a> | 
+                  <a href="javascript:post('{{ url_for('admin.static_page.delete', static_page_id=static_page.id) }}')">Delete</a>
+                </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{{ pagination.links | safe  }}
+{% endblock %}

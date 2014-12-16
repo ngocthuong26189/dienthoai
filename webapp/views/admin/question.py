@@ -38,7 +38,7 @@ def detail(question_id):
         b = Question.objects.get(id=question_id)
         return render.template('admin/question/detail.html', question=b)
     except Exception:
-        abort(404)
+        abort(400, 'ValueError Error')
 
 @module.route('/', methods=['POST'])
 @identity.permission_required(2)
@@ -66,11 +66,13 @@ def edit(question_id):
         b = Question.objects.get(id=question_id)
         categories = Question_Category.objects()
         username=json.loads(session.get('user')).get('username')
-        if str(b.user.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) or json.loads(session.get('user')).get('permission') < 3:
+        if str(b.user.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) or (str(b.user.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) and json.loads(session.get('user')).get('permission') < 3):
             return abort(403)
         return render.template('admin/question/edit.html', question=b,categories=categories,username=username)
     except DoesNotExist:
         abort(404, "404 does not exist")
+    except Exception:
+        abort(400, 'ValueError Error')
 
 @module.route('/<string:question_id>/update', methods=['POST'])
 @identity.permission_required(2)

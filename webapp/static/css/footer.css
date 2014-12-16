@@ -46,9 +46,7 @@ footer > div > div:nth-child(2) > div > div:nth-child(1) > form > button:hover{
 	border: 0px;
 }
 footer .face-box{
-	border: 1px solid #000;
-	padding: 15px;
-	height: 170px;
+	height: 250px;
 }
 footer .show-for-small-only .button{
 	height: 40px;
@@ -82,14 +80,15 @@ footer h5{
 #social ul li a{
 	line-height: 100px;
 	display: block;
-	background-color: #2F292B;
+	color: #fff;
+	background-color: #FDA9CA;
 	transition: all 300ms ease-out;
 }
 #social ul li:not(:last-child){
 	border-bottom: 1px solid #ddd;
 }
 #social ul li a:hover{
-	background: #3ABDE8;
+	background: #EFBFD3;
 }
 @media only screen and (min-width: 1200px){
 	#social{

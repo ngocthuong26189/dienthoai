@@ -1,0 +1,25 @@
+<div id="thanhtoan" class="reveal-modal" data-reveal>
+  <div class="row">
+    <dl class="tabs" data-tab>
+      <dd class="active text-center"><a href="#panel1">GIAO HÀNG & TT</a></dd>    
+      <dd class="text-center"><a href="#panel3">BẢO HÀNH</a></dd>
+      <dd class="text-center"><a href="#panel2">BẢO MẬT</a></dd>
+      <dd class="text-center"><a href="#panel4">KHIẾU NẠI</a></dd>
+    </dl>
+    <div class="tabs-content">
+      <div class="content active " id="panel1">
+        {% include "sites/giaohang.html" | safe %}
+      </div>
+      <div class="content " id="panel2">
+        {% include "sites/baomat.html" | safe %}
+      </div>
+      <div class="content " id="panel3">
+        {% include "sites/baohanh.html" | safe %}
+      </div>
+      <div class="content " id="panel4">
+        {% include "sites/khieunai.html" | safe %}
+      </div>
+    </div>
+ 
+  </div>
+</div>

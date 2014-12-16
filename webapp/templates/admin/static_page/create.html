@@ -1,0 +1,5 @@
+{% extends "admin/static_page/layout.html" %}
+{% block content %}
+	{% from "admin/static_page/form.html" import form %}
+	{{ form(url_for('admin.static_page.create')) }}
+{% endblock %}

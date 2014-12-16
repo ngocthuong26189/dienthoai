@@ -1,13 +1,82 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Danh sách sản phẩm</title>
+{% endblock %}
+
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="/static/css/product.css" />
+{% endblock css%}
+{% block js %}
+{{ super() }}
+<script src="js/foundation/foundation.equalizer.js"></script>
+{% endblock %}
+
 {% block content%}
-  {% for product in products %}
-    <div class="product">
-      <div>
-        <a href="{{ url_for('site_product.detail', product_slug=product.slug)}}">{{product.name}}</a>
-      </div>
-      <div>
-        {{product.price}}
-      </div>
-      <div></div>
-    </div>
-  {% endfor %}
+<section class="main-section" style="padding-top: 5px;">
+    <!-- content goes here -->
+    <div style="min-height:300px;">
+        <section id="detail" class="row">
+            <div class="large-2 columns" style="padding:0">
+                <div class="clearfix"></div>
+                <div class="large-12 " style="background-color:#F2F2F2;margin-top:10px">
+                    <div class="content-LuaChon">
+                        <table style="border:none;margin:0 auto;background-color:#F2F2F2">
+                            <tr style="background-color:#F2F2F2">
+                                <td>Giá Tiền</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                            <tr style="background-color:#F2F2F2">
+                                <td>Thương hiệu</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                            <tr style="background-color:#F2F2F2">
+                                <td>Màu Sắc</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="banner-quangcao-1 large-12">
+                    Banner quang cáo
+                </div>
+                <div class="banner-quangcao-2 large-12">
+                    Banner quang cáo
+                </div>
+            </div>
+            <div class="large-10 columns" data-equalizer>
+                <div class="clearfix"></div>
+                <p>
+                    TRANG CHU >> THỜI TRANG >> VÁY DẠ HỘI >> vÁY ABC
+                </p>
+                <div class="products-list">
+                  {% for product in products %}
+                    <div class="product large-4 columns">
+                      <div class="product-image">
+                        <a href="{{ url_for('site_product.detail', product_slug=product.slug)}}">
+                          <img src="{{product.image_url}}" />
+                        </a>
+                      </div>
+                      <div class="product-title">
+                        <a href="{{ url_for('site_product.detail', product_slug=product.slug)}}">{{product.name}}</a>
+                      </div>
+                      <div class="product-price">
+                        {{product.price}} VND
+                      </div>
+                      <form class="addtocart-form" action="{{ url_for('cart.add') }}" method="post">
+                        <button class="cart-button"><i class="fa fa-shopping-cart"></i></button>
+                        <input type='hidden' name="product_id" value="{{ product.id }}" />
+                        <input type='hidden' name="quantity" value="1" />
+                      </form>
+                    </div>
+                  {% endfor %}
+                </div>
+                
+                </div>
+                <div class="clearfix"></div>
+            </section>
+        </div>
+    </section>
+</section>
 {% endblock %}

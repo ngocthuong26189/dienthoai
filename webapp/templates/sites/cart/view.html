@@ -1,4 +1,276 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Hello world</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="../static/css/payment.css" />
+{% endblock css%}
+{% block cart_login%}
+    <li class="active">
+        <a href="{{ url_for('cart.create')}}" title="GIỎ HÀNG">
+            <img src="../static/img/cart-lg.png" alt="me va be">
+            <br>
+            GIỎ HÀNG
+        </a>
+    </li>
+    <li class="">
+        <a href="{{ url_for('home.login')}}" title="ĐĂNG NHẬP">
+            <img src="../static/img/login.png" alt="me va be">
+            <br>
+            ĐĂNG NHẬP
+        </a>
+    </li>
+{% endblock cart_login%}
 {% block content %}
+<section id="payment" class="row" style="margin-top:15px;">
+	<ul class="pricing-table large-8 columns" id="gio-hang" style="border:none">
+		<div style="border: 1px solid #FDA9CA;">
+			<li class="title backgroundcl-Hong text-left title-payment">1. GIỎ HÀNG</li>
+			<li class="bullet-item" style="padding-left:0;padding-right:0;padding:0;margin:0;border-bottom: none;">
+				<p class="text-left" style="padding: 0 10px;padding-top: 10px;padding-bottom: 10px;margin:0;">
+					<button class="title-number-detail">
+						1
+					</button>
+					<span class="margin-5">GIỎ HÀNG CỦA TÔI</span>
+				</p>
+				<div class="clearfix"></div>
+				<div style="padding: 0 2px;">
+					<div class="show-for-large-up">
+						<div class="small-3 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header hide-mobile-payment">HÌNH ẢNH</p>
+						</div>	
+						<div class="small-5  medium-4 large-3 columns padding-0-payment">
+							<p class="payment-table-header">TÊN SẢN PHẨM</p>
+						</div>
+						<div class="small-4  medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header">SỐ LƯỢNG</p>
+						</div>
+						<div class="small-4 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header">ĐƠN GIÁ</p>
+						</div>
+						<div class="small-4 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header">THÀNH TIỀN</p>
+						</div>
+						<div class="small-4 medium-4 large-1 columns padding-0-payment ">
+							<p class="payment-table-header">XOÁ</p>
+						</div>
+					</div>
+					<!-- Begin item -->
+          {% for product in cart.products %}
+					<div>
+						<div class="small-3 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header hide-mobile-payment hide-for-large-up">HÌNH ẢNH</p>
+
+							<p style="margin-bottom:14px">
+								<img src="{{ product.image_url }}" class="item-image-payment">
+							</p>
+						</div>
+						<div class="small-5  medium-4 large-3 columns padding-0-payment">
+							<p class="payment-table-header hide-for-large-up">TÊN SẢN PHẨM</p>
+							<p class="item-content-payment-table">
+								{{ product.name }}
+							</p>
+						</div>
+						<div class="small-4  medium-4 large-2 columns padding-0-payment">
+              <form id="update-form-{{ product.id }}" action="{{ url_for('cart.update', product_id=product.id) }}" method="POST">
+                <input name="quantity" type="text" style="width: 22px;height: 16px;float: left;padding: 0;margin: 0;background-color: #FDA9CA; float:left;margin-right:2px" class="text-center input-count" value="{{ cart.quantity_of(product.id) }}"  min="0" max="100"/>
+                <span class="cursor-pointer btn-DivCount" style="float:left;margin-right:2px">
+                  <i class="fa fa-minus-circle" ></i>
+                </span>
+                <span class="cursor-pointer btn-AddCount" style="float:left;margin-right:2px">
+                  <i class="fa fa-plus-circle" ></i>
+                </span>
+                <a onclick="document.getElementById('update-form-{{ product.id }}').submit()">
+                  <i class="fa fa-check"></i>
+                </a>
+              </form>
+						</div>
+						<div class="clearfix show-mobile-payment"></div>
+						<div class="small-4 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header hide-for-large-up">ĐƠN GIÁ</p>
+							<p class="color-red columns-table-payment-2 item-content-payment-table">
+								{{ product.price }}
+							</p>
+						</div>
+						<div class="small-4 medium-4 large-2 columns padding-0-payment">
+							<p class="payment-table-header hide-for-large-up">THÀNH TIỀN</p>
+							<p class="color-red columns-table-payment-2 item-content-payment-table">
+								{{ product.price * cart.quantity_of(product.id) }}
+							</p>
+						</div>
+						<div class="small-4 medium-4 large-1 columns padding-0-payment ">
+              <form id="product-form-{{ product.id }}" action="{{ url_for('cart.delete', product_id=product.id) }}" method="POST">
+                <a onclick="document.getElementById('product-form-{{ product.id }}').submit()"><i class="fa fa-trash"></i></a>
+              </form>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+          {% endfor %}
+					<!-- End item -->
+					<div class="clearfix"></div>
+					<div class="large-12" style="border-top: 1px solid #FDA9CA;padding:20px">
+						<div class="large-6 large-offset-6">
+							<span style="font-weight:bold;">TỔNG TIỀN:</span><span style="padding-left:15px;color:red"> {{ cart.total }}
+						</div>
+					</div>
+				</div>	
+				<!-- </div> -->
+				<div class="clearfix"></div>
+				<div class="hide-mobile-payment" style="font-size:16px;">
+					<div class="large-3 columns" style="">
+						<a href="" class="button payging backgroundcl-Hong expand" style="height:34px;padding:0px;margin:0px;line-height:34px;"><i class="fa fa-chevron-circle-left"></i> QUAY LẠI</a>
+					</div>
+					<div class="large-6 columns" style="padding:10px;">
+						HỖ TRỢ: 0918 967 807
+					</div>
+					<div class="large-3 columns">
+						<a class=" button expand backgroundcl-Hong payging" style="height:34px;padding:0px;margin:0px;line-height:34px;">THANH TOÁN</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</li>
+			<li class="bullet-item" id="hinh-thuc-thanh-toan" style="padding-left:0;padding-right:0;">
+				<p class="text-left" style="border-bottom: 1px solid #FDA9CA;padding-bottom:10px;padding: 0 10px;padding-bottom: 10px;">
+					<button class="title-number-detail">
+						2
+					</button>
+					<span class="margin-5">HÌNH THỨC THANH TOÁN</span>
+				</p>
+				<div class="text-left" style="margin: 40px 25px 25px 37px;">
+					<p>
+						<input type="radio" name="radiog_lite" id="radio1" class="css-checkbox" value="1" />
+						<label for="radio1" class="css-label radGroup1" style="padding-bottom:10px">Thanh Toán Tận Nhà</label>
+						<p style="margin-left: 48px;font-size:13px;margin-bottom:16px;">Chúng tôi sẽ xác nhận đơn hàng lại với quý khách bằng điện thoại khi thống nhất cả 2 bên chúng tôi sẽ giao hàng và thu tiền tại nhà của quý khách.</p>
+					</p>
+					<p style="padding-bottom:20px">
+						<input type="radio" name="radiog_lite" id="radio2" class="css-checkbox" value="2" />
+						<label for="radio2" class="css-label radGroup1">Chuyển Khoản ATM</label>
+					</p>
+					<p >
+						<input type="radio" name="radiog_lite" id="radio3" class="css-checkbox" value="3" />
+						<label for="radio3" class="css-label radGroup1">Qua Cổng Thanh Toán</label>
+					</p>
+				</div> 	
+			</li>
+		</div>
+	</ul>
+	<ul class="pricing-table large-4 columns" style="border:none" id="information-payment">
+		<div style="border: 1px solid #FDA9CA;">
+			<li class="title backgroundcl-Hong title-payment"> 2. THÔNG TIN CÁ NHÂN</li>
+			<li class="bullet-item" style="padding:20px 20px 20px 25px ">
+				<div class="form-group" style="margin-bottom:16px" style="margin-bottom:13px">
+					<p class="text-left mr-br-12-payment">1. Họ Tên: *</p>
+					<input type="text" class="form-control input-custom mr-br-12-payment height-24-payment padding-5-payment" placeholder="Họ tên"/>
+				</div>
+				<div class="form-group" style="margin-bottom:16px">
+					<p class="text-left mr-br-12-payment">2. Số Điện Thoại: *</p>
+					<input type="text" class="form-control input-custom mr-br-12-payment height-24-payment padding-5-payment" placeholder="Số điện thoại"/>
+				</div>
+				<div class="form-group" style="margin-bottom:16px">
+					<p class="text-left mr-br-12-payment">3. Email: *</p>
+					<input type="text" class="form-control input-custom mr-br-12-payment height-24-payment padding-5-payment" placeholder="Email"/>
+				</div>
+				<div class="form-group" style="margin-bottom:16px">
+					<p class="text-left mr-br-12-payment">4. Địa Chỉ: *</p>
+					<input type="text" class="form-control input-custom mr-br-8-payment height-24-payment padding-5-payment" placeholder="Địa Chỉ"/>
+					<input type="text" class="form-control input-custom mr-br-12-payment height-24-payment padding-5-payment" placeholder="Quận"/>
+				</div>
+				<div class="form-group" style="margin-bottom:16px">
+					<p class="text-left mr-br-12-payment">5. Tỉnh/ Thành Phố: *</p>
+					<select style="background-image: url(../static/img/checkbox.png);background-position: 98% center;border-color:#FDA9CA;margin-bottom: 1.25rem;background-color:white;padding:0;background-size: 20px;" class="mr-br-12-payment height-24-payment padding-5-payment">
+						<optgroup label='Food'>
+							<option>HotDog</option>
+							<option data-selected>Pizza</option>
+							<option>Spaghetti</option>
+						</optgroup>
+						<optgroup label='Colors'>
+							<option>Red</option>
+							<option data-selected>Black</option>
+							<option>Orange</option>
+							<option>Purple</option>
+						</optgroup>
+					</select>
+				</div>
+				<div class="form-group" style="margin-bottom:15px">
+					<p class="text-left mr-br-12-payment">6. Ghi Chú: *</p>
+					<textarea class="form-control input-custom mr-br-12-payment" style="min-height:103px"></textarea>
+				</div>
+				<div class="form-group" style="margin-top:10px">
+					<button class="button expand backgroundcl-Hong payging" style="margin:0">THANH TOÁN</button>
+				</div>
+			</li>
+		</div>
+	</ul>
+	<div class="clearfix"></div>
+	<div>
+		<div id="bottom-slider" class="show-for-large-up">
+			<div class="small-6 medium-6 large-6 columns" style="padding: 10px;margin-top:5px;font-size:20px;">SẢN PHẨM ĐANG BÁN CHẠY NHẤT</div>
+			<div class="small-6 medium-6 large-6 columns text-right">
+				<div class="arrow right">
+					<img src="../static/img/left.png" alt="" class="left arrow-left">
+					<img src="../static/img/right.png" alt="" class="left arrow-right">
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		<div>
+			<div class="show-for-large-up">
+				<div class="small-12 medium-12 large-12 columns" id="brand">
+					<div id="slider1_container" style="position: relative; width: 1000px; height: 350px;">
+						<div u="slides" style="position: absolute; left: 0px; top: 5px; width: 1000px; height: 350px; overflow: hidden; ">
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+							<div onclick="go('')" style="cursor: pointer; "><img u="image" src="../static/img/item-payment.png" /></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+<script src="../static/js/jssor/jssor.core.js"></script>
+<script src="../static/js/jssor/jssor.utils.js"></script>
+<script src="../static/js/jssor/jssor.slider.min.js"></script>
+<script src="../static/js/payment.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.btn-DivCount').click(function () {
+			var parent = $(this).parent();
+			var input = parent.find('input');
+			var num = parseInt(input.val());
+			if(isNaN(num))
+				input.val(0);
+			if(parseInt(input.val())>0)
+				input.val(parseInt(input.val()) - 1);
+		});
+		$('.btn-AddCount').click(function () {
+			var parent = $(this).parent();
+			var input = parent.find('input');
+			var num = parseInt(input.val());
+			if(isNaN(num))
+				input.val(0);
+			if(parseInt(input.val())<100)
+				input.val(parseInt(input.val()) + 1);
+		});
+	});
+</script>
+{% endblock script %}
+{% block test %}
 <div>View cart</div>
 <table>
   <thead>
@@ -25,4 +297,5 @@
 {% endfor %}
 </table>
 <div>Total: {{ cart.total }}</div>
+<a href="{{ url_for('cart.shipping')}}">Thanh toan</a>
 {% endblock %}

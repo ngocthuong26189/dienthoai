@@ -76,7 +76,7 @@
         </div>
         <div class="row collapse">
             <div class="medium-8 columns">
-                <span>Image:</span>   
+                <span>Main Image:</span>   
                 <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
                 <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
             </div>
@@ -86,10 +86,24 @@
                 <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
             </div>
         </div>
+        <div class="row collapse">
+            <div class="medium-8 columns">
+                <span>Product Images:</span>   
+                <input type="file" data-field-name="images" data-field-container="#images-list" multiple="true" onchange="multiple_upload(this)" />
+            </div>
+            <div id="images-list" class="columns medium-12">
+              {% for image in data.images %}
+              <input name="images[]" value="{{ image }}" type="hidden" />
+              {% endfor %}
+              {% for image_url in data.image_urls %}
+              <img src="{{ image_url }}" />
+              {% endfor %}
+            </div>
+        </div>
         
         <div class="row collapse">
-            <div class="medium-3 columns">
-                 <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+            <div class="medium-12 columns">
+                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success" style="display:table;margin:0 auto; margin-top:15px;">
             </div>
         </div>
     </fieldset>

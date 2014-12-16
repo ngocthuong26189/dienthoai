@@ -1,0 +1,81 @@
+{% extends "admin/banner/layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="/static/vendor/select2/select2.css" />
+<div class="row">
+        <div class="medium-3 columns">
+            <a href="{{ url_for('admin.banner.add') }}" class="button success tiny"><i class="fa fa-plus"></i> Add a banner</a>        
+        </div>
+        <div class="medium-9 columns">
+            <form>
+            <div class="row collapse">
+                <div class="small-4 columns">
+                    <input type="text" name="name__icontains" placeholder="Banner name">
+                </div>
+                <div class="small-6 columns">
+                    <select name="slider__icontains" id="slider">
+                        <option value=""></option>
+                        {%for slider in sliders%}
+                        <option value="{{slider.id}}">{{slider.name}}</option>
+                        {%endfor%}
+
+                    </select>
+                </div>
+                <div class="small-2 columns">
+                    <button type="submit" class="button postfix">Search</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+	<table>
+		<thead>
+			<tr>
+				<th>No.</th>
+				<th>name</th>
+                <th>position</th>
+				<th>slider</th>
+                <th>To do</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for banner in banners %}
+			<tr>
+				<td>{{ loop.index }}</td>
+                <td>
+                    <a href="{{ url_for('admin.banner.detail', banner_id=banner.id) }}">{{ banner.name}}</a>
+                </td>
+                <td>
+                   {{ banner.position}}
+                </td>
+                <td>{%if banner.slider is not none%} <a href="{{ url_for('admin.slider.detail', slider_id=banner.slider.id) }}">{{ banner.slider.name}}</a> {%endif%}</td>
+				<td>
+                  <a href="{{ url_for('admin.banner.edit', banner_id=banner.id) }}">Edit</a> | 
+                  <a href="javascript:post('{{ url_for('admin.banner.delete', banner_id=banner.id) }}')">Delete</a>
+                </td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{{ pagination.links | safe  }}
+
+   <style type="text/css">
+    .select2-container{
+        width: 100%;
+    }
+    .select2-container .select2-choice{
+        height: 37px;
+        border-radius: 0px;
+        line-height:37px;
+    }
+</style>
+<script src="/static/vendor/foundation/js/vendor/jquery.js"></script>
+<script src="/static/vendor/select2/select2.min.js"></script>
+<script type="text/javascript">
+ $('#slider').select2({
+    allowClear: true,
+    placeholder: "Select slider to filter"
+});
+
+</script> 
+{% endblock %}

@@ -7,7 +7,7 @@
     {% block title %}<title></title>{% endblock title %}
     <link rel="stylesheet" href="/static/vendor/foundation/css/foundation.css" />
     <link rel="stylesheet" href="/static/vendor/foundation/css/normalize.css" />
-	<link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/static/vendor/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/static/css/app-admin.css" />
     <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>	
     {% endblock head %}
@@ -17,15 +17,15 @@
         <aside id="left-panel" data-equalizer-watch>
             <a id="logo">Workshop</a>
             <ul class="side-nav">
-				{% block top_menu %}
-					{% from "admin/common/menu.html" import top_menu %}
-					{{ top_menu('dashboard') }}
-				{% endblock %}
+                {% block top_menu %}
+                {% from "admin/common/menu.html" import top_menu %}
+                {{ top_menu('dashboard') }}
+                {% endblock %}
             </ul>
         </aside>
         <div id="main" data-equalizer-watch>
             {% block content %}
-                        Just a default content
+            Just a default content
             {% endblock %} 
         </div>
     </div>
@@ -35,7 +35,20 @@
     <script src="/static/js/helpers.js"></script>
     <script src="/static/js/upload.js"></script>
     
-    {% block chat_script %}
+    {% block custom_script %}
     {% endblock %}
+    <script type="text/javascript">
+        var height = $( document ).height();
+        $("#left-panel").height(height);
+        $(window).scroll(function () {
+            var height = $( document ).height();
+            $("#left-panel").height(height);
+        });
+    </script>
+    <script>
+        $( ".unavailable a" ).each(function() {
+          $( this ).replaceWith( "<p>" + $( this ).text() + "</p>" );
+      });
+    </script>
 </body>
 </html>

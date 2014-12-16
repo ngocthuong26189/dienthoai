@@ -1,0 +1,20 @@
+{% macro top_chat_menu(current="index") -%}
+
+{% set chat_menu = [
+    ("index","fa-comments-o", "Chat with customer"),
+    ("manage","fa-user", "Manage")
+] %}
+<nav id="chat-top-bar" >
+    <ul>
+        {% for item in chat_menu%}
+        <li class="{% if current== item[0] %}active{% endif %}">
+            <a href="{{ url_for('admin.chat.' + item[0]) }}">
+                <i class="fa fa-lg fa-fw {{ item[1] }}"></i>{{ item[2] }}
+            </a>
+        </li>
+        <li class="divider"></li>
+        {% endfor %}  
+    </ul>
+</nav>
+ <div id="chat-top-bar-boder"></div>
+{%- endmacro %}

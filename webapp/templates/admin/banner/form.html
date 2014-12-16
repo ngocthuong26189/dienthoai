@@ -1,0 +1,93 @@
+{% macro form(url, data='', show_form=1) -%}
+<link rel="stylesheet" href="/static/vendor/select2/select2.css" />
+<form action="{{ url }}" method="post">
+	<fieldset>
+		
+		<legend>{% if show_form == 1 %}Create a banner:{%else%}Update a banner:{% endif %}</legend>
+
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Name:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="text" placeholder="Banner name" name="name" value="{{ data.name }}" required/>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Position:</span>  
+            </div>
+            <div class="medium-10 columns">
+                <select name="position" style="margin-bottom:1rem;">
+                    <option value=""></option> 
+                    {%for position in data.positions%}
+                        <option value="{{position}}" {% if data.position == position %} selected {%endif%}>{{position}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Slider:</span>  
+            </div>
+
+            <div class="medium-10 columns">
+                <select name="slider" style="margin-bottom:1rem;" id="slider">
+                    <option value=""></option> 
+                    {%for slider in data.sliders%}
+                        <option value="{{slider.id}}" {% if data.slider and slider.id == data.slider.id %} selected {%endif%}>{{slider.name}}</option>
+                    {%endfor%}
+                </select>
+            </div>
+        </div>
+		<div class="row collapse">
+            <div class="medium-2 columns">
+                <span class="prefix">Content: </span>   
+            </div>
+            <div class="medium-10 columns">
+            <textarea rows="10" placeholder="Enter your html here" name="html" value="{{ data.html }}" id="content">{{ data.html | safe }}</textarea>
+            </div>
+        </div>
+        <div class="row collapse" style="margin-top:10px;">
+            <div class="medium-8 columns">
+                <span>Image:</span>   
+                <input type="file" data-field-name="image" data-preview-element="image-preview" onchange="upload(this)" />
+                <input type="hidden" placeholder="Paste your image link here" name="image" value="{{ data.image }}" />
+            </div>
+            
+            <div class="medium-4 columns clearfix">
+
+                <img id="image-preview" class="inline right" src="{{data.image_url}}"/>
+            </div>
+        </div>
+		<div class="row collapse">
+            <div class="medium-12 columns">
+                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success" style="display:table;margin:0 auto; margin-top:15px;">
+            </div>
+        </div>
+	</fieldset>
+</form>
+<script src="/static/vendor/ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+     CKEDITOR.replace( 'content',{uiColor :'#AADC6E'} );
+</script>
+<style type="text/css">
+    .select2-container{
+        width: 100%;
+    }
+    .select2-container .select2-choice{
+        height: 37px;
+        border-radius: 0px;
+        line-height:37px;
+    }
+</style>
+<script src="/static/vendor/foundation/js/vendor/jquery.js"></script>
+<script src="/static/vendor/select2/select2.min.js"></script>
+<script type="text/javascript">
+ $('#slider').select2({
+    allowClear: true,
+    placeholder: "Select parrent slider"
+});
+
+</script>
+{% endmacro -%}

@@ -66,7 +66,7 @@ def edit(news_id):
         b = News.objects.get(id=news_id)
         categories = News_Category.objects()
         username=json.loads(session.get('user')).get('username')
-        if str(b.author.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) or json.loads(session.get('user')).get('permission') < 3:
+        if str(b.author.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) or (str(b.author.id) != str(json.loads(session.get('user')).get('_id').get('$oid')) and json.loads(session.get('user')).get('permission') < 3):
             return abort(403)
         return render.template('admin/news/edit.html', news=b,categories=categories,username=username)
     except DoesNotExist:

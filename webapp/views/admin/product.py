@@ -54,7 +54,7 @@ def create():
         return render.template('admin/product/detail.html', product=product), 201
     except ValidationError as ve:
         abort(400, "Validation Error")
-    except ValueError:
+    except Exception:
         abort(400, 'Validation Error')
 
 @module.route('/create', methods=['GET'])
@@ -80,19 +80,27 @@ def update(product_id):
         temp_data = data
         data = dict((k, v) for (k, v) in data.iteritems() if len(str(v).strip())>0)
         update_map = dict([('set__' + key, value) for key, value in data.items()])
+
         if update_map.has_key('set__category'):
             update_map['set__category'] = Category.objects.get(id=str(update_map['set__category']))
             if update_map['set__category'] is None:
                 raise ValidationError("Category not found")
+
         if update_map.has_key('set__brand'):
             update_map['set__brand'] = Brand.objects.get(id=str(update_map['set__brand']))
             if update_map['set__brand'] is None:
                 raise ValidationError("Brand not found")
 
         product = Product.objects.get(id=product_id)
+
         if temp_data.has_key('brand'):
             if len(str(temp_data['brand']).strip()) == 0:
                 update_map['set__brand'] = None
+
+        if temp_data.has_key('images[]'):
+            update_map.pop('set__images[]')
+            update_map['set__images'] = request.form.getlist('images[]')
+        # print update_map
         product.update(**update_map)
         product.reload()
         rebuilt_category_product()
@@ -101,7 +109,7 @@ def update(product_id):
         abort(404, "Does Not Exist")
     except ValidationError as ve:
         abort(404, "Validation error")
-    except ValueError:
+    except Exception:
         abort(404, 'ValueError Error')
 
 @module.route('/<string:product_id>/delete', methods=['POST'])

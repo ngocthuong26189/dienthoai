@@ -1,4 +1,5 @@
 {% macro form(url, data='', show_form=1) -%}
+<link rel="stylesheet" href="/static/vendor/select2/select2.css" />
 <form action="{{ url }}" method="post">
     <fieldset>
 
@@ -17,14 +18,22 @@
         </div>
         <div class="row collapse">
             <div class="medium-2 columns">
+                <span class="prefix">Link:</span>   
+            </div>
+            <div class="medium-10 columns">
+                <input type="text" placeholder="Category link" name="link" value="{{ data.link }}" required readonly="true" />
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="medium-2 columns">
                 <span class="prefix">Parent category:</span>  
             </div>
             <div class="medium-10 columns">
-                <select name="parent" style="margin-bottom:1rem;">
+                <select name="parent" style="margin-bottom:1rem;" id="category">
                     <option value=""></option>
                     
                     {%for category in data.parents%}
-                        <option value="{{category.id}}" {% if category.id ==data.parent %} selected {%endif%}>{{category.name}}</option>
+                    <option value="{{category.id}}" {% if category.id ==data.parent %} selected {%endif%}>{{category.name}}</option>
                     {%endfor%}
                 </select>
             </div>
@@ -42,10 +51,35 @@
             </div>
         </div>
         <div class="row collapse">
-            <div class="medium-3 columns">
-                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success">
+            <div class="medium-12 columns">
+                <input type="submit" value="{% if show_form==1:%} Create {%else %} Update {%endif%}" class="button tiny success" style="display:table;margin:0 auto; margin-top:15px;">
             </div>
         </div>
     </fieldset>
 </form>
+<style type="text/css">
+    .select2-container{
+        width: 100%;
+    }
+    .select2-container .select2-choice{
+        height: 37px;
+        border-radius: 0px;
+        line-height:37px;
+    }
+</style>
+<script src="/static/vendor/foundation/js/vendor/jquery.js"></script>
+<script src="/static/vendor/select2/select2.min.js"></script>
+<script src="/static/vendor/stringjs/lib/string.min.js"></script>
+<script type="text/javascript">
+ $('#category').select2({
+    allowClear: true,
+    placeholder: "Select parrent category"
+});
+
+$("input[name='name']").change(function () {
+    var decode = S($("input[name='name']").val()).latinise().s
+    var link = S(decode).replaceAll(' ','-').s;
+    $("input[name='link']" ).val(escape(link));
+});
+</script>
 {% endmacro -%}

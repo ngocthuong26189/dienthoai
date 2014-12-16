@@ -1,0 +1,33 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Hello world</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="./static/css/login_register.css" />
+{% endblock css%}
+ 
+{% block content %}
+<section id="login_register" style="margin-top:50px;">
+    <div class="row">
+        <div class="small-12 medium-6 medium-centered large-4 large-centered columns">
+            <form action="" method="get" accept-charset="utf-8">
+                <input type="text" name="username" placeholder="USERNAME OR EMAIL" required>
+                <input type="email" name="email" placeholder="EMAIL ĐĂNG KÝ" required>
+                <input type="password" name="password" placeholder="PASSWORD" required>
+                <button type="submit" class="button expand" style="margin-bottom:20px;">ĐĂNG KÝ</button>
+                <p class="clearfix">
+                    <a href="{{url_for('home.login')}}" class="right">Đăng nhập</a>
+                </p> 
+                <a href="{{url_for('home.facebook_index')}}" title="Facebook" class="button expand facebook">ĐĂNG NHẬP BẰNG FACEBOOK</a>
+                <a href="{{url_for('home.google_index')}}" title="Google" class="button expand google">ĐĂNG NHẬP BẰNG GOOGLE</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+{% endblock script %}

@@ -1,0 +1,5 @@
+{% extends "admin/slider/layout.html" %}
+{% block content %}
+	{% from "admin/slider/form.html" import form %}
+	{{ form(url_for('admin.slider.create')) }}
+{% endblock %}

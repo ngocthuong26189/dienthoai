@@ -1,0 +1,25 @@
+{% extends "admin/chat/layout.html" %}
+{% block head %}
+{{super()}}
+<link rel="stylesheet" href="/static/css/app-admin-chat.css" />
+{% endblock head %}
+{% block chat_menu%}
+    {% from "admin/chat/menu.html" import top_chat_menu %}
+    {{ top_chat_menu('index') }}
+{% endblock%} 
+{% block chat_content %}
+    <div ng-app="admin_chat_app" id="admin-chat-app">
+        <div ui-view></div>
+    </div>
+{% endblock %}
+{% block chat_script %}
+<script src="/static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+<script src="/static/vendor/angular/angular.min.js"></script>
+<script src="/static/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/static/vendor/angular-socket-io/socket.min.js"></script>
+<script src="/static/js/chat.js"></script>
+ <script>
+    $(document).foundation();
+  </script>
+{% endblock %}

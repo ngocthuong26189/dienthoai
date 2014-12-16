@@ -2,6 +2,7 @@ from models.category import Category
 from models.product import Product
 from models.category_product import Category_Product
 
+
 def rebuilt_category_product():
     Category_Product.objects().delete()
     categories = Category.objects()
@@ -20,3 +21,10 @@ def rebuilt_category_product():
                 bulk.append(Category_Product(product=product_of_child.id,category=category.id))
             if len(bulk) > 0:
                 Category_Product.objects.insert(bulk)
+def get_child_category(category_id):
+    # childs = []
+    # category = Category.objects(id=str(category_id)).first()
+    # if category is None:
+    #     return childs
+    parent = Category.objects.get(parent = category.id)
+    return parent

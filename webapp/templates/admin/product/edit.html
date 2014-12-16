@@ -1,11 +1,6 @@
 {% extends "admin/product/layout.html" %}
 {% block content %}
     {% from "admin/product/form.html" import form %}
-
-    {% set data={
-    'categories':categories,'name':product.name,'sku':product.sku,'price':product.price,'selling_price':product.selling_price,'discount':product.discount,'category':product.category.id,'brand':product.brand.id,'image':product.image,'image_url':product.image_url,'image_original_url':product.image_original_url,'brands':brands
-    } 
-    %}
-
+    {% set data={'categories':categories,'name':product.name,'sku':product.sku,'price':product.price,'selling_price':product.selling_price,'discount':product.discount,'category':product.category.id,'brand':product.brand.id,'images': product.images,'image_urls':product.image_urls,'image':product.image,'image_url':product.image_url,'image_original_url':product.image_original_url,'brands':brands} %}
     {{ form(url_for('admin.product.update', product_id=product.id), data, show_form=2) }}
 {% endblock %}

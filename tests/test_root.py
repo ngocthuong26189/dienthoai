@@ -1,5 +1,4 @@
 from tests import ClientTest, expect
-
 class BaseRouteUrlTest(ClientTest):
 
     def setUp(self):

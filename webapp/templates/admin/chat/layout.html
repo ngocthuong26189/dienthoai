@@ -1,0 +1,15 @@
+{% extends "admin/common/layout.html" %}
+
+{% block top_menu %}
+    {% from "admin/common/menu.html" import top_menu %}
+    {{ top_menu('chat') }}
+{% endblock %}
+{% block content%}
+    {% block chat_menu%}
+        {% from "admin/chat/menu.html" import top_chat_menu %}
+        {{ top_chat_menu('chat') }}
+    {% endblock%}
+    {% block chat_content%}
+        
+    {% endblock%}
+{% endblock%}

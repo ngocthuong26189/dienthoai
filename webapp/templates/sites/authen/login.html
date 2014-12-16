@@ -1,0 +1,86 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Hello world</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="./static/css/login_register.css" />
+{% endblock css%}
+{% block cart_login%}
+<li >
+    <a href="{{ url_for('cart.create')}}" title="GIỎ HÀNG">
+        <img src="../static/img/cart-lg.png" alt="me va be">
+        <br>
+        GIỎ HÀNG
+    </a>
+</li>
+<li class="active">
+    <a href="{{ url_for('home.login')}}" title="ĐĂNG NHẬP">
+        <img src="../static/img/login.png" alt="me va be">
+        <br>
+        ĐĂNG NHẬP
+    </a>
+</li>
+{% endblock cart_login%}    
+{% block content %}
+<section id="login_register" style="margin-top:50px;">
+    <div class="row">
+        <div class="small-12 medium-6 medium-centered large-4 large-centered columns">
+            <form action="" method="POST" accept-charset="utf-8">
+                <input type="text" name="username" placeholder="USERNAME OR EMAIL" required id="username">
+                <input type="password" name="password" placeholder="PASSWORD" required id="password">
+                <button type="submit" class="button expand">ĐĂNG NHẬP</button>
+                <p>
+                    <input type="checkbox" name="remember" id="remember" />
+                    <label for="remember" style="font-size:14px;">GHI NHỚ MẬT KHẨU</label>
+                </p>
+                <p class="clearfix">
+                    <a href="{{url_for('home.register')}}" class="right">Đăng ký tài khoản</a>
+                </p>    
+                
+                <a href="{{url_for('home.facebook_index', next=request.args.next)}}" title="Facebook" class="button expand facebook">ĐĂNG NHẬP BẰNG FACEBOOK</a>
+                <a href="{{url_for('home.google_index', next=request.args.next)}}" title="Google" class="button expand google">ĐĂNG NHẬP BẰNG GOOGLE</a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+
+<script type="text/javascript">
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+    if(getCookie("username"))
+        $('#username').val(getCookie("username"));
+    if(getCookie("password"))
+        $('#password').val(getCookie("password"));
+    $( "form" ).submit(function( event ) {
+       if(($('#remember').is(":checked"))){
+            setCookie('username', $('#username').val() , 3);
+            setCookie('password', $('#password').val() , 3);
+       }else{
+       document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+        document.cookie = "password=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+       }
+   });
+</script>
+{% endblock script %}

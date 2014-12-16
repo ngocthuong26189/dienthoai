@@ -12,6 +12,49 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated_function
 
+def social_login(facebook_token,google_token,username,email):
+    try:
+        if facebook_token:
+            u = User.objects(facebook_access_token=facebook_token).first()
+            if u:
+                u.username = username
+                u.email = email
+                u.save()
+                u.reload()
+                return u
+            else:
+                u = User.objects(email=email).first()
+                if u:
+                    u.facebook_access_token = facebook_token
+                    u.reload()
+                    return u
+                else:
+                    data = {"username":username,"password":"facebook","email":email,"facebook_access_token":facebook_token}
+                    u = User.objects.create(**data)
+                    return u
+        if google_token:
+            u = User.objects(google_access_token=google_token).first()
+            if u:
+                u.username = username
+                u.email = email
+                u.save()
+                u.reload()
+                return u
+            else:
+                u = User.objects(email=email).first()
+                if u:
+                    u.google_access_token = google_token
+                    u.reload()
+                    return u
+                else:
+                    data = {"username":username,"password":"google_authen","email":email,"google_access_token":google_token}
+                    u = User.objects.create(**data)
+                    return u
+        return None;
+    except Exception as e:
+        return None;
+    
+
 def permission_required(code):
     def wrap(f):
         @wraps(f)

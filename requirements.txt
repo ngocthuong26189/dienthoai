@@ -7,4 +7,5 @@ factory_boy
 preggy
 pillow
 blinker
-Flask-SocketIO
+Flask-OAuth
+oauth2

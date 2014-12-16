@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Blueprint
 from flask import request, abort
 from models.category import Category
@@ -29,6 +30,9 @@ def detail(category_id):
 def create():
     try:
         data = request.form.to_dict()
+        if data.get('link'):
+            data['link'] =  data['link'].encode('ascii', 'ignore')
+            data['link'] = data['link'].replace(' ','-')
         data = dict((k, v) for (k, v) in data.iteritems() if len(str(v).strip())>0)
         ancestorpath = []
         if "parent" in data:
@@ -44,14 +48,17 @@ def create():
         abort(400, "Duplicated, category is existed") # Duplicate
     except ValidationError as ve:
         abort(400, "Validation Error")
-    except ValueError:
-        abort(400, "ValueError Error")
     except DoesNotExist as dne:
         abort(400, "DoesNotExist Error")
+    except Exception, e:
+        abort(404)
 @module.route('/<string:category_id>/update', methods=['POST'])
 def update(category_id):
     try:
         data = request.form.to_dict()
+        if data.get('link'):
+            data['link'] =  data['link'].encode('ascii', 'ignore')
+            data['link'] = data['link'].replace(' ','-')
         temp_data = data
         ancestorpath = []
         data = dict((k, v) for (k, v) in data.iteritems() if len(str(v).strip())>0)
@@ -104,8 +111,8 @@ def update(category_id):
         rebuilt_category_product()  
         return render.template('admin/category/detail.html', category = category.reload()), 200
     except Exception as e:
-        print e
         abort(400)
+
 @module.route('/create', methods=['GET'])
 def add():
     categories = Category.objects()

@@ -1,0 +1,300 @@
+{% extends "sites/common/layout.html" %}
+
+{% block title %}
+<title>Hello world</title>
+{% endblock %}
+{% block css%}
+{{super()}}
+<link rel="stylesheet" href="./static/css/detail.css" />
+{% endblock css%}
+    
+{% block content %}
+<section class="main-section" style="padding-top: 5px;">
+    <!-- content goes here -->
+    <div style="min-height:300px;">
+        <section id="detail" class="row">
+            <div class="large-2 columns" style="padding:0">
+                <div class="clearfix"></div>
+                <div class="large-12 " style="background-color:#F2F2F2;margin-top:10px">
+                    <div class="content-LuaChon">
+                        <table style="border:none;margin:0 auto;background-color:#F2F2F2">
+                            <tr style="background-color:#F2F2F2">
+                                <td>Giá Tiền</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                            <tr style="background-color:#F2F2F2">
+                                <td>Thương hiệu</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                            <tr style="background-color:#F2F2F2">
+                                <td>Màu Sắc</td>
+                                <td><i class="fa fa-chevron-down"></i></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="banner-quangcao-1 large-12">
+                    Banner quang cáo
+                </div>
+                <div class="banner-quangcao-2 large-12">
+                    Banner quang cáo
+                </div>
+            </div>
+            <div class="large-10 columns">
+                <div class="clearfix"></div>
+                <p>
+                    TRANG CHU >> THỜI TRANG >> VÁY DẠ HỘI >> vÁY ABC
+                </p>
+                <div  class="row">
+                    <div class="large-6 columns text-center">
+                        <div class="detail-left" style="margin-bottom:10px;">
+                            <!-- <div id="gallery_01" class="small-12 small-push-12" >
+                                <div  id="links">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div> -->
+                            <div class="clearfix"></div>
+                            <div class="text-center small-pull-12 image-view-product-detail" style="height:auto;position:relative">
+                                <img id="zoom_09" src="./static/img/123(3).jpg" data-zoom-image="./static/img/123(2).jpg" style="height: auto;border:1px solid #DDD"/>
+                            </div>
+                            <div id="gallery_01" class="small-12 small-push-12" >
+                                <div  id="links">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="columns detail-btn-color-select">
+                            <div>
+                                <button style="height:60px;width:60px;background-color:#FFF;border:1px solid #ddd"></button>
+                                <button style="height:60px;width:60px;background-color:#FF00FF;border:1px solid #ddd"></button>
+                                <button style="height:60px;width:60px;background-color:#0CA2E0;border:1px solid #ddd"></button>
+                                <button style="height:60px;width:60px;background-color:#000;border:1px solid #ddd"></button>
+                            </div>
+                        </div>
+                         <div class="clearfix"></div>
+                    </div>
+                    <div class="large-6 columns detail-content-right" style="">
+                        <p>ZARA</p>
+                        <p>Đầm thời trang tuyệt đẹp</p>
+                        <p>Giá tiền: 1.500.500 VNĐ</p>
+                        <p>
+                            <button class="btn btn-primary detail-background-button" style="padding: 10; width:228px">
+                                <i class="fa fa-shopping-cart" style="color:yellow"></i> 
+                                <span="margin-left:10px">CHO VÀO GIỎ</span>
+                            </button>
+                        </p>
+                        <p>
+                            <button class="btn btn-primary detail-background-button" style="padding: 10; width:228px">
+                                <i class="fa fa-phone" style="color:red"></i>
+                                <span style="margin-left:10px">0918.967.807</span>
+                            </button>
+                        </p>
+                        <div class="large-12">
+                            Mô tả ngắn:
+                            <p style="padding-left:15px">
+                                - Sản phẩm thời trang tốt nhất hiện nay với kiểu dáng tuyệt vời, giúp cho bạn thoải mái trong mọi thời tiết.
+                            </p>
+                            <p style="padding-left:15px">
+                                - Sản phẩm thời trang tốt nhất hiện nay với kiểu dáng tuyệt vời, giúp cho bạn thoải mái trong mọi thời tiết.
+                            </p>
+                            <div>
+                                <p>- Thời Gian giao hàng : 3 - 5 Ngày.</br>
+                                    - Giao ngay sau 1h nếu bạn trong nội thành Hồ Chí Minh.</p>
+                                </div>
+                            </div>
+                            <div class="large-12 detail-background-button">
+                                <p >Chia sẻ cho mọi người</p>
+                                <div class="text-center">
+                                    <a href=""><img src="./static/img/youtube.png" style="padding:5px"></a>
+                                    <a href=""><img src="./static/img/twitter.png" style="padding:5px" ></a>
+                                    <a href=""><img src="./static/img/google.png" style="padding:5px" ></a>
+                                    <a href=""><img src="./static/img/facebook.png" style="padding:5px" ></a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="large-12 columns detail-content-desciprtion" style="background-color:#F2F2F2;margin-top:10px">
+                            <dl class="tabs" data-tab style="border-bottom:1px solid #ddd">
+                                <dd class="active" style="border-right:2px solid #ddd;padding: 5px;"><a href="#panel1" style="padding:0">Thông Tin Chi Tiết</a></dd>
+                                <dd style="border-right:2px solid #ddd;padding: 5px;"><a href="#panel2" style="padding:0">Comment</a></dd>
+                                <dd style="border-right:2px solid #ddd;padding: 5px;"><a href="#panel3" style="padding:0">Chính Sách Đổi Hàng</a></dd>
+                                <dd style="padding: 5px;"><a href="#panel4" style="padding:0">Thời Gian Vận Chuyển</a></dd>
+                            </dl>
+                            <div class="tabs-content">
+                                <div class="content active" id="panel1">
+                                    <p>Mã Sản Phẩm : 00156456456DSAD</p>
+                                    <p>Màu Sắc Sản Phẩm : Trắng Tuyết</p>
+                                    <div>
+                                        <p>Hướng Dẫn Sử Dụng:</p>
+                                        <p style="padding-left:10px">
+                                            - Mặt Vào thật tốt.<br>
+                                            - Giặt thật Sach.<br>
+                                            - ...
+                                        </p>
+                                    </div>
+                                    <p>Chất Liệu Sản phẩm</p>
+                                    <p>Xuất sứ</p>
+                                </div>
+                                <div class="content" id="panel2">
+                                    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+                                </div>
+                                <div class="content" id="panel3">
+                                    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+                                </div>
+                                <div class="content" id="panel4">
+                                    <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="large-12 columns" style="margin-top: 5px;">
+                        <div class="row hide-for-small-only">
+                            <div class="small-12 medium-12 large-12 columns clearfix" id="bottom-slider">
+                                <div class="left" style="padding: 10px;">
+                                    SẢN PHẨM CÙNG THƯƠNG HIỆU
+                                </div>
+                                <div class="arrow right">
+                                    <img src="./static/img/left.png" alt="" class="left arrow-left">
+                                    <img src="./static/img/right.png" alt="" class="left arrow-right">
+                                </div>
+                            </div>
+
+                        </div>
+                            <div class="clearfix"></div>
+                            <div id="product-detail-other" class="row" style="margin-top:10px;">
+                                <div class="small-12 medium-4 large-4 columns">
+                                    <a href=""><img src="./static/img/sp1.jpg" ></a>
+                                    <div class="clearfix">
+                                        <div class="small-10 medium-9 large-10 left">
+                                            <p>Đầm đám cưới fuyệt xinh </p>
+                                            <p>590.000 VNĐ</p>
+                                        </div>
+                                        <div class="small-2 medium-3 large-2 right">
+                                            <a href=""><img src="./static/img/card_product.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-12 medium-4 large-4 columns">
+                                    <a href=""><img src="./static/img/sp1.jpg" ></a>
+                                    <div class="clearfix">
+                                        <div class="small-10 medium-9 large-10 left">
+                                            <p>Đầm đám cưới fuyệt xinh </p>
+                                            <p>590.000 VNĐ</p>
+                                        </div>
+                                        <div class="small-2 medium-3 large-2 right">
+                                            <a href=""><img src="./static/img/card_product.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="small-12 medium-4 large-4 columns">
+                                    <a href=""><img src="./static/img/sp1.jpg" ></a>
+                                    <div class="clearfix">
+                                        <div class="small-10 medium-9 large-10 left">
+                                            <p>Đầm đám cưới fuyệt xinh </p>
+                                            <p>590.000 VNĐ</p>
+                                        </div>
+                                        <div class="small-2 medium-3 large-2 right">
+                                            <a href=""><img src="./static/img/card_product.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-12 medium-4 large-4 columns">
+                                    <a href=""><img src="./static/img/sp1.jpg" ></a>
+                                    <div class="clearfix">
+                                        <div class="small-10 medium-9 large-10 left">
+                                            <p>Đầm đám cưới fuyệt xinh </p>
+                                            <p>590.000 VNĐ</p>
+                                        </div>
+                                        <div class="small-2 medium-3 large-2 right">
+                                            <a href=""><img src="./static/img/card_product.png"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="navigation-product-other" class="small-centered">
+                                <span><a href="">Prev</a></span> 
+                                <span><a href="">1</a></span>
+                                 <span><a href="">2</a></span> 
+                                 <span><a href="">3</a></span> 
+                                 <span><a href="">6</a></span>
+                                  <span><a href="">Next</a></span>
+
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </section>
+        </div>
+    </section>
+    <!--  Khong dc delete, dung` de popup lider hinh`-->
+    <div id="blueimp-gallery" class="blueimp-gallery">
+        <div class="slides"></div>
+        <h3 class="title"></h3>
+        <a class="prev">‹</a>
+        <a class="next">›</a>
+        <a class="close">×</a>
+        <a class="play-pause"></a>
+        <ol class="indicator"></ol>
+    </div>
+    <!--  -->
+</section>
+{% endblock %}
+
+{% block script%}
+{{ super() }}
+<script src="../static/js/jquery.elevatezoom.js"></script>
+<script src="../static/js/jquery.blueimp-gallery.min.js"></script>
+<script type="text/javascript" charset="utf-8" async defer>
+$("#zoom_09").elevateZoom({ zoomWindowFadeIn: 30, zoomWindowFadeOut: 30, lensFadeIn: 30, lensFadeOut: 30,zoomWindowWidth:500,zoomWindowHeight: 600, lensSize:1});
+</script>
+<script type="text/javascript">
+var array_image = [];
+var data = [
+{smallImage:'./static/img/123(3).jpg',largeImage : './static/img/123(2).jpg'},
+{smallImage:'./static/img/image4.png',largeImage : './static/img/image4.jpg'},
+{smallImage:'./static/img/123(3).jpg',largeImage : './static/img/123(2).jpg'},
+{smallImage:'./static/img/image4.png',largeImage : './static/img/image4.jpg'},
+{smallImage:'./static/img/123(3).jpg',largeImage : './static/img/123(2).jpg'},
+{smallImage:'./static/img/image4.png',largeImage : './static/img/image4.jpg'}
+];
+$(document).ready(function() {
+    init();
+    $(".item-image-gallery").hover(function () {
+        var ez = $('#zoom_09').data('elevateZoom');
+        $('#zoom_09').attr("data-index-item",$(this).attr("data-index-item"));
+        ez.swaptheimage($(this).attr("src"), data[$(this).attr("data-index-item")].largeImage); 
+    });
+    $( ".btn-menu-toggle-LuaChon" ).click(function() {
+        $( ".content-LuaChon" ).toggle( "slow" );
+    });
+    document.getElementById('zoom_09').onclick = function (event) {
+        event = event || window.event;
+        var target = event.target || event.srcElement,
+            link = target.src ? target.parentNode : target,
+            options = { index: $(link.getElementsByTagName('img')[0]).attr('data-index-item'), event: event },
+            links = $("#gallery_01").children('a');
+            array_image = blueimp.Gallery(links, options);
+            array_image.onslide($(link.getElementsByTagName('img')[0]).attr('data-index-item'));
+    };
+});
+function init(){
+    $("#gallery_01").children().remove();
+    for (var i = 0; i < data.length; i++) {
+        var Col = "<div class='small-2 medium-2 large-2 columns'>"
+        +"<img src="+data[i].smallImage+" class='item-image-gallery' data-index-item='"+i+"' />"
+        +"</div><a href="+data[i].smallImage+" data-link='' data-gallery></a>";
+        $("#gallery_01").append(Col);
+    };
+     $('#zoom_09').attr('src',data[0].smallImage);
+     $('#zoom_09').attr('data-zoom-image',data[0].largeImage);
+     $('#zoom_09').attr('data-index-item',0);
+    var ez = $('#zoom_09').data('elevateZoom');
+    ez.swaptheimage(data[0].smallImage, data[0].largeImage);
+}
+</script>
+
+{% endblock script %}

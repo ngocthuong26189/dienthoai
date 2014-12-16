@@ -1,0 +1,55 @@
+{% extends "admin/banner/layout.html" %}
+{% block content %}
+<div class="row">
+    <div class="small-12 columns">
+        <table>
+        <h2 class="text-center subheader">banner detail</h2>
+         
+          <tr>
+            <th>Properties</th>
+            <th>Description</th>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td>{{banner.name}}</td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td>{{banner.position}}</td>
+        </tr>
+        <tr>
+            <td>Slider</td>
+            <td>{%if banner.slider is not none%}{{banner.slider.name}}{%endif%}</td>
+        </tr>
+        <tr>
+                <td >Image</td>
+                <td>
+                    {%if banner.image_original_url | length > 0%}
+                    <a class="th" role="button" aria-label="Thumbnail" href="{{banner.image_original_url}}">
+                      <img aria-hidden=true src="{{banner.image_url}}"/>
+                  </a>
+                  {%endif%}
+              </td>
+          </tr>
+        <tr>
+            <td colspan="2">
+                <div style="border:1px solid green;background-color:#fff;padding:10px;">
+                    {{banner.html|safe}}
+                </div>
+            </td>
+            
+        </tr>
+        <tr style="border-top:solid 1px #ddd;">
+            <td colspan="2">
+                <ul class="button-group" style="display:table;margin:0 auto;">
+                <li> <a href="{{ url_for('admin.banner.add') }}" class="button tiny success" style="margin-bottom:0px;"><i class="fa fa-plus"></i> Add </a></li>
+                  <li><a href="{{ url_for('admin.banner.edit', banner_id=banner.id) }}" class="button tiny" style="margin-bottom:0px;"><i class="fa fa-edit"></i> Edit</a></li>
+                  <li><a href="javascript:post('{{ url_for('admin.banner.delete', banner_id=banner.id) }}',null,'{{url_for('admin.banner.index')}}')" class="button tiny alert" style="margin-bottom:0px;"><i class="fa fa-trash"></i> Delete</a></li>
+              </ul>
+          </td>
+        </tr>
+    </table>
+</div>
+</div>
+{% endblock %}

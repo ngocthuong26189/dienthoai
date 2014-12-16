@@ -17,4 +17,4 @@ class NewsBasicFactory(MongoEngineFactory):
 
 class NewsFactory(NewsBasicFactory , NewsCategoryFactory, UserFactory):
     news_category = factory.SubFactory(NewsCategoryFactory)
-    author = factory.SubFactory(NewsCategoryFactory)
+    author = factory.SubFactory(UserFactory)
