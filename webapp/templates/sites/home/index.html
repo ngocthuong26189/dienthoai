@@ -18,8 +18,6 @@
 
 {% block content %}
 
-
-{%if message is none%}
 <section id="menu_slide" style="margin-top:10px;">
     <div class="row clearfix">
         <div id="slide">
@@ -45,10 +43,6 @@
     </div>
 </div>
 </section>
-{%else%}
-    <h1 style="text-align:center;margin:30px;color:red;">{{message}}</h1>
-{%endif%}
-
     <div class="row show-for-large-up">
         <div class="small-12 medium-12 large-12 columns clearfix" id="bottom-slider">
             <div class="arrow right">
@@ -78,13 +72,6 @@
             </div>
         </div>
 
-    </div>
-    <div class="row">
-        <div class="large-12 medium-12 small-12 columns">
-            <p class="text-center stmargin sbmargin">
-                Copyright@2014 by Me&Be
-            </p>
-        </div>
     </div>
 </section>
 {% endblock %}
