@@ -137,7 +137,21 @@ def category_leve1(level_1):
         return abort(404)
     except Exception, e:
         return abort(404)
-    
+ 
+
+@module.route('/X-4', methods = ['GET'])
+def x4():
+    return render.template('sites/dienthoai/x-4.html')
+
+
+@module.route('/X-6', methods = ['GET'])
+def x6():
+    return render.template('sites/dienthoai/x-6.html')
+
+@module.route('/X-8', methods = ['GET'])
+def x8():
+    return render.template('sites/dienthoai/x-8.html')
+
 
 @module.route('/<string:level_1>/<string:level_2>', methods = ['GET'])
 def category_leve2(level_1,level_2):

@@ -35,8 +35,6 @@
 
 #menu_slide #slide{
 	width: 100%;
-	padding-left: 5px;
-	padding-right:5px;
 	z-index: 0;
 	max-height: 500px;
 }

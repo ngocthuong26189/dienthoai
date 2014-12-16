@@ -1,96 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    {% block head %}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% block title %}
-    <title>
-
-    </title>
-    {% endblock title %}
-    
-    {% block css%}
-    <link rel="stylesheet" href="../static/vendor/foundation/css/foundation.css" />
-    <link rel="stylesheet" href="../static/vendor/foundation/css/normalize.css" />
-    <link rel="stylesheet" href="../static/css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../static/css/header.css" />
-    <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
-    {% endblock css%}
-    {% endblock head %}
-</head>
-<body>
-    
-    <section id="header">
-    <nav class="show-for-large-up">
-        <div class="row clearfix">
-            <ul class="inline-list left nav-left">
-             {% block home%}
-                <li >
-                    <a href="{{ url_for('home.index')}}" title="MẸ & BÉ">
-                        <br>
-                        MẸ VÀ BÉ
-                    </a>
-                </li>
-            {% endblock home%}
-            {% block new%}
-                <li>
-                    <a href="#" title="TIN TỨC">
-                        
-                        <br>
-                        TIN TỨC
-                    </a>
-                </li>
-            {% endblock new%}
-            </ul>
-            <ul class="inline-list right nav-right">
-            </ul>
-        </div>
-    </nav>
-    <div class="off-canvas-wrap" data-offcanvas>
-        <div class="inner-wrap">
-            <nav class="tab-bar hide-for-large-up">
-                <section class="left-small">
-                    <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-                </section>
-                <section class="middle tab-bar-section">
-                    <a href="" title="home">
-                        <img src="../static/img/logo.png" alt="" style="height:41px;margin-top:4px;">
-                    </a>
-                </section>
-            </nav>
-            <aside class="left-off-canvas-menu hide-for-large-up">
-                <!-- menuleft here -->
-                 {% block menu %}
-                    {% include "sites/common/menu.html" %}
-                {% endblock %}
-            </aside>
-
-            <section class="main-section">
-                <!-- content goes here -->
-                <div style="min-height:500px;">
-                {% block content %}
-                    Just a default content
-                {% endblock %}
+    <head>
+        {% block head %}
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            {% block title %}
+                <title>
+                </title>
+            {% endblock title %}
+            
+            {% block css%}
+                <link rel="stylesheet" href="../static/vendor/foundation/css/foundation.css" />
+                <link rel="stylesheet" href="../static/vendor/foundation/css/normalize.css" />
+                <link rel="stylesheet" href="../static/css/layout.css" />
+                <link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="../static/css/header.css" />
+                <link rel="stylesheet" href="../static/css/footer.css" />
+                <script src="/static/vendor/foundation/js/vendor/modernizr.js"></script>
+            {% endblock css%}
+        {% endblock head %}
+    </head>
+    <body>
+        
+        <section id="header">
+            <nav class="show-for-large-up">
+                <div class="row">
+                    <a href="/"><img src="./static/img/logo.png" alt="logo"></a>
+                    <ul class="inline-list right">
+                        {% block new %}
+                            <li><a href="{{ url_for('home.index')}}">TRANG CHỦ</a></li>
+                            <li><a href="{{ url_for('home.x4')}}">X-4</a></li>
+                            <li><a href="{{ url_for('home.x6')}}">X-6</a></li>
+                            <li><a href="{{ url_for('home.x8')}}">X-8</a></li>
+                            <li><a href="#" data-reveal-id="firstModal">HỆ THỐNG</a></li>
+                            <li><a href="#" data-reveal-id="thanhtoan">HỖ TRỢ</a></li>
+                        {% endblock new %}
+                    </ul>
+                    
                 </div>
-            </section>
-
-            <a class="exit-off-canvas"></a>
-
+            </nav>
+            <div class="off-canvas-wrap" data-offcanvas>
+                <div class="inner-wrap">
+                    <nav class="tab-bar hide-for-large-up">
+                        <section class="left-small">
+                            <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
+                        </section>
+                        <section class="middle tab-bar-section">
+                            <a href="" title="home">
+                                <img src="../static/img/logo.png" alt="" style="height:41px;margin-top:4px;">
+                            </a>
+                        </section>
+                    </nav>
+                    <aside class="left-off-canvas-menu hide-for-large-up">
+                        <!-- menuleft here -->
+                        {% block menu %}
+                            {% include "sites/common/menu.html" %}
+                        {% endblock %}
+                    </aside>
+                    <section class="main-section">
+                        <!-- content goes here -->
+                        <div style="min-height:500px;">
+                            {% block content %}
+                                Just a default content
+                            {% endblock %}
+                            {% block hotro %}
+                                {% include "sites/dienthoai/temp.html" %}
+                                {% include "sites/dienthoai/trungtam.html" %}
+                            {% endblock %}
+                        </div>
+                    </section>
+                    <a class="exit-off-canvas"></a>
+                </div>
+            </div>
+        </section>
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+                <p class="text-center stmargin sbmargin">
+                Copyright@2014 by Me&Be
+                </p>
+            </div>
         </div>
-    </div>
-</section>
-    {% block script%}
-    <script src="../static/vendor/foundation/js/vendor/modernizr.js"></script>
-    <script src="../static/vendor/foundation/js/vendor/jquery.js"></script>
-    <script src="../static/vendor/foundation/js/foundation.min.js"></script>
-    <script src="../static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
-    <script src="../static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
-    <script src="../static/js/mevabe.js" type="text/javascript" charset="utf-8" async defer></script>
-    {% endblock script%}
-    <script type="text/javascript" charset="utf-8" async defer>
+        <div id="social">
+            <ul>
+                <li><a href="https://www.facebook.com/pages/Smartphone-gi%C3%A1-r%E1%BA%BB-nh%E1%BA%A5t/757846657636925?ref=hl" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
+                <li><a href="#" title="Google"><img src="./static/img/google.png" alt=""></a></li>
+                <li><a href="https://www.youtube.com/watch?v=VJG6A54YbEE" title="Youtube"><img src="./static/img/youtube.png" alt=""></a></li>
+            </ul>
+        </div>
+        {% block script%}
+            <script src="../static/vendor/foundation/js/vendor/modernizr.js"></script>
+            <script src="../static/vendor/foundation/js/vendor/jquery.js"></script>
+            <script src="../static/vendor/foundation/js/foundation.min.js"></script>
+            <script src="../static/vendor/foundation/js/foundation/foundation.equalizer.js"></script>
+            <script src="../static/vendor/foundation/js/foundation/foundation.offcanvas.js"></script>
+            <script src="../static/js/mevabe.js" type="text/javascript" charset="utf-8" async defer></script>
+        {% endblock script%}
+        <script type="text/javascript" charset="utf-8" async defer>
         $(document).foundation();
-    </script>
-</body>
+        </script>
+    </body>
 </html>
