@@ -62,7 +62,7 @@
 }
 #bottom-slider img:hover,
 #bottom-slider img:active{
-	margin-top:15px;
+	margin-top:10px;
 }
 #slider1_container{
 	width: 100%;
@@ -72,14 +72,15 @@
 	position: absolute;
 	top: 45%;
 	margin-top: -25px;
-	width: 41px;
-	height: 41px;
+	width: 88px;
+	height: 90px;
 	line-height: 50px;
 	color: white;
 	background-color: transparent;
 	text-indent: -9999px !important;
 	z-index: 10;
 	background-repeat: no-repeat;
+	opacity: 0.3;
 
 }
 .custom_next{

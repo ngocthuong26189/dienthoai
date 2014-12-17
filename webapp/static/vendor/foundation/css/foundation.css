@@ -4279,6 +4279,7 @@ table {
   .tabs dd, .tabs .tab-title {
     position: relative;
     margin-bottom: 0 !important;
+    width: 220px !important;
     list-style: none;
     float: left; }
     .tabs dd > a, .tabs .tab-title > a {
@@ -4292,7 +4293,7 @@ table {
       .tabs dd > a:hover, .tabs .tab-title > a:hover {
         background-color: #e1e1e1; }
     .tabs dd.active a, .tabs .tab-title.active a {
-      background-color: white;
+      background-color: #696969;
       color: #222222; }
   .tabs.radius dd:first-child a, .tabs.radius .tab:first-child a {
     -webkit-border-bottom-left-radius: 3px;
@@ -5089,11 +5090,11 @@ td {
 
 /* Default Link Styles */
 a {
-  color: #008cba;
+  color: white;
   text-decoration: none;
   line-height: inherit; }
   a:hover, a:focus {
-    color: #0078a0; }
+    color: #003366; }
   a img {
     border: none; }
 

@@ -82,32 +82,6 @@
 <script src="./static/js/jssor/jssor.slider.min.js"></script>
 <script src="./static/js/home.js"></script>
 <script type="text/javascript" charset="utf-8" async defer>
-    $(function() {
-    // Ẩn tất cả .accordion trừ accordion đầu tiên
-    // $("#accordiondemo .accordion:not(:first)").hide();
-    $("#accordiondemo .accordion").hide();
-    $('.accordion .active').each(function () {
-        $first_accordion = $(this).parent().parent().parent();
-        $first_accordion.prev().addClass("active");
-        $first_accordion.slideDown();
-    });
-    $('#accordiondemo > .active').each(function () {
-        $first_accordion = $(this).next();
-        $first_accordion.slideDown();
-    });
-    $("#accordiondemo > a").click(function(){
-        $("#accordiondemo > a").removeClass('active');
-        $('.accordion .active').removeClass('active');
-        $(this).addClass('active');
-
-        $accordion = $(this).next();
-        if ($accordion.is(':hidden') === true) {
-            $("#accordiondemo .accordion").slideUp();
-            $accordion.slideDown();
-        } else {
-            $accordion.slideUp();
-        }
-    });
-});
+$(document).foundation();
 </script>
 {% endblock script %}

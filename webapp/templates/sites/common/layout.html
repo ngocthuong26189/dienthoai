@@ -26,14 +26,14 @@
             <nav class="show-for-large-up">
                 <div class="row">
                     <a href="{{ url_for('home.index')}}"><img src="./static/img/logo.png" alt="logo"></a>
-                    <ul class="inline-list right">
+                    <ul class="inline-list right stmargin" style="padding-right:20px;">
                         {% block new %}
-                            <li><a href="{{ url_for('home.index')}}">TRANG CHỦ</a></li>
-                            <li><a href="{{ url_for('home.x4')}}">X-4</a></li>
-                            <li><a href="{{ url_for('home.x6')}}">X-6</a></li>
-                            <li><a href="{{ url_for('home.x8')}}">X-8</a></li>
-                            <li><a href="#" data-reveal-id="firstModal">HỆ THỐNG</a></li>
-                            <li><a href="#" data-reveal-id="thanhtoan">HỖ TRỢ</a></li>
+                            <li><a href="{{ url_for('home.index')}}">Trang Chủ</a></li>
+                            <li><a href="{{ url_for('home.x4')}}">Doogee-4</a></li>
+                            <li><a href="{{ url_for('home.x6')}}">Doogee-6</a></li>
+                            <li><a href="{{ url_for('home.x8')}}">Doogee-8</a></li>
+                            <li><a href="#" data-reveal-id="firstModal">Hệ Thống</a></li>
+                            <li><a href="#" data-reveal-id="thanhtoan">Hỗ Trợ</a></li>
                         {% endblock new %}
                     </ul>
                     
@@ -69,17 +69,16 @@
                             {% endblock %}
                         </div>
                     </section>
-                    <a class="exit-off-canvas"></a>
+                    <div class="row">
+                        <div class="large-12 medium-12 small-12 columns" style="opacity:0.3;">
+                            <p class="text-center stmargin sbmargin">
+                            Copyright@2014 by Me&Be
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        <div class="row">
-            <div class="large-12 medium-12 small-12 columns">
-                <p class="text-center stmargin sbmargin">
-                Copyright@2014 by Me&Be
-                </p>
-            </div>
-        </div>
         <div id="social">
             <ul>
                 <li><a href="https://www.facebook.com/pages/Smartphone-gi%C3%A1-r%E1%BA%BB-nh%E1%BA%A5t/757846657636925?ref=hl" title="Facebook"><img src="./static/img/facebook.png" alt=""></a></li>
